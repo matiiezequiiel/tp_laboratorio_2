@@ -43,6 +43,12 @@ namespace MiCalculadora
             
         }
 
-   
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            this.txtNumero1.Clear();
+            this.txtNumero2.Clear();
+            this.cmbOperador.ResetText();
+            this.lblResultado.ResetText();
+        }
     }
 }

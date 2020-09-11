@@ -23,6 +23,7 @@ namespace Entidades
 
         public static double Operar (Numero num1,Numero num2,string operador)
         {
+
             if(operador.Equals("+"))
             {
                 return num1 + num2;
