@@ -45,6 +45,7 @@
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(129, 20);
             this.txtNumero1.TabIndex = 0;
+            this.txtNumero1.TextChanged += new System.EventHandler(this.txtNumero1_TextChanged);
             // 
             // txtNumero2
             // 
@@ -52,6 +53,7 @@
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(129, 20);
             this.txtNumero2.TabIndex = 2;
+            this.txtNumero2.TextChanged += new System.EventHandler(this.txtNumero2_TextChanged);
             // 
             // btnOperar
             // 
@@ -61,6 +63,7 @@
             this.btnOperar.TabIndex = 3;
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = true;
+            this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
             // 
             // btnLimpiar
             // 
@@ -103,9 +106,8 @@
             this.lblResultado.AutoSize = true;
             this.lblResultado.Location = new System.Drawing.Point(363, 52);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(35, 13);
+            this.lblResultado.Size = new System.Drawing.Size(0, 13);
             this.lblResultado.TabIndex = 8;
-            this.lblResultado.Text = "";
             // 
             // cmbOperador
             // 
@@ -142,6 +144,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora de Matias Aguirre 2°D";
+            this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,3 +8,6 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debu
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debug\MiCalculadora.exe
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debug\MiCalculadora.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\bin\Debug\Entidades.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\bin\Debug\Entidades.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
