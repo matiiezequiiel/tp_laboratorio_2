@@ -17,9 +17,6 @@ namespace MiCalculadora
             InitializeComponent();
         }
 
-        private void txtNumero1_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+   
     }
 }
