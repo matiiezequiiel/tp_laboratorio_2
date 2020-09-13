@@ -41,22 +41,30 @@
             // 
             // txtNumero1
             // 
-            this.txtNumero1.Location = new System.Drawing.Point(67, 89);
+            this.txtNumero1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero1.Location = new System.Drawing.Point(67, 67);
+            this.txtNumero1.Multiline = true;
             this.txtNumero1.Name = "txtNumero1";
-            this.txtNumero1.Size = new System.Drawing.Size(129, 20);
+            this.txtNumero1.Size = new System.Drawing.Size(129, 42);
             this.txtNumero1.TabIndex = 0;
+            this.txtNumero1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNumero1.TextChanged += new System.EventHandler(this.txtNumero1_TextChanged);
             // 
             // txtNumero2
             // 
-            this.txtNumero2.Location = new System.Drawing.Point(272, 89);
+            this.txtNumero2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero2.Location = new System.Drawing.Point(272, 67);
+            this.txtNumero2.Multiline = true;
             this.txtNumero2.Name = "txtNumero2";
-            this.txtNumero2.Size = new System.Drawing.Size(129, 20);
+            this.txtNumero2.Size = new System.Drawing.Size(129, 42);
             this.txtNumero2.TabIndex = 2;
+            this.txtNumero2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNumero2.TextChanged += new System.EventHandler(this.txtNumero2_TextChanged);
             // 
             // btnOperar
             // 
+            this.btnOperar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnOperar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnOperar.Location = new System.Drawing.Point(67, 131);
             this.btnOperar.Name = "btnOperar";
             this.btnOperar.Size = new System.Drawing.Size(90, 39);
@@ -83,6 +91,7 @@
             this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnConvertirADecimal
             // 
@@ -92,6 +101,7 @@
             this.btnConvertirADecimal.TabIndex = 7;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
+            this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
             // 
             // btnConvertirABinario
             // 
@@ -101,18 +111,27 @@
             this.btnConvertirABinario.TabIndex = 6;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
+            this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
             // 
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(363, 52);
+            this.lblResultado.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.lblResultado.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.lblResultado.Location = new System.Drawing.Point(231, 9);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 13);
+            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblResultado.Size = new System.Drawing.Size(2, 41);
             this.lblResultado.TabIndex = 8;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmbOperador
             // 
+            this.cmbOperador.DropDownWidth = 64;
             this.cmbOperador.FormattingEnabled = true;
+            this.cmbOperador.IntegralHeight = false;
             this.cmbOperador.Items.AddRange(new object[] {
             "+",
             "-",
@@ -121,7 +140,7 @@
             this.cmbOperador.Location = new System.Drawing.Point(202, 89);
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(64, 21);
-            this.cmbOperador.TabIndex = 9;
+            this.cmbOperador.TabIndex = 1;
             // 
             // FormCalculadora
             // 
@@ -144,7 +163,7 @@
             this.Name = "FormCalculadora";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Calculadora de Matias Aguirre 2°D";
+            this.Text = "                                                    ";
             this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

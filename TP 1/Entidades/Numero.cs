@@ -20,6 +20,12 @@ namespace Entidades
         public string setNumero
         {
             set{ this.numero = ValidarNumero(value); }
+            get { return (this.numero).ToString() ; }
+        }
+
+        public string getNumero
+        {
+            get { return (this.numero).ToString() ; }
         }
 
         
@@ -43,22 +49,119 @@ namespace Entidades
 
         private bool EsBinario(string binario)
         {
-            return true;
+            bool retorno=false;
+
+            for (int i = 0; i < binario.Length; i++)
+            {
+                if (binario[i].Equals('1')||binario[i].Equals('0') )
+                {
+                    retorno = true;        
+                }
+                else
+                {
+                    retorno = false;
+                    break;
+                }
+            }
+            return retorno;
         }
 
         public string BinarioDecimal(string binario)
         {
-            return "algo";
+            int resultado;
+
+            if (EsBinario(binario))
+            {
+                resultado = Convert.ToInt32(binario, 2);
+                return resultado.ToString();
+            }
+            else
+            {
+                return "Valor invalido";
+            }
+ 
         }
 
         public string DecimalBinario(double numero)
         {
-            return "algo";
+            int numeroEntero;
+            numeroEntero = (int)numero;
+            String cadena = "";
+
+            numeroEntero =(int) numero;
+
+            if (numero > 0)
+            {
+                
+                while (numero > 0)
+                {
+                    if (numero % 2 == 0)
+                    {
+                        cadena = "0" + cadena;
+                    }
+                    else
+                    {
+                        cadena = "1" + cadena;
+                    }
+                    numero = (int)(numero / 2);
+                }
+                Console.WriteLine(cadena);
+            }
+            else
+            {
+                if (numero == 0)
+                {
+                    Console.WriteLine("0");
+                }
+                else
+                {
+                    cadena="Ingrese solo numeros positivos";
+                }
+            }
+
+            return cadena;
         }
 
         public string DecimalBinario(string numero)
         {
-            return "algo";
+            float numeroConComa;
+            int numeroEntero;
+
+            float.TryParse(numero, out numeroConComa);        
+            numeroEntero = (int)numeroConComa;
+
+            String cadena = "";
+
+            if (numeroEntero > 0)
+            {
+
+                while (numeroEntero > 0)
+                {
+                    if (numeroEntero % 2 == 0)
+                    {
+                        cadena = "0" + cadena;
+                    }
+                    else
+                    {
+                        cadena = "1" + cadena;
+                    }
+                    numeroEntero = numeroEntero / 2;
+                }
+                Console.WriteLine(cadena);
+            }
+            else
+            {
+                if (numeroEntero == 0)
+                {
+                    Console.WriteLine("0");
+                }
+                else
+                {
+                    cadena = "Ingrese solo numeros positivos";
+                }
+            }
+
+            return cadena;
         }
 
         public static double operator -(Numero n1,Numero n2)

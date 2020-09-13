@@ -16,6 +16,7 @@ namespace MiCalculadora
     {
         Numero numero1;
         Numero numero2;
+        Numero nroResultado;
 
         public FormCalculadora()
         {
@@ -25,6 +26,12 @@ namespace MiCalculadora
         {
             numero1 = new Numero();
             numero2 = new Numero();
+            nroResultado = new Numero();
+        }
+
+        private static double Operar(Numero numero1,Numero Numero2,string operador)
+        {
+            return Calculadora.Operar(numero1, Numero2, operador);
         }
 
         private void txtNumero1_TextChanged(object sender, EventArgs e)
@@ -39,16 +46,50 @@ namespace MiCalculadora
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            this.lblResultado.Text= Calculadora.Operar(numero1, numero2, this.cmbOperador.Text).ToString();
+            this.lblResultado.Text=Operar(numero1, numero2, this.cmbOperador.Text).ToString();
             
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            ///this.txtNumero1.Text = string.Empty;
             this.txtNumero1.Clear();
             this.txtNumero2.Clear();
             this.cmbOperador.ResetText();
             this.lblResultado.ResetText();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();            
+        }
+
+        private void btnConvertirABinario_Click(object sender, EventArgs e)
+        {
+
+            if(!string.IsNullOrWhiteSpace(this.lblResultado.Text))
+            {
+                nroResultado.setNumero = this.lblResultado.Text;
+                this.lblResultado.Text = nroResultado.DecimalBinario(this.lblResultado.Text);
+            }
+            else
+            {
+                this.lblResultado.Text = "No hay resultado calculado.";
+            }  
+        }
+
+        private void btnConvertirADecimal_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(this.lblResultado.Text))
+            {
+                nroResultado.setNumero = this.lblResultado.Text;
+                this.lblResultado.Text = nroResultado.BinarioDecimal(this.lblResultado.Text);
+            }
+            else
+            {
+                this.lblResultado.Text = "No hay resultado calculado.";
+            }
+
         }
     }
 }
