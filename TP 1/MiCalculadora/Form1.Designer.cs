@@ -120,7 +120,7 @@
             this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.lblResultado.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.lblResultado.Location = new System.Drawing.Point(231, 9);
+            this.lblResultado.Location = new System.Drawing.Point(194, 9);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblResultado.Size = new System.Drawing.Size(2, 41);
@@ -129,8 +129,10 @@
             // 
             // cmbOperador
             // 
+            this.cmbOperador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbOperador.DropDownWidth = 64;
-            this.cmbOperador.FormattingEnabled = true;
             this.cmbOperador.IntegralHeight = false;
             this.cmbOperador.Items.AddRange(new object[] {
             "+",
@@ -163,7 +165,7 @@
             this.Name = "FormCalculadora";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "                                                    ";
+            this.Text = " Calculadora de Matias Aguirre 2°D                                         ";
             this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

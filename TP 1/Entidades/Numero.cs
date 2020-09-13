@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,16 @@ namespace Entidades
         public Numero()
         {
             this.numero = 0;
+        }
+
+        public Numero(double numero)
+        {
+            this.setNumero = numero.ToString();
+        }
+
+        public Numero(string numero)
+        {
+            this.setNumero = numero;
         }
 
         public string setNumero
@@ -182,7 +193,15 @@ namespace Entidades
 
         public static double operator /(Numero n1,Numero n2)
          {
-            return n1.numero/n2.numero;
+            if(n2.numero!=0)
+            {
+                return n1.numero/n2.numero;
+            }
+            else
+            {
+                return double.MinValue;
+            }
+            
         }
 
     }

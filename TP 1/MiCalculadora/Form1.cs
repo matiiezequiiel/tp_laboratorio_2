@@ -27,6 +27,7 @@ namespace MiCalculadora
             numero1 = new Numero();
             numero2 = new Numero();
             nroResultado = new Numero();
+            this.cmbOperador.SelectedIndex = 0;
         }
 
         private static double Operar(Numero numero1,Numero Numero2,string operador)
@@ -46,6 +47,8 @@ namespace MiCalculadora
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
+            this.btnConvertirABinario.Enabled = true;
+            this.btnConvertirADecimal.Enabled = true;
             this.lblResultado.Text=Operar(numero1, numero2, this.cmbOperador.Text).ToString();
             
         }
@@ -53,16 +56,18 @@ namespace MiCalculadora
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             ///this.txtNumero1.Text = string.Empty;
+            this.btnConvertirABinario.Enabled = true;
+            this.btnConvertirADecimal.Enabled = true;
             this.txtNumero1.Clear();
             this.txtNumero2.Clear();
-            this.cmbOperador.ResetText();
+            this.cmbOperador.SelectedIndex = 0;
             this.lblResultado.ResetText();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();            
-        }
+        } 
 
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
@@ -71,11 +76,14 @@ namespace MiCalculadora
             {
                 nroResultado.setNumero = this.lblResultado.Text;
                 this.lblResultado.Text = nroResultado.DecimalBinario(this.lblResultado.Text);
+                this.btnConvertirABinario.Enabled = false;
+                this.btnConvertirADecimal.Enabled = true;
             }
             else
             {
                 this.lblResultado.Text = "No hay resultado calculado.";
-            }  
+            }
+            
         }
 
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
@@ -84,6 +92,8 @@ namespace MiCalculadora
             {
                 nroResultado.setNumero = this.lblResultado.Text;
                 this.lblResultado.Text = nroResultado.BinarioDecimal(this.lblResultado.Text);
+                this.btnConvertirADecimal.Enabled = false;
+                this.btnConvertirABinario.Enabled = true;
             }
             else
             {

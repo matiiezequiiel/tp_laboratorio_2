@@ -23,39 +23,27 @@ namespace Entidades
 
         public static double Operar (Numero num1,Numero num2,string operador)
         {
-            /*
+          
             switch (ValidarOPerador(operador[0]))
             {
                 case "+":
-               break;
-                case "+":
+                    return num1 + num2;
                     break;
-                case "+":
+                case "-":
+                    return num1 - num2;
                     break;
-                case "+":
+                case "*":
+                    return num1 * num2;
+                    break;
+                case "/":
+                    return num1 / num2;
                     break;
                 default:
+                    return num1 + num2;
                     break;
             }
-            */
             
-            if(operador.Equals("+"))
-            {
-                return num1 + num2;
-            }
-            else if(operador.Equals("-"))
-            {
-                return num1 - num2;
-            }
-            else if(operador.Equals("*"))
-            {
-                return num1 * num2;
-            }
-            else
-            {
-                return num1 / num2;
-            }
-       
+ 
         }
 
     }
