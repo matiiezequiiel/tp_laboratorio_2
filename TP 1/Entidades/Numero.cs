@@ -126,7 +126,7 @@ namespace Entidades
                 }
                 else
                 {
-                    cadena="Ingrese solo numeros positivos";
+                    cadena="Nro negativo,error.";
                 }
             }
 
@@ -168,7 +168,7 @@ namespace Entidades
                 }
                 else
                 {
-                    cadena = "Ingrese solo numeros positivos";
+                    cadena = "Nro negativo,error.";
                 }
             }
 
