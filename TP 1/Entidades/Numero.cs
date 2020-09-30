@@ -39,7 +39,11 @@ namespace Entidades
             get { return (this.numero).ToString() ; }
         }
 
-        
+        /// <summary>
+        /// Valida cadena para determinar que sea un numero.
+        /// </summary>
+        /// <param name="strNumero">Cadena a validar.</param>
+        /// <returns>Devuelve numero validado, si no es valido devuelve 0.</returns>
         private double ValidarNumero(string strNumero)
         {
             bool isNum;
@@ -58,6 +62,11 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Determina si la cadena recibida es binario (1 y 0).
+        /// </summary>
+        /// <param name="binario">Cadena a determinar si esta en binario.</param>
+        /// <returns>True si es binario, false si no es binario.</returns>
         private bool EsBinario(string binario)
         {
             bool retorno=false;
@@ -77,6 +86,11 @@ namespace Entidades
             return retorno;
         }
 
+        /// <summary>
+        /// Convierte una cadena en binario a una cadena decimal.
+        /// </summary>
+        /// <param name="binario">Cadena en binario.</param>
+        /// <returns>Cadena en decimal.</returns>
         public string BinarioDecimal(string binario)
         {
             int resultado;
@@ -93,6 +107,11 @@ namespace Entidades
  
         }
 
+        /// <summary>
+        /// Convierte un numero decimal a una cadena en binario.
+        /// </summary>
+        /// <param name="numero">Numero a convertir.</param>
+        /// <returns>Cadena en binario.</returns>
         public string DecimalBinario(double numero)
         {
             int numeroEntero;
@@ -133,6 +152,11 @@ namespace Entidades
             return cadena;
         }
 
+        /// <summary>
+        /// Convierte un numero decimal a una cadena en binario.
+        /// </summary>
+        /// <param name="numero">Cadena a convertir.</param>
+        /// <returns>Cadena en binario.</returns>
         public string DecimalBinario(string numero)
         {
             float numeroConComa;
@@ -175,22 +199,46 @@ namespace Entidades
             return cadena;
         }
 
+        /// <summary>
+        /// Resta de 2 numeros.
+        /// </summary>
+        /// <param name="n1">Numero 1 a restar.</param>
+        /// <param name="n2">Numero 2 a restar.</param>
+        /// <returns>Resultado.</returns>
         public static double operator -(Numero n1,Numero n2)
         {
    
             return n1.numero-n2.numero;
-        }   
+        }
 
+        // <summary>
+        /// Suma de 2 numeros.
+        /// </summary>
+        /// <param name="n1">Numero 1 a sumar.</param>
+        /// <param name="n2">Numero 2 a sumar.</param>
+        /// <returns>Resultado.</returns>
         public static double operator +(Numero n1,Numero n2)
         {
             return n1.numero + n2.numero;
         }
 
+        // <summary>
+        /// Multiplicacion de 2 numeros.
+        /// </summary>
+        /// <param name="n1">Numero 1 a multiplicar.</param>
+        /// <param name="n2">Numero 2 a multiplicar.</param>
+        /// <returns>Resultado.</returns>
         public static double operator *(Numero n1,Numero n2)
         {
             return n1.numero*n2.numero;
-        } 
+        }
 
+        // <summary>
+        /// Division de 2 numeros validando la division por 0.
+        /// </summary>
+        /// <param name="n1">Numero 1 a dividir.</param>
+        /// <param name="n2">Numero 2 a dividir.</param>
+        /// <returns>Resultado.</returns>
         public static double operator /(Numero n1,Numero n2)
          {
             if(n2.numero!=0)

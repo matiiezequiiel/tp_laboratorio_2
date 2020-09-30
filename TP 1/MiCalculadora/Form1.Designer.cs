@@ -118,7 +118,7 @@
             this.lblResultado.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblResultado.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.lblResultado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblResultado.Location = new System.Drawing.Point(67, 9);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
