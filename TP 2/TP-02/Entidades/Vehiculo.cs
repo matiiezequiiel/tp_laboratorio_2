@@ -27,7 +27,9 @@ namespace Entidades
 
         public Vehiculo(string chasis,EMarca marca, ConsoleColor color)
         {
-
+            this.chasis = chasis;
+            this.marca = marca;
+            this.color = color;
         }
 
         private short tamanio;

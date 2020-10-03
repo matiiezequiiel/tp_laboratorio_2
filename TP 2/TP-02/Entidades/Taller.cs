@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,17 @@ namespace Entidades
     {
         List<Vehiculo> vehiculos;
         int espacioDisponible;
-        Taller miTaller = new Taller();
         public enum ETipo
         {
             Moto, Automovil, Camioneta, Todos
         }
 
         #region "Constructores"
-        private Taller()
+        public Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
-        public Taller(int espacioDisponible)
+        public Taller(int espacioDisponible):this()
         {
             this.espacioDisponible = espacioDisponible;
         }
@@ -88,6 +88,7 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
+         
             foreach (Vehiculo v in taller.vehiculos)
             {
                 if (v == vehiculo)
