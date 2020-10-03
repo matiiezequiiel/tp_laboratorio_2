@@ -15,11 +15,11 @@ namespace Entidades
         /// <summary>
         /// Las motos son chicas
         /// </summary>
-        protected short Tamanio
+        protected override short Tamanio
         {
             get
             {
-                return 0;
+                return (short)ETamanio.Chico;
             }
         }
 

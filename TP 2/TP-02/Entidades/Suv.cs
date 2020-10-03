@@ -18,8 +18,8 @@ namespace Entidades
         protected override short Tamanio
         {
             get
-            {
-                return 0;
+            { 
+                return (short) ETamanio.Grande ;
             }
         }
 
@@ -28,7 +28,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SUV");
-            sb.AppendLine(this.);
+         //   sb.AppendLine(this.);
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

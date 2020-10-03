@@ -37,7 +37,7 @@ namespace Entidades
         /// <returns></returns>
         public override string ToString()
         {
-            return Listar(miTaller, ETipo.Todos);
+            return Listar(this, ETipo.Todos);
         }
         #endregion
 
@@ -50,7 +50,7 @@ namespace Entidades
         /// <param name="taller">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Listar(Taller taller, ETipo tipo)
+        public static string Listar(Taller taller, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -60,7 +60,7 @@ namespace Entidades
             {
                 switch (tipo)
                 {
-                    case ETipo.Camioneta:
+                    case ETipo.Camioneta:   
                         sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Moto:

@@ -24,3 +24,10 @@ D:\Federico\VB .Net\Visual C#\utn\TPs\2018\TP-N2\TP-02\TP-02\obj\Debug\TP-02.exe
 C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\obj\Debug\TP-02.csprojAssemblyReference.cache
 C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
 C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\obj\Debug\TP-02.exe
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\bin\Debug\TP-02.exe
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\bin\Debug\TP-02.pdb
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\bin\Debug\Entidades.dll
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\bin\Debug\Entidades.pdb
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\obj\Debug\TP-02.csproj.CopyComplete
+C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\TP-02\obj\Debug\TP-02.pdb

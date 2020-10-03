@@ -29,11 +29,11 @@ namespace Entidades
         /// Los automoviles son medianos
         /// </summary>
        // protected override short Tamanio
-        protected short Tamanio
+        protected override short Tamanio
         {
             get
             {
-                return this.Tamanio;
+                return (short)ETamanio.Mediano;
             }
         }
 
@@ -42,8 +42,8 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(this.);
-        //    sb.AppendLine("TAMAÑO : {0}", this.Tamanio);
+        //    sb.AppendLine(this.Mostrar());
+            sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

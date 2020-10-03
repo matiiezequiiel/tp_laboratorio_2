@@ -15,22 +15,35 @@ namespace Entidades
         {
             Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson
         }
-        enum ETamanio
+        public enum ETamanio
         {
             Chico, Mediano, Grande
         }
-        enum ETipo
-        {
-
-        }
+      
         EMarca marca;
         string chasis;
         ConsoleColor color;
+     
 
         public Vehiculo(string chasis,EMarca marca, ConsoleColor color)
         {
 
         }
+
+        private short tamanio;
+
+        protected virtual short  Tamanio
+        {
+            get { return this.Tamanio; }
+            
+        }
+
+        /*
+        public virtual ETamanio
+        {
+            return tamanio;
+        }
+        */
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
@@ -58,6 +71,32 @@ namespace Entidades
             return sb.ToString();
         }
 
+        public override bool Equals(object obj)
+        {
+            bool aux = false;
+            Vehiculo auxVehiculo = (Vehiculo)obj;
+
+
+            if(obj is Vehiculo)
+            {
+                if (this.chasis == auxVehiculo.chasis)
+                {
+                    aux = true;
+                }
+
+            }
+            
+
+            return aux;
+
+       
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+
+        }
         /// <summary>
         /// Dos vehiculos son iguales si comparten el mismo chasis
         /// </summary>
@@ -66,8 +105,12 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+         
+          
+            return v1.Equals(v2);
+            
         }
+
         /// <summary>
         /// Dos vehiculos son distintos si su chasis es distinto
         /// </summary>
@@ -76,7 +119,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return (v1.chasis == v2.chasis);
+            return !v1.Equals(v2);
         }
     }
 }
