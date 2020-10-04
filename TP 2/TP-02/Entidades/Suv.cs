@@ -15,11 +15,12 @@ namespace Entidades
         /// <summary>
         /// Las camionetas son grandes
         /// </summary>
-        protected override short Tamanio
+        protected override ETamanio Tamanio
         {
             get
             { 
-                return (short) ETamanio.Grande ;
+               // return ETamanio.Grande;
+                return ETamanio.Mediano;
             }
         }
 
@@ -28,7 +29,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SUV");
-         //   sb.AppendLine(this.);
+            sb.AppendLine((string)this);
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

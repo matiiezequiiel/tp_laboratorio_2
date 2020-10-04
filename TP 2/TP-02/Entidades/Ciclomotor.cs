@@ -15,11 +15,11 @@ namespace Entidades
         /// <summary>
         /// Las motos son chicas
         /// </summary>
-        protected override short Tamanio
+        protected override ETamanio Tamanio
         {
             get
             {
-                return (short)ETamanio.Chico;
+                return ETamanio.Chico;
             }
         }
 
@@ -28,7 +28,7 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("CICLOMOTOR");
-            sb.AppendLine(this.Mostrar());
+            sb.AppendLine((string)this);
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

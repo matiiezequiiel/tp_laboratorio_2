@@ -22,7 +22,7 @@ namespace Entidades
         #region "Constructores"
         public Taller()
         {
-            this.vehiculos = new List<Vehiculo>();
+            vehiculos = new List<Vehiculo>();
         }
         public Taller(int espacioDisponible):this()
         {
@@ -88,15 +88,23 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-         
-            foreach (Vehiculo v in taller.vehiculos)
+            if(taller.espacioDisponible> taller.vehiculos.Count )
             {
-                if (v == vehiculo)
-                    return taller;
-            }
 
-            taller.vehiculos.Add(vehiculo);
+                foreach (Vehiculo v in taller.vehiculos)
+                {
+
+                    if (v == vehiculo)
+                        return taller;
+
+                }
+
+                taller.vehiculos.Add(vehiculo);
+               
+
+            }
             return taller;
+
         }
         /// <summary>
         /// Quitará un elemento de la lista
@@ -110,6 +118,7 @@ namespace Entidades
             {
                 if (v == vehiculo)
                 {
+                    taller.vehiculos.Remove(v);
                     break;
                 }
             }

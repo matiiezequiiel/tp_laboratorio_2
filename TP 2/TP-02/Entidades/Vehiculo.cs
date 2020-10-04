@@ -19,33 +19,39 @@ namespace Entidades
         {
             Chico, Mediano, Grande
         }
-      
+
         EMarca marca;
         string chasis;
         ConsoleColor color;
-     
 
-        public Vehiculo(string chasis,EMarca marca, ConsoleColor color)
+
+        public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
             this.marca = marca;
             this.color = color;
         }
 
-        private short tamanio;
+        /* private short tamanio;
 
-        protected virtual short  Tamanio
+         protected virtual short  Tamanio
+         {
+             get { return this.Tamanio; }
+
+         }
+        */
+
+       
+
+        protected virtual ETamanio Tamanio
         {
             get { return this.Tamanio; }
-            
+       
         }
 
-        /*
-        public virtual ETamanio
-        {
-            return tamanio;
-        }
-        */
+
+       
+        
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
