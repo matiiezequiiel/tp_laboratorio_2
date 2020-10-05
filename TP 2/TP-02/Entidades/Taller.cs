@@ -17,6 +17,7 @@ namespace Entidades
         public enum ETipo
         {
             Moto, Automovil, Camioneta, Todos
+                
         }
 
         #region "Constructores"
@@ -52,18 +53,24 @@ namespace Entidades
         /// <returns></returns>
         public static string Listar(Taller taller, ETipo tipo)
         {
+
             StringBuilder sb = new StringBuilder();
+            List<Vehiculo> listaFiltrada = new List<Vehiculo>();
+
+            listaFiltrada=FiltrarTaller(taller.vehiculos,tipo);
+            
+          
 
             sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", taller.vehiculos.Count, taller.espacioDisponible);
             sb.AppendLine("");
-            foreach (Vehiculo v in taller.vehiculos)
+            foreach (Vehiculo v in listaFiltrada)
             {
                 switch (tipo)
                 {
                     case ETipo.Camioneta:   
                         sb.AppendLine(v.Mostrar());
                         break;
-                    case ETipo.Moto:
+                    case ETipo.Moto:  
                         sb.AppendLine(v.Mostrar());
                         break;
                     case ETipo.Automovil:
@@ -124,6 +131,52 @@ namespace Entidades
             }
 
             return taller;
+        }
+
+        private static List<Vehiculo> FiltrarTaller(List<Vehiculo> vehiculos, ETipo tipoFiltro)
+        {
+            
+    
+            List<Vehiculo> listaFiltrada = new List<Vehiculo>();
+
+            switch (tipoFiltro.ToString())
+            {
+                case "Moto":
+                    foreach (Vehiculo item in vehiculos)
+                    {
+                        if (item.GetType() == typeof(Ciclomotor))
+                        {
+                            listaFiltrada.Add(item);
+                        }
+
+                    }
+                    break;
+                case "Automovil":
+                    foreach (Vehiculo item in vehiculos)
+                    {
+                        if (item.GetType() == typeof(Sedan))
+                        {
+                            listaFiltrada.Add(item);
+                        }
+
+                    }
+                    break;
+                case "Camioneta":
+                    foreach (Vehiculo item in vehiculos)
+                    {
+                        if (item.GetType() == typeof(Suv))
+                        {
+                            listaFiltrada.Add(item);
+                        }
+
+                    }
+                    break;
+                default:
+                    return vehiculos;
+            }
+
+            return listaFiltrada;
+           
         }
         #endregion
     }
