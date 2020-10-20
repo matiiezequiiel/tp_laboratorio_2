@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using System.Xml.XPath;
 
 namespace Clases_Abstractas
 {
@@ -21,53 +23,64 @@ namespace Clases_Abstractas
 
         #endregion
 
+        #region Constructores
+
+        public Persona()
+        {
+            this.nombre = "Sin nombre";
+            this.apellido = "Sin apellido";
+            this.dni = 0;
+            this.nacionalidad = ENacionalidad.Argentino;
+
+        }
+
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
+        {
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.nacionalidad = nacionalidad;
+        }
+
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre,apellido,nacionalidad)
+        {
+            StringToDNI = dni;
+        }
+
+
+
+        #endregion
+
         #region Propiedades
 
-        /// <summary>
-        /// Valida que el nombre no tenga espacios, numeros o simbolos.
-        /// </summary>
+       
         public string Nombre
         {
             get { return this.nombre; }
             set {
-                    for (int i = 0; i < value.Length; i++)
+                    string nombre = ValidarNombreApellido(value);
+                    
+                    if(nombre != null)
                     {
-                        if(char.IsWhiteSpace(value[i]) || char.IsNumber(value[i]) || char.IsSymbol(value[i]))
-                        {
-                             break;
-                        }
-                        else
-                        {
-                             this.nombre = value;
-
-                        }
+                         this.nombre = nombre;
                     }
                
                 }
         }
 
-        /// <summary>
-        /// Valida que el apellido no tenga espacios, numeros o simbolos.
-        /// </summary>
+     
         public string Apellido
         {
             get { return this.apellido; }
             set
             {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    if (char.IsWhiteSpace(value[i]) || char.IsNumber(value[i]) || char.IsSymbol(value[i]))
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        this.apellido = value;
+                    string apellido = ValidarNombreApellido(value);
 
+                    if (apellido != null)
+                    {
+                        this.apellido = apellido;
                     }
-                }
-
             }
+
         }
         
         /// <summary>
@@ -77,19 +90,14 @@ namespace Clases_Abstractas
         {
             get { return this.dni; }
             set {
-                    if(this.nacionalidad==ENacionalidad.Argentino && value>1 && value < 89999999)
+                    int dni = ValidarDni(this.nacionalidad, value);
+
+                    if (dni != -1)
                     {
-                        this.dni = value;
+                        this.dni = dni;
                     }
-                    else if(this.nacionalidad==ENacionalidad.Extranjero && value> 90000000 && value < 99999999 )
-                    {
-                        this.dni = value;
-                    }
-                    else
-                    {
-                        //throw NacionalidadInvalidaException.
-                    }
-                }
+
+            }
         }
         public ENacionalidad Nacionalidad
         {
@@ -104,26 +112,111 @@ namespace Clases_Abstractas
         {
             //PASAR STRING A ENTERO VALIDANDOLO
             set {
-                    int numero;
-                    if(int.TryParse(value,out numero) && numero>1 && numero< 99999999)
+                    int dni = ValidarDni(this.nacionalidad, value);
+                     
+                    if(dni != -1)
                     {
-                         this.Dni = numero;                  
+                         this.dni = dni;
                     }
-                    else
-                    {
-                        //throw DniInvalidoException
-                    }
-
+                   
                 }
         }
-        
+
 
         #endregion
 
+        #region Metodos
+
+        /// <summary>
+        /// Valida dni del tipo int si esta dentro de los rangos para cada nacionalidad.
+        /// </summary>
+        /// <param name="nacionalidad">Nacionalidad </param>
+        /// <param name="dato">Dni a validar.</param>
+        /// <returns>Retorna el dni validado si esta correcto, -1 si es incorrecto.</returns>
+        private int ValidarDni(ENacionalidad nacionalidad, int dato)
+        {
+            
+            if (this.nacionalidad == ENacionalidad.Argentino && dato > 1 && dato < 89999999)
+            {
+                return dato;
+            }
+            else if (this.nacionalidad == ENacionalidad.Extranjero && dato > 90000000 && dato < 99999999)
+            {
+                return dato;
+            }
+            else
+            {
+                return -1;
+                //throw NacionalidadInvalidaException.
+            }
+
+        }
+
+        /// <summary>
+        /// Valida dni del tipo string si esta dentro de los rangos para cada nacionalidad.
+        /// </summary>
+        /// <param name="nacionalidad">Nacionalidad </param>
+        /// <param name="dato">Dni a validar.</param>
+        /// <returns>Retorna el dni validado si esta correcto, -1 si es incorrecto.</returns>
+        private int ValidarDni(ENacionalidad nacionalidad, string dato)
+        {
+            int numero;
+            if (int.TryParse(dato, out numero) && numero > 1 && numero < 99999999)
+            {
+                return numero;
+            }
+            else
+            {
+                return -1;
+                //throw DniInvalidoException
+            }
+
+        }
+
+        /// <summary>
+        /// Valida que el nombre no tenga espacios, numeros o simbolos.
+        /// </summary>
+        /// <param name="dato"></param>
+        /// <returns>Nombre o apellido si es correcto, NULL si es invalido.</returns>
+        private string ValidarNombreApellido(string dato)
+        {
+            string retorno = null;
+
+            for (int i = 0; i < dato.Length; i++)
+            {
+                if (char.IsWhiteSpace(dato[i]) || char.IsNumber(dato[i]) || char.IsSymbol(dato[i]))
+                {
+                    break;
+                }
+                else
+                {
+                   retorno = dato;
+                }
+            }
+
+            return retorno;
+
+        }
 
 
+        /// <summary>
+        /// Muestra los datos de la persona.
+        /// </summary>
+        /// <returns>String con todos los datos de la persona.</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
 
+            sb.AppendFormat("Nombre: {0} \n", this.nombre);
+            sb.AppendFormat("Apellido: {0} \n", this.apellido);
+            sb.AppendFormat("DNI: {0} \n", this.dni.ToString());
+            sb.AppendFormat("Nacionalidad: {0} \n", this.nacionalidad);
+          
 
+            return sb.ToString();
+        }
+
+        #endregion
 
     }
 }
