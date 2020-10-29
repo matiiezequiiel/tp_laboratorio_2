@@ -45,7 +45,10 @@ namespace Clases_Abstractas
         {
             StringToDNI = dni;
         }
-
+        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre,apellido,nacionalidad)
+        {
+            Dni = dni;
+        }
 
 
         #endregion
@@ -207,10 +210,8 @@ namespace Clases_Abstractas
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Nombre: {0} \n", this.nombre);
-            sb.AppendFormat("Apellido: {0} \n", this.apellido);
-            sb.AppendFormat("DNI: {0} \n", this.dni.ToString());
-            sb.AppendFormat("Nacionalidad: {0} \n", this.nacionalidad);
+            sb.AppendFormat("NOMBRE COMPLETO: {0}, {1} \n", this.apellido,this.nombre);
+            sb.AppendFormat("NACIONALIDAD: {0} \n", this.nacionalidad);
           
 
             return sb.ToString();

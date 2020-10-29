@@ -34,7 +34,8 @@ namespace Clases_Abstractas
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.ToString());
-            sb.AppendFormat("Legajo: {0}", this.legajo);
+            sb.AppendLine("\n");
+            sb.AppendFormat("LEGAJO NUMERO: {0}", this.legajo);
 
             return sb.ToString();
             
