@@ -5,24 +5,29 @@ using System.Text;
 
 namespace Clases_Instanciables
 {
-    sealed class Profesor : Universitario
+    sealed public class Profesor : Universitario
     {
         #region Atributos
-        Queue<Universidad.EClase> clasesDeldia;
+        Queue<Universidad.EClases> clasesDelDia;
         static Random random;
         #endregion
 
         #region Constructores
-       
+
+        static Profesor()
+        {
+            Profesor.random = new Random();
+        }
         private Profesor()
         {
-            random = new Random();
-            clasesDeldia = new Queue<Universidad.EClase>();
+            this.clasesDelDia = new Queue<Universidad.EClases>();
+            this._randomClases();
+            
         }
 
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id,nombre,apellido,dni,nacionalidad)
         {
-            _randomClases();             
+            this.clasesDelDia = new Profesor().clasesDelDia;           
         }
 
 
@@ -41,20 +46,24 @@ namespace Clases_Instanciables
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(MostrarDatos());
-            sb.AppendLine(ParticiparEnClase());
 
+            //  foreach (Universidad.EClases item in this.clasesDelDia)
+            //  {
+            //      sb.AppendLine(item.ToString());
+            //  }
+            sb.AppendFormat("{0}CLASES DEL DIA:{1}", this.MostrarDatos(), this.ParticiparEnClase());
             return sb.ToString();
+            
         }
 
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("CLASES DEL DIA: ");
-            foreach (Universidad.EClase item in this.clasesDeldia)
+
+            foreach (Universidad.EClases item in this.clasesDelDia)
             {
-                sb.Append(item);
+                sb.AppendFormat("\n{0}",item);
             }
           
 
@@ -63,21 +72,43 @@ namespace Clases_Instanciables
 
         private void _randomClases()
         {
-            Universidad.EClase claseRandom1 = (Universidad.EClase)random.Next(0, 4);
-            Universidad.EClase claseRandom2 = (Universidad.EClase)random.Next(0, 4);
+            for (int i = 0; i < 2; i++)
+            {
+                switch (random.Next(4))
+                {
+                    case 0:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.Programacion);
+                        break;
+                    case 1:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.Laboratorio);
+                        break;
+                    case 2:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.Legislacion);
+                        break;
+                    case 3:
+                        this.clasesDelDia.Enqueue(Universidad.EClases.SPD);
+                        break;
 
-            this.clasesDeldia.Enqueue(claseRandom1);
-            this.clasesDeldia.Enqueue(claseRandom2);
+                }
+
+
+            }
         }
 
         #endregion
 
         #region Sobrecargas
 
-        public static bool operator ==(Profesor i, Universidad.EClase clase)
+        /// <summary>
+        /// Verifica si el profesor da la clase
+        /// </summary>
+        /// <param name="i">Profesor</param>
+        /// <param name="clase">Clase</param>
+        /// <returns>TRUE si el profesor da la clase, FALSE si no da la clase.</returns>
+        public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
             bool retorno = false;
-            foreach (Universidad.EClase item in i.clasesDeldia)
+            foreach (Universidad.EClases item in i.clasesDelDia)
             {
                 if(clase == item)
                 {
@@ -86,8 +117,9 @@ namespace Clases_Instanciables
             }
             return retorno;
         }
-        
-        public static bool operator !=(Profesor i, Universidad.EClase clase)
+
+
+        public static bool operator !=(Profesor i, Universidad.EClases clase)
         {
             return !(i == clase);
         }

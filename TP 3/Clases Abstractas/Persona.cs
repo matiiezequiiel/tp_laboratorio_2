@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 using System.Xml.XPath;
+using Excepciones;
 
 namespace Clases_Abstractas
 {
@@ -27,10 +29,7 @@ namespace Clases_Abstractas
 
         public Persona()
         {
-            this.nombre = "Sin nombre";
-            this.apellido = "Sin apellido";
-            this.dni = 0;
-            this.nacionalidad = ENacionalidad.Argentino;
+            
 
         }
 
@@ -93,12 +92,22 @@ namespace Clases_Abstractas
         {
             get { return this.dni; }
             set {
-                    int dni = ValidarDni(this.nacionalidad, value);
-
-                    if (dni != -1)
+                    try
                     {
-                        this.dni = dni;
+                        int dni = ValidarDni(this.nacionalidad, value);
+
+                        if (dni != -1)
+                        {
+                            this.dni = dni;
+                        }
+
                     }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                   
 
             }
         }
@@ -115,12 +124,21 @@ namespace Clases_Abstractas
         {
             //PASAR STRING A ENTERO VALIDANDOLO
             set {
-                    int dni = ValidarDni(this.nacionalidad, value);
-                     
-                    if(dni != -1)
+                    try
                     {
-                         this.dni = dni;
+                        int dni = ValidarDni(this.nacionalidad, value);
+
+                        if (dni != -1)
+                        {
+                            this.dni = dni;
+                        }
                     }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                    
                    
                 }
         }
@@ -138,21 +156,28 @@ namespace Clases_Abstractas
         /// <returns>Retorna el dni validado si esta correcto, -1 si es incorrecto.</returns>
         private int ValidarDni(ENacionalidad nacionalidad, int dato)
         {
-            
-            if (this.nacionalidad == ENacionalidad.Argentino && dato > 1 && dato < 89999999)
+            if(dato>0 && dato < 1000000000)
             {
-                return dato;
-            }
-            else if (this.nacionalidad == ENacionalidad.Extranjero && dato > 90000000 && dato < 99999999)
-            {
-                return dato;
+                if (this.nacionalidad == ENacionalidad.Argentino && dato > 1 && dato < 89999999)
+                {
+                    return dato;
+                }
+                else if (this.nacionalidad == ENacionalidad.Extranjero && dato > 90000000 && dato < 99999999)
+                {
+                    return dato;
+                }
+                else
+                {
+                    throw new NacionalidadInvalidaException("La nacionalidad no condice con el numero de DNI.");
+                }
+
             }
             else
             {
-                return -1;
-                //throw NacionalidadInvalidaException.
+                throw new DniInvalidoException("El DNI no tiene un formato valido.");
             }
-
+            
+           
         }
 
         /// <summary>
@@ -164,15 +189,30 @@ namespace Clases_Abstractas
         private int ValidarDni(ENacionalidad nacionalidad, string dato)
         {
             int numero;
-            if (int.TryParse(dato, out numero) && numero > 1 && numero < 99999999)
+
+            if(int.TryParse(dato,out numero) && numero > 0 && numero < 1000000000)
             {
-                return numero;
+
+                if (this.nacionalidad == ENacionalidad.Argentino && numero > 1 && numero < 89999999)
+                {
+                    return numero;
+                }
+                else if (this.nacionalidad == ENacionalidad.Extranjero && numero > 90000000 && numero < 99999999)
+                {
+                    return numero;
+                }
+                else
+                {
+                    throw new NacionalidadInvalidaException("La nacionalidad no condice con el numero de DNI.");
+
+                }
             }
             else
             {
-                return -1;
-                //throw DniInvalidoException
+                throw new DniInvalidoException("El DNI no tiene un formato valido.");
+            
             }
+
 
         }
 
@@ -211,7 +251,7 @@ namespace Clases_Abstractas
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("NOMBRE COMPLETO: {0}, {1} \n", this.apellido,this.nombre);
-            sb.AppendFormat("NACIONALIDAD: {0} \n", this.nacionalidad);
+            sb.AppendFormat("NACIONALIDAD: {0}", this.nacionalidad);
           
 
             return sb.ToString();

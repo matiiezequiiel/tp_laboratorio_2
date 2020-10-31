@@ -48,9 +48,17 @@
     <Compile Include="Universidad.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Archivos\Archivos.csproj">
+      <Project>{82d3d437-399d-4706-906c-4a8a71e787dc}</Project>
+      <Name>Archivos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Clases Abstractas\Clases Abstractas.csproj">
       <Project>{a272742f-0e83-402e-8865-6776a2bbb0fd}</Project>
       <Name>Clases Abstractas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.csproj">
+      <Project>{b6765241-e8d8-410c-aca2-990434c66962}</Project>
+      <Name>Excepciones</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

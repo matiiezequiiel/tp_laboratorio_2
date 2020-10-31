@@ -15,9 +15,9 @@ namespace Clases_Abstractas
 
         #region Constructores
 
-        public Universitario() : base()
+        public Universitario()
         {
-            this.legajo = -1;
+         
         }
 
         public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(nombre,apellido,dni,nacionalidad)
@@ -34,8 +34,8 @@ namespace Clases_Abstractas
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.ToString());
-            sb.AppendLine("\n");
-            sb.AppendFormat("LEGAJO NUMERO: {0}", this.legajo);
+            sb.Append("\n");
+            sb.AppendFormat("LEGAJO NUMERO: {0}\n", this.legajo);
 
             return sb.ToString();
             

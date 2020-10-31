@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using Archivos;
 
 namespace Clases_Instanciables
 {
-    class Jornada
+    [Serializable]
+    public class Jornada
     {
         #region Atributos
         List<Alumno> alumnos;
-        Universidad.EClase clase;
+        Universidad.EClases clase;
         Profesor instructor;
-
-
         #endregion
 
         #region Constructores
@@ -23,7 +23,7 @@ namespace Clases_Instanciables
             alumnos = new List<Alumno>();
         }
 
-        public Jornada(Universidad.EClase clase, Profesor instructor)
+        public Jornada(Universidad.EClases clase, Profesor instructor) : this()
         {
             this.clase = clase;
             this.instructor = instructor;
@@ -39,7 +39,7 @@ namespace Clases_Instanciables
             set { this.alumnos = value; }
         }
          
-        public Universidad.EClase Clase
+        public Universidad.EClases Clase
         {
             get { return this.clase; }
             set { this.clase = value; }
@@ -53,28 +53,51 @@ namespace Clases_Instanciables
 
         #region Metodos
 
-        public bool Guardar(Jornada jornada)
+        public static bool Guardar(Jornada jornada)
         {
-            return true;
+            Texto auxTexto = new Texto();
+            string ruta = AppDomain.CurrentDomain.BaseDirectory;
+            bool retorno = false;
+
+            retorno = auxTexto.Guardar(ruta + @"Jornada.txt", jornada.ToString());
+
+            return retorno;
         }
 
-        public string Leer()
+        public static string Leer(string archivo)
         {
-            return "algo";
+            Texto auxTexto = new Texto();
+            string ruta = AppDomain.CurrentDomain.BaseDirectory;
+
+            if (!auxTexto.Leer(ruta + @"Jornada.txt", out string rtnJornada))
+            {
+                rtnJornada = null;
+            }
+
+            return rtnJornada.ToString();
         }
+
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("JORNADA: ");
-            sb.AppendFormat("CLASE DE: {0} POR {1}",this.clase,this.instructor.ToString());
-            sb.AppendLine("\n");
-            sb.AppendFormat("Legajo NRO");
+            sb.AppendFormat("CLASE DE: {0} POR {1}\n",this.clase.ToString(),this.instructor.ToString());
+            sb.AppendFormat("\nALUMNOS: \n");
+
+            foreach (Alumno item in alumnos)
+            {
+                sb.AppendLine(item.ToString());
+            }
+
+            sb.AppendLine("<------------------------------------------------------------->");
 
 
-            return base.ToString();
+            return sb.ToString();
         }
+
+  
 
         #endregion
 

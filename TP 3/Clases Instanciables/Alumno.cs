@@ -7,10 +7,10 @@ using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
-    sealed class Alumno : Universitario
+    sealed public class Alumno : Universitario
     {
         #region atributos
-        public Universidad.EClase claseQueToma;
+        public Universidad.EClases claseQueToma;
         public enum EEstadoCuenta
         {
             AlDia, Deudor, Becado
@@ -22,16 +22,16 @@ namespace Clases_Instanciables
         #region Constructores
         public Alumno()
         {
-            this.claseQueToma = Universidad.EClase.Laboratorio;
+            this.claseQueToma = Universidad.EClases.Laboratorio;
             this.estadoCuenta = EEstadoCuenta.Deudor;
         }
 
-        public Alumno(int id, string nombre, string apelido, string dni, ENacionalidad nacionalidad, Universidad.EClase claseQueToma) : base(id, nombre, apelido, dni, nacionalidad)
+        public Alumno(int id, string nombre, string apelido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma) : base(id, nombre, apelido, dni, nacionalidad)
         {
             this.claseQueToma = claseQueToma;
         }
 
-        public Alumno(int id, string nombre, string apelido, string dni, ENacionalidad nacionalidad, Universidad.EClase claseQueToma,EEstadoCuenta estadoCuenta) : this(id,nombre,apelido,dni,nacionalidad,claseQueToma)
+        public Alumno(int id, string nombre, string apelido, string dni, ENacionalidad nacionalidad, Universidad.EClases claseQueToma,EEstadoCuenta estadoCuenta) : this(id,nombre,apelido,dni,nacionalidad,claseQueToma)
         {
             this.estadoCuenta = estadoCuenta;
         }
@@ -39,13 +39,18 @@ namespace Clases_Instanciables
         #endregion
 
         #region Metodos
+
+        public override string ToString()
+        {
+            return MostrarDatos();
+        }
+
         protected override string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.MostrarDatos());
-            sb.AppendLine("\n");
-            sb.AppendFormat("ESTADO DE CUENTA: {0}", this.estadoCuenta);
-            sb.AppendFormat("TOMA CLASE DE: {0}", this.claseQueToma);
+            sb.AppendFormat("ESTADO DE CUENTA: {0}\n", this.estadoCuenta);
+            sb.AppendFormat( this.ParticiparEnClase());
             
             return sb.ToString();
         }
@@ -53,7 +58,7 @@ namespace Clases_Instanciables
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("Toma clase de: {0}", this.claseQueToma);
+            sb.AppendFormat("TOMA CLASE DE: {0}", this.claseQueToma);
 
             return sb.ToString();   
         }
@@ -62,7 +67,7 @@ namespace Clases_Instanciables
 
         #region Sobrecargas
 
-        public static bool operator ==(Alumno a, Universidad.EClase clase)
+        public static bool operator ==(Alumno a, Universidad.EClases clase)
         {
             bool retorno = false;
 
@@ -79,7 +84,7 @@ namespace Clases_Instanciables
 
         }
         
-        public static bool operator !=(Alumno a, Universidad.EClase clase)
+        public static bool operator !=(Alumno a, Universidad.EClases clase)
         {
             bool retorno = false;
 

@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Excepciones
 {
-    class DniInvalidoException : Exception
+    public class DniInvalidoException : Exception
     {
+        public DniInvalidoException():base("DNI invalido.")
+        {
+                    
+        }
+        public DniInvalidoException(Exception e) : base()
+        {
+                    
+        } 
+
+        public DniInvalidoException(string mensaje):base(mensaje)
+        {
+                    
+        } 
+        public DniInvalidoException(string mensaje, Exception e):base(mensaje,e)
+        {
+                    
+        }
     }
 }
