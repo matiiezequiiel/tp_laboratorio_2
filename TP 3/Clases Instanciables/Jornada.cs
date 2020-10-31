@@ -86,9 +86,18 @@ namespace Clases_Instanciables
             sb.AppendFormat("CLASE DE: {0} POR {1}\n",this.clase.ToString(),this.instructor.ToString());
             sb.AppendFormat("\nALUMNOS: \n");
 
-            foreach (Alumno item in alumnos)
+            if(alumnos.Count==0)
             {
-                sb.AppendLine(item.ToString());
+                sb.AppendLine("No hay alumnos para esta clase.");
+
+            }
+            else
+            {
+                foreach (Alumno item in alumnos)
+                {
+                    sb.AppendLine(item.ToString());
+                }
+
             }
 
             sb.AppendLine("<------------------------------------------------------------->");

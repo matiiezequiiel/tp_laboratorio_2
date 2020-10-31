@@ -185,9 +185,10 @@ namespace Clases_Instanciables
 
             foreach (Profesor item in u.profesores)
             {
-                if(item!=clase)
+                if(item==clase)
                 {
-                    retorno=item; //VER LA LOGICA
+                    retorno=item;
+                    break;
                 }
             }
 
@@ -213,7 +214,7 @@ namespace Clases_Instanciables
 
             foreach (Profesor item in u.profesores)
             {
-                if (item == clase)
+                if (item != clase)
                 {
                     retorno = item; //VER LA LOGICA
                 }
@@ -240,23 +241,22 @@ namespace Clases_Instanciables
             {
                 profesorAux = g == clase;
                 nuevaJornada = new Jornada(clase, profesorAux);
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-            
-            foreach (Alumno item in g.alumnos)
-            {
-                if(item==clase)
+                foreach (Alumno item in g.alumnos)
                 {
-                    nuevaJornada.Alumnos.Add(item);
+                    if (item == clase)
+                    {
+                        nuevaJornada.Alumnos.Add(item);
+                    }
                 }
-            }
 
-            g.jornada.Add(nuevaJornada);
-         
+                g.jornada.Add(nuevaJornada);
+            }
+            catch (Exception e)
+            {
+                throw new SinProfesorException();
+            }
+                    
             return g;
         }
          
@@ -268,13 +268,23 @@ namespace Clases_Instanciables
         /// <returns>Universidad</returns>
         public static Universidad operator +(Universidad u, Alumno a)
         {
-            if(!u.alumnos.Contains(a))
+            bool existe = false;
+            foreach (Alumno item in u.alumnos)
             {
-                u.alumnos.Add(a);
+                if(item.Dni==a.Dni)
+                {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if(existe)
+            {
+                throw new AlumnoRepetidoException();
             }
             else
             {
-                throw new AlumnoRepetidoException();
+                u.alumnos.Add(a);
             }
             return u;
         }
@@ -287,11 +297,24 @@ namespace Clases_Instanciables
         /// <returns>Universidad</returns>
         public static Universidad operator +(Universidad u, Profesor i)
         {
-            if (!u.profesores.Contains(i))
+            bool existe = false;
+            foreach (Profesor item in u.profesores)
+            {
+                if (item.Dni == i.Dni)
+                {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (!existe)
             {
                 u.profesores.Add(i);
+
             }
+    
             return u;
+          
         }
 
 

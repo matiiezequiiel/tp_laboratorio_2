@@ -74,7 +74,7 @@ namespace Clases_Instanciables
         {
             for (int i = 0; i < 2; i++)
             {
-                switch (random.Next(4))
+                switch (random.Next(4))                                
                 {
                     case 0:
                         this.clasesDelDia.Enqueue(Universidad.EClases.Programacion);
@@ -88,7 +88,7 @@ namespace Clases_Instanciables
                     case 3:
                         this.clasesDelDia.Enqueue(Universidad.EClases.SPD);
                         break;
-
+              
                 }
 
 
@@ -113,6 +113,7 @@ namespace Clases_Instanciables
                 if(clase == item)
                 {
                     retorno=true;
+                    break;
                 }
             }
             return retorno;
