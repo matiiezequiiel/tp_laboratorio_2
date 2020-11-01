@@ -1,25 +1,25 @@
 JORNADA: 
-CLASE DE: Programacion POR NOMBRE COMPLETO: Lopez, Juan 
+CLASE DE: Legislacion POR NOMBRE COMPLETO: Juarez, Roberto 
 NACIONALIDAD: Argentino
 
-LEGAJO NUMERO: 1
+LEGAJO NUMERO: 2
 CLASES DEL DIA:
 Legislacion
-Programacion
+SPD
 
 ALUMNOS: 
-NOMBRE COMPLETO: Lopez, Juan 
-NACIONALIDAD: Argentino
+NOMBRE COMPLETO: Hernandez, Miguel 
+NACIONALIDAD: Extranjero
 
-LEGAJO NUMERO: 1
-
-ESTADO DE CUENTA: Becado
-TOMA CLASE DE: Programacion
-NOMBRE COMPLETO: Gonzalez, Carlos 
-NACIONALIDAD: Argentino
-
-LEGAJO NUMERO: 5
+LEGAJO NUMERO: 4
 
 ESTADO DE CUENTA: AlDia
-TOMA CLASE DE: Programacion
+TOMA CLASE DE: Legislacion
+NOMBRE COMPLETO: Smith, Rodrigo 
+NACIONALIDAD: Argentino
+
+LEGAJO NUMERO: 8
+
+ESTADO DE CUENTA: AlDia
+TOMA CLASE DE: Legislacion
 <------------------------------------------------------------->

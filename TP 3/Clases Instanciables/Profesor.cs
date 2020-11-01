@@ -14,10 +14,17 @@ namespace Clases_Instanciables
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor de clase
+        /// </summary>
         static Profesor()
         {
             Profesor.random = new Random();
         }
+
+        /// <summary>
+        /// Constructor de instancia privado
+        /// </summary>
         private Profesor()
         {
             this.clasesDelDia = new Queue<Universidad.EClases>();
@@ -25,6 +32,14 @@ namespace Clases_Instanciables
             
         }
 
+        /// <summary>
+        /// Constructor de instancia 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="nacionalidad"> Argentino, Extranjero </param>
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id,nombre,apellido,dni,nacionalidad)
         {
             this.clasesDelDia = new Profesor().clasesDelDia;           
@@ -36,6 +51,10 @@ namespace Clases_Instanciables
 
         #region Metodos
 
+        /// <summary>
+        /// Muestra datos completos de la clase. Nombre completo, nacionalidad y su legajo.
+        /// </summary>
+        /// <returns></returns>
         protected override string MostrarDatos()
         {
            
@@ -43,19 +62,23 @@ namespace Clases_Instanciables
 
         }
 
+        /// <summary>
+        /// Retorna nombre completo, nacionalidad, su legajo y las clases que da por dia
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-
-            //  foreach (Universidad.EClases item in this.clasesDelDia)
-            //  {
-            //      sb.AppendLine(item.ToString());
-            //  }
             sb.AppendFormat("{0}CLASES DEL DIA:{1}", this.MostrarDatos(), this.ParticiparEnClase());
+
             return sb.ToString();
             
         }
 
+        /// <summary>
+        /// Retorna nombre completo, su nacionalidad y las dos clases que de ese dia
+        /// </summary>
+        /// <returns></returns>
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
@@ -70,6 +93,9 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Metodo privado donde asigna dos clases a un instructor
+        /// </summary>
         private void _randomClases()
         {
             for (int i = 0; i < 2; i++)
@@ -100,11 +126,11 @@ namespace Clases_Instanciables
         #region Sobrecargas
 
         /// <summary>
-        /// Verifica si el profesor da la clase
+        /// Un profesor es igual a una clase si este la da en sus dias
         /// </summary>
         /// <param name="i">Profesor</param>
         /// <param name="clase">Clase</param>
-        /// <returns>TRUE si el profesor da la clase, FALSE si no da la clase.</returns>
+        /// <returns>TRUE si el profesor da la  clase, FALSE si no da la clase.</returns>
         public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
             bool retorno = false;
@@ -119,7 +145,12 @@ namespace Clases_Instanciables
             return retorno;
         }
 
-
+        /// <summary>
+        /// Un profesor no es igual a una clase si este no la dicta
+        /// </summary>
+        /// <param name="i"> Profesor </param>
+        /// <param name="clase"> Programacion, Laboratorio, Legislacion, SPD </param>
+        /// <returns></returns>
         public static bool operator !=(Profesor i, Universidad.EClases clase)
         {
             return !(i == clase);
@@ -127,6 +158,19 @@ namespace Clases_Instanciables
 
         #endregion
 
+        #region OVERRIDE DE OBJ Y GET HASH CODE PARA QUE NO DE WARNING
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Profesor;
+        }
+
+        #endregion  
 
     }
 }

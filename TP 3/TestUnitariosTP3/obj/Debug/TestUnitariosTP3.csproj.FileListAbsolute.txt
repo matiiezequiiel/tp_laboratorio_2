@@ -17,3 +17,9 @@ C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\obj\Debug\
 C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\obj\Debug\TestUnitariosTP3.csproj.CopyComplete
 C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\obj\Debug\TestUnitariosTP3.dll
 C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\obj\Debug\TestUnitariosTP3.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\bin\Debug\Clases Instanciables.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\bin\Debug\Excepciones.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\bin\Debug\Archivos.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\bin\Debug\Clases Instanciables.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\bin\Debug\Excepciones.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\TestUnitariosTP3\bin\Debug\Archivos.pdb

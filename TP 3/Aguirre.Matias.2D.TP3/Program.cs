@@ -9,7 +9,7 @@ using Excepciones;
 using Clases_Instanciables;
 using EntidadesAbstractas = Clases_Abstractas;
 
-namespace Aguirre.Matias._2D.TP3
+namespace Consola
 {
     class Program
     {
@@ -17,6 +17,7 @@ namespace Aguirre.Matias._2D.TP3
         {
             Universidad uni = new Universidad();
             Alumno a1 = new Alumno(1, "Juan", "Lopez", "12234456", EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion, Alumno.EEstadoCuenta.Becado);
+         
             uni += a1;
             try
             {

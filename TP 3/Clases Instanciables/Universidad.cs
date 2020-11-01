@@ -26,8 +26,55 @@ namespace Clases_Instanciables
 
         #endregion
 
+        #region Propiedades
+
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado alumnos
+        /// </summary>  
+        public List<Alumno> Alumnos
+        {
+            get { return this.alumnos; }
+            set { this.alumnos = value; }
+        }
+
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado jornada
+        /// </summary>
+        public List<Jornada> Jornada
+        {
+            get { return this.jornada; }
+            set { this.jornada = value; }
+        }
+
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado instructores
+        /// </summary>
+        public List<Profesor> Instructores
+        {
+            get { return this.profesores; }
+            set { this.profesores = value; }
+        }
+
+        /// <summary>
+        /// Propiedad de lectura y escritura donde retorna la posicion del elemento a agregar o insertar dependiendo su uso
+        /// </summary>
+        /// <param name="i"> Posicion donde insertar o tomar la clase almacenada </param>
+        /// <returns></returns>
+        public Jornada this[int i]
+        {
+            get { return this.jornada.ElementAt(i); }
+            set { this.jornada.Insert(i, value); } //VER
+        }
+
+
+        #endregion
+
+
         #region Constructores
 
+        /// <summary>
+        /// Constructor de clase que inicializa las listas
+        /// </summary>
         public Universidad()
         {
             alumnos = new List<Alumno>();
@@ -37,36 +84,14 @@ namespace Clases_Instanciables
 
         #endregion
 
-        #region propiedades
-
-        public List<Alumno> Alumnos
-        {
-            get { return this.alumnos; }
-            set { this.alumnos = value; }
-        } 
-        public List<Jornada> Jornada
-        {
-            get { return this.jornada; }
-            set { this.jornada = value; }
-        }  
-        
-        public List<Profesor> Profesores
-        {
-            get { return this.profesores; }
-            set { this.profesores = value; }
-        }
-
-        public Jornada this[int i]
-        {
-            get { return this.jornada.ElementAt(i); }
-            set { this.jornada.Insert(i,value); } //VER
-        }
-
-
-        #endregion
 
         #region Metodos
 
+        /// <summary>
+        /// Metodo de clase que guarda la informacion de la clase Universidad en un archivo .xml, retorna true si fue correcta
+        /// </summary>
+        /// <param name="uni"> Universidad </param>
+        /// <returns></returns>
         public static bool Guardar(Universidad datos)
         {
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
@@ -79,6 +104,10 @@ namespace Clases_Instanciables
             return retorno;
         }
 
+        /// <summary>
+        /// Metodo de clase para leer un archivo .xml y retorna su informacion
+        /// </summary>
+        /// <returns></returns>
         public static Universidad Leer(string archivo)
         {
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
@@ -96,7 +125,7 @@ namespace Clases_Instanciables
 
 
         /// <summary>
-        /// Muestra los datos de la universidad.
+        /// Metodo de clase privado que muestra la informacion de la clase Universidad recibida como parametro  
         /// </summary>
         /// <param name="uni"></param>
         /// <returns>Datos de la universidad.</returns>
@@ -272,7 +301,7 @@ namespace Clases_Instanciables
             bool existe = false;
             foreach (Alumno item in u.alumnos)
             {
-                if(item.Dni==a.Dni)
+                if(item==a)
                 {
                     existe = true;
                     break;
@@ -320,16 +349,22 @@ namespace Clases_Instanciables
 
 
 
-        //VER ESTE METODO QUE ESTA MAL.
-        public override bool Equals(object obj)
-        {
-            return obj is Universitario;
-        }
-       
-
-    
         #endregion
 
+        #region OVERRIDE DE OBJ Y GET HASH CODE PARA QUE NO DE WARNING
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+
+        #endregion  
 
 
 

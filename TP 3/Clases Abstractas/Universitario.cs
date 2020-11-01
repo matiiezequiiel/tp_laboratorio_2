@@ -40,6 +40,10 @@ namespace Clases_Abstractas
 
         #region Metodos
 
+        /// <summary>
+        /// Muestra datos completos de la clase, nombre completo, nacionalidad y su legajo.
+        /// </summary>
+        /// <returns></returns>
         protected virtual string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -52,38 +56,62 @@ namespace Clases_Abstractas
             
         }
 
+        /// <summary>
+        /// Implementacion en sus herencias
+        /// </summary>
+        /// <returns></returns>
         protected abstract string ParticiparEnClase();
 
         #endregion
 
         #region Sobrecargas
 
+        /// <summary>
+        /// Dos universitarios son iguales si tienen el mismo legajo y DNI
+        /// </summary>
+        /// <param name="pg1"> Universitario 1</param>
+        /// <param name="pg2"> Universitario 2</param>
+        /// <returns></returns>
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
+            bool retorno = false;
+
             if(pg1.legajo == pg2.legajo && pg1.Dni == pg2.Dni)
             {
-                return true;
+                retorno=true;
             }
             else
             {
-                return false;
+                retorno = false;
             }
+
+            return retorno;
         }
+
+        /// <summary>
+        /// Dos universitarios son diferentes si tienen legajo y DNI diferentes
+        /// </summary>
+        /// <param name="pg1"> Universitario 1</param>
+        /// <param name="pg2"> Universitario 2</param>
+        /// <returns></returns>
         public static bool operator !=(Universitario pg1, Universitario pg2)
         {
             return !(pg1 == pg2);
         }
 
+        /// <summary>
+        /// Comprueba si es del mismo tipo
+        /// </summary>
+        /// <param name="obj"> Cualquiero Clase </param>
+        /// <returns></returns>
         public override bool Equals(object obj)
-        {
-            if (obj.GetType() != typeof(Universitario))
-                return false;
-            return this == (Universitario)obj;
+        {            
+            return obj is Universitario;
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return base.GetHashCode(); 
         }
 
         #endregion

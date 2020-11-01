@@ -69,25 +69,7 @@ namespace Clases_Abstractas
         public int Dni
         {
             get { return this.dni; }
-            set {
-                    try
-                    {
-                        int dni = ValidarDni(this.nacionalidad, value);
-
-                        if (dni != -1)
-                        {
-                            this.dni = dni;
-                        }
-
-                    }
-                    catch (Exception)
-                    {
-
-                        throw;
-                    }
-                   
-
-            }
+            set { this.dni = ValidarDni(this.nacionalidad, value); }
         }
 
         /// <summary>
@@ -141,7 +123,7 @@ namespace Clases_Abstractas
         /// <param name="nacionalidad"> Argentino, Extrajero </param>
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            StringToDNI = dni;
+            this.StringToDNI = dni;
         }
 
 
@@ -194,11 +176,11 @@ namespace Clases_Abstractas
             if(int.TryParse(dato,out numero) && numero > 0 && numero < 1000000000)
             {
 
-                if (this.nacionalidad == ENacionalidad.Argentino && numero > 1 && numero < 89999999)
+                if (this.nacionalidad == ENacionalidad.Argentino && numero >= 1 && numero <= 89999999)
                 {
                     return numero;
                 }
-                else if (this.nacionalidad == ENacionalidad.Extranjero && numero > 90000000 && numero < 99999999)
+                else if (this.nacionalidad == ENacionalidad.Extranjero && numero >= 90000000 && numero <= 99999999)
                 {
                     return numero;
                 }
