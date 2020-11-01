@@ -66,7 +66,7 @@ namespace Clases_Abstractas
         /// <summary>
         /// Valida si el dni se encuentra entre los valores correspondondientes a la nacionalidad indicada, de lo contrario lanza una excepcion-
         /// </summary>
-        public int Dni
+        public int DNI
         {
             get { return this.dni; }
             set { this.dni = ValidarDni(this.nacionalidad, value); }

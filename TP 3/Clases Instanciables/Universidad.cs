@@ -92,14 +92,14 @@ namespace Clases_Instanciables
         /// </summary>
         /// <param name="uni"> Universidad </param>
         /// <returns></returns>
-        public static bool Guardar(Universidad datos)
+        public static bool Guardar(Universidad uni)
         {
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
             bool retorno = false;
 
             XML<Universidad> universidad = new XML<Universidad>();
 
-            retorno = universidad.Guardar(ruta+"XMLUNIVERSIDAD.xml", datos);
+            retorno = universidad.Guardar(ruta+"XMLUNIVERSIDAD.xml", uni);
 
             return retorno;
         }
@@ -156,8 +156,6 @@ namespace Clases_Instanciables
         #endregion
 
         #region Sobrecarga de operadores
-
-
         /// <summary>
         /// Verifica si el alumno esta inscipto en la universidad
         /// </summary>
@@ -255,7 +253,6 @@ namespace Clases_Instanciables
             
         }
 
-
         /// <summary>
         /// Agrega una nueva jornada, indicando la clase y el profesor que puede darla ademas de agregar los alumnos que estan tomando esa clase.
         /// </summary>
@@ -330,7 +327,7 @@ namespace Clases_Instanciables
             bool existe = false;
             foreach (Profesor item in u.profesores)
             {
-                if (item.Dni == i.Dni)
+                if (item.DNI == i.DNI)
                 {
                     existe = true;
                     break;

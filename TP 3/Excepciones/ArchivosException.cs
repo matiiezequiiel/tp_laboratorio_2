@@ -9,6 +9,14 @@ namespace Excepciones
     public class ArchivosException : Exception
     {
         #region Constructor
+
+        /// <summary>
+        /// Constructor por defecto.
+        /// </summary>
+        public ArchivosException():base("Error en el archivo")
+        {
+
+        }
         /// <summary>
         /// Excepcion que controla si el el archivo es null
         /// </summary>

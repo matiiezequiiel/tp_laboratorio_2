@@ -76,7 +76,7 @@ namespace Clases_Abstractas
         {
             bool retorno = false;
 
-            if(pg1.legajo == pg2.legajo && pg1.Dni == pg2.Dni)
+            if(pg1.legajo == pg2.legajo && pg1.DNI == pg2.DNI)
             {
                 retorno=true;
             }

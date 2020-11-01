@@ -92,7 +92,7 @@ namespace Clases_Instanciables
         /// Metodo de clase que lee un archivo .txt en su directorio
         /// </summary>
         /// <returns></returns>
-        public static string Leer(string archivo)
+        public static string Leer()
         {
             Texto auxTexto = new Texto();
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
