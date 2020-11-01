@@ -14,47 +14,23 @@ namespace Clases_Abstractas
     public abstract class Persona
     {
         #region Atributos
-        string nombre;
-        string apellido;
-        int dni;
         public enum ENacionalidad
         {
             Argentino, Extranjero
         }
+
+        string nombre;
+        string apellido;
+        int dni;
         ENacionalidad nacionalidad;
-
-        #endregion
-
-        #region Constructores
-
-        public Persona()
-        {
-            
-
-        }
-
-        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
-        {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.nacionalidad = nacionalidad;
-        }
-
-        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre,apellido,nacionalidad)
-        {
-            StringToDNI = dni;
-        }
-        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre,apellido,nacionalidad)
-        {
-            Dni = dni;
-        }
-
 
         #endregion
 
         #region Propiedades
 
-       
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado nombre, valida internamente la carga correcta del dato
+        /// </summary>
         public string Nombre
         {
             get { return this.nombre; }
@@ -69,7 +45,9 @@ namespace Clases_Abstractas
                 }
         }
 
-     
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado apellido, valida internamente la carga correcta del dato
+        /// </summary>
         public string Apellido
         {
             get { return this.apellido; }
@@ -111,6 +89,10 @@ namespace Clases_Abstractas
 
             }
         }
+
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado nacionalidad
+        /// </summary>
         public ENacionalidad Nacionalidad
         {
             get { return this.nacionalidad; }
@@ -122,25 +104,44 @@ namespace Clases_Abstractas
         /// </summary>
         public string StringToDNI
         {
-            //PASAR STRING A ENTERO VALIDANDOLO
-            set {
-                    try
-                    {
-                        int dni = ValidarDni(this.nacionalidad, value);
+            set { this.dni = ValidarDni(this.Nacionalidad, value); }
+        }
+        #endregion
 
-                        if (dni != -1)
-                        {
-                            this.dni = dni;
-                        }
-                    }
-                    catch (Exception)
-                    {
+        #region Constructores
 
-                        throw;
-                    }
-                    
-                   
-                }
+        /// <summary>
+        /// Constructor de instancia
+        /// </summary>
+        public Persona()
+        {
+
+
+        }
+
+        /// <summary>
+        /// Constructor de instancia
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="nacionalidad"> Argentino, Extranjero </param>
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
+        {
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.nacionalidad = nacionalidad;
+        }
+
+        /// <summary>
+        /// Constructor de instancia
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="nacionalidad"> Argentino, Extrajero </param>
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
+        {
+            StringToDNI = dni;
         }
 
 

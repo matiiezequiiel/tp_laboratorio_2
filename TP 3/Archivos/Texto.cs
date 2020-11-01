@@ -25,7 +25,7 @@ namespace Archivos
 
             try
             {
-                writer.Write(archivo);
+                writer.Write(datos);
                 retorno = true;
             }
             catch (Exception e)

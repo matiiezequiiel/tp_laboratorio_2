@@ -24,6 +24,7 @@ namespace Archivos
             bool retorno = false;
             XmlSerializer ser = new XmlSerializer(typeof(T));
             XmlTextWriter writer = new XmlTextWriter(archivo, Encoding.UTF8);
+            writer.Formatting = Formatting.Indented;
 
             try
             {

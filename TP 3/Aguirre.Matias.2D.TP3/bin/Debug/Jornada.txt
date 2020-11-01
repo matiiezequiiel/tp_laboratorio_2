@@ -1,1 +1,25 @@
-C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Jornada.txt
+JORNADA: 
+CLASE DE: Programacion POR NOMBRE COMPLETO: Lopez, Juan 
+NACIONALIDAD: Argentino
+
+LEGAJO NUMERO: 1
+CLASES DEL DIA:
+Legislacion
+Programacion
+
+ALUMNOS: 
+NOMBRE COMPLETO: Lopez, Juan 
+NACIONALIDAD: Argentino
+
+LEGAJO NUMERO: 1
+
+ESTADO DE CUENTA: Becado
+TOMA CLASE DE: Programacion
+NOMBRE COMPLETO: Gonzalez, Carlos 
+NACIONALIDAD: Argentino
+
+LEGAJO NUMERO: 5
+
+ESTADO DE CUENTA: AlDia
+TOMA CLASE DE: Programacion
+<------------------------------------------------------------->

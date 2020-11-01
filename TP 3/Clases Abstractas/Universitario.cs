@@ -15,11 +15,22 @@ namespace Clases_Abstractas
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor de instancia
+        /// </summary>
         public Universitario()
         {
          
         }
 
+        /// <summary>
+        /// Constructor de instancia
+        /// </summary>
+        /// <param name="legajo"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="nacionalidad"> Argentino, Extranjero </param>
         public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(nombre,apellido,dni,nacionalidad)
         {
             this.legajo = legajo;

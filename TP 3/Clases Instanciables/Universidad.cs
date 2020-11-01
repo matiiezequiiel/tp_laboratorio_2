@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Schema;
 using Excepciones;
 using Archivos;
+using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
@@ -252,7 +253,7 @@ namespace Clases_Instanciables
 
                 g.jornada.Add(nuevaJornada);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new SinProfesorException();
             }
@@ -322,14 +323,9 @@ namespace Clases_Instanciables
         //VER ESTE METODO QUE ESTA MAL.
         public override bool Equals(object obj)
         {
-            if (obj.GetType() != typeof(Universidad) || obj.GetType() != typeof(Alumno))
-                return false;
-            return this == (Universidad)obj; //VER
+            return obj is Universitario;
         }
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+       
 
     
         #endregion
