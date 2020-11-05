@@ -24,7 +24,7 @@ namespace MiCalculadora
         }
         private void FormCalculadora_Load(object sender, EventArgs e)
         {
-            LimpiarPantalla();
+            Limpiar();
             numero1 = new Numero();
             numero2 = new Numero();
             nroResultado = new Numero();
@@ -64,7 +64,7 @@ namespace MiCalculadora
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarPantalla();
+            Limpiar();
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -103,7 +103,7 @@ namespace MiCalculadora
             }
 
         }
-        private void LimpiarPantalla()
+        private void Limpiar()
         {
             this.btnConvertirABinario.Enabled = true;
             this.btnConvertirADecimal.Enabled = true;
@@ -117,7 +117,7 @@ namespace MiCalculadora
         { 
             if(MessageBox.Show("¿Seguro desea salir?","Salir" ,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.No)
             {
-                LimpiarPantalla();
+                Limpiar();
                 e.Cancel = true;
             }
            
