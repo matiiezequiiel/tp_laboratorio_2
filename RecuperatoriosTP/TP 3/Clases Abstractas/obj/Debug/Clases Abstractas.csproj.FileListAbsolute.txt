@@ -1,0 +1,9 @@
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\bin\Debug\Clases Abstractas.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\bin\Debug\Clases Abstractas.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\obj\Debug\Clases Abstractas.csprojAssemblyReference.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\obj\Debug\Clases Abstractas.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\obj\Debug\Clases Abstractas.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\bin\Debug\Excepciones.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\bin\Debug\Excepciones.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CopyComplete

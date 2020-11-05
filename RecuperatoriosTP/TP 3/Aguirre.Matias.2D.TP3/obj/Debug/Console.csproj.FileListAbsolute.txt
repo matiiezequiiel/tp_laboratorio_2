@@ -1,0 +1,4 @@
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Console.csprojAssemblyReference.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Console.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.exe
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.pdb

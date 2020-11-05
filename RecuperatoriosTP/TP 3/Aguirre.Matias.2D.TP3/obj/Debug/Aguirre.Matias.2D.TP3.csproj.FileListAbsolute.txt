@@ -1,0 +1,16 @@
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.csprojAssemblyReference.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Aguirre.Matias.2D.TP3.exe.config
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Aguirre.Matias.2D.TP3.exe
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Aguirre.Matias.2D.TP3.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Archivos.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Clases Abstractas.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Clases Instanciables.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Excepciones.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Archivos.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Clases Abstractas.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Clases Instanciables.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\bin\Debug\Excepciones.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.csproj.CopyComplete
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.exe
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 3\Aguirre.Matias.2D.TP3\obj\Debug\Aguirre.Matias.2D.TP3.pdb
