@@ -13,17 +13,26 @@ namespace Entidades
     {
         double numero;
 
+        /// <summary>
+        /// Constructor por defecto, se inicializa el numero en 0.
+        /// </summary>
         public Numero()
         {
             this.numero = 0;
         }
 
-        public Numero(double numero)
+        /// <summary>
+        /// Constructor de instancia, se valida el numero recibido.
+        /// </summary>
+        public Numero(double numero):this()
         {
             this.SetNumero = numero.ToString();
         }
 
-        public Numero(string strNumero)
+        /// <summary>
+        /// Constructor de instancia, se valida el numero recibido.
+        /// </summary>
+        public Numero(string strNumero):this()
         {
             this.SetNumero = strNumero;
         }
@@ -32,8 +41,7 @@ namespace Entidades
         {
             set { this.numero=ValidarNumero(value) ; }
         }
-
-  
+          
 
         /// <summary>
         /// Valida cadena para determinar que sea un numero.
@@ -42,20 +50,12 @@ namespace Entidades
         /// <returns>Devuelve numero validado, si no es valido devuelve 0.</returns>
         private double ValidarNumero(string strNumero)
         {
-            bool isNum;
             double aux=0;
 
-            isNum = double.TryParse(strNumero, out aux);
+            double.TryParse(strNumero, out aux);
 
-            if (isNum)
-            {
-                return aux;
-            }
-            else
-            {
-                return aux;
-            }
-
+            return aux;
+            
         }
 
         /// <summary>
@@ -111,17 +111,16 @@ namespace Entidades
         public string DecimalBinario(double numero)
         {
             int numeroEntero;
-            numeroEntero = (int)numero;
             String cadena = "";
 
             numeroEntero =(int) numero;
 
-            if (numero > 0)
+            if (numeroEntero > 0)
             {
                 
-                while (numero > 0)
+                while (numeroEntero > 0)
                 {
-                    if (numero % 2 == 0)
+                    if (numeroEntero % 2 == 0)
                     {
                         cadena = "0" + cadena;
                     }
@@ -129,15 +128,15 @@ namespace Entidades
                     {
                         cadena = "1" + cadena;
                     }
-                    numero = (int)(numero / 2);
+                    numeroEntero = numeroEntero / 2;
                 }
-                Console.WriteLine(cadena);
+              
             }
             else
             {
                 if (numero == 0)
                 {
-                    Console.WriteLine("0");
+                    cadena = "0";
                 }
                 else
                 {
@@ -155,44 +154,7 @@ namespace Entidades
         /// <returns>Cadena en binario.</returns>
         public string DecimalBinario(string numero)
         {
-            float numeroConComa;
-            int numeroEntero;
-
-            float.TryParse(numero, out numeroConComa);        
-            numeroEntero = (int)numeroConComa;
-
-            String cadena = "";
-
-            if (numeroEntero > 0)
-            {
-
-                while (numeroEntero > 0)
-                {
-                    if (numeroEntero % 2 == 0)
-                    {
-                        cadena = "0" + cadena;
-                    }
-                    else
-                    {
-                        cadena = "1" + cadena;
-                    }
-                    numeroEntero = numeroEntero / 2;
-                }
-                Console.WriteLine(cadena);
-            }
-            else
-            {
-                if (numeroEntero == 0)
-                {
-                    Console.WriteLine("0");
-                }
-                else
-                {
-                    cadena = "Nro negativo,error.";
-                }
-            }
-
-            return cadena;
+            return DecimalBinario( ValidarNumero(numero));   
         }
 
         /// <summary>
