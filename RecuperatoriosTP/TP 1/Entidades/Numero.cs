@@ -20,24 +20,20 @@ namespace Entidades
 
         public Numero(double numero)
         {
-            this.setNumero = numero.ToString();
+            this.SetNumero = numero.ToString();
         }
 
-        public Numero(string numero)
+        public Numero(string strNumero)
         {
-            this.setNumero = numero;
+            this.SetNumero = strNumero;
         }
 
-        public string setNumero
+        public string SetNumero
         {
-            set{ this.numero = ValidarNumero(value); }
-            get { return (this.numero).ToString() ; }
+            set { this.numero=ValidarNumero(value) ; }
         }
 
-        public string getNumero
-        {
-            get { return (this.numero).ToString() ; }
-        }
+  
 
         /// <summary>
         /// Valida cadena para determinar que sea un numero.

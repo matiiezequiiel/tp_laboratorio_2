@@ -11,3 +11,16 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debu
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\bin\Debug\Entidades.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\bin\Debug\Entidades.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\bin\Debug\MiCalculadora.exe.config
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\bin\Debug\MiCalculadora.exe
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\bin\Debug\MiCalculadora.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\bin\Debug\Entidades.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\bin\Debug\Entidades.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csprojAssemblyReference.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.FormCalculadora.resources
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.exe
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\MiCalculadora\obj\Debug\MiCalculadora.pdb

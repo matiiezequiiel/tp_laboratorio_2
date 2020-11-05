@@ -30,32 +30,39 @@ namespace MiCalculadora
             this.cmbOperador.SelectedIndex = 0;
         }
 
-        private static double Operar(Numero numero1,Numero Numero2,string operador)
+        private static double Operar(Numero numero1,Numero Numero2,char operador)
         {
             return Calculadora.Operar(numero1, Numero2, operador);
         }
 
         private void txtNumero1_TextChanged(object sender, EventArgs e)
         {
-            numero1.setNumero = this.txtNumero1.Text;
+            numero1.SetNumero = this.txtNumero1.Text;
         }
 
         private void txtNumero2_TextChanged(object sender, EventArgs e)
         {
-            numero2.setNumero = this.txtNumero2.Text;
+            numero2.SetNumero = this.txtNumero2.Text;
         }
 
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            this.btnConvertirABinario.Enabled = true;
-            this.btnConvertirADecimal.Enabled = true;
-            this.lblResultado.Text=Operar(numero1, numero2, this.cmbOperador.Text).ToString();
+            char operador;
+            if (char.TryParse(this.cmbOperador.Text, out operador) && !char.IsWhiteSpace(operador))
+            {
+                this.btnConvertirABinario.Enabled = true;
+                this.btnConvertirADecimal.Enabled = true;
+                this.lblResultado.Text = Operar(numero1, numero2, operador).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Operador vacio o invalido");
+            }
             
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            ///this.txtNumero1.Text = string.Empty;
             this.btnConvertirABinario.Enabled = true;
             this.btnConvertirADecimal.Enabled = true;
             this.txtNumero1.Clear();
@@ -74,7 +81,7 @@ namespace MiCalculadora
 
             if(!string.IsNullOrWhiteSpace(this.lblResultado.Text))
             {
-                nroResultado.setNumero = this.lblResultado.Text;
+                nroResultado.SetNumero = this.lblResultado.Text;
                 this.lblResultado.Text = nroResultado.DecimalBinario(this.lblResultado.Text);
                 this.btnConvertirABinario.Enabled = false;
                 this.btnConvertirADecimal.Enabled = true;
@@ -90,7 +97,7 @@ namespace MiCalculadora
         {
             if (!string.IsNullOrWhiteSpace(this.lblResultado.Text))
             {
-                nroResultado.setNumero = this.lblResultado.Text;
+                nroResultado.SetNumero = this.lblResultado.Text;
                 this.lblResultado.Text = nroResultado.BinarioDecimal(this.lblResultado.Text);
                 this.btnConvertirADecimal.Enabled = false;
                 this.btnConvertirABinario.Enabled = true;

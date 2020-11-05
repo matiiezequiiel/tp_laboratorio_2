@@ -33,29 +33,31 @@ namespace Entidades
         /// <param name="num2">Numero 2 a operar.</param>
         /// <param name="operador">Resultado de la operacion elegida.</param>
         /// <returns></returns>
-        public static double Operar (Numero num1,Numero num2,string operador)
+        public static double Operar (Numero num1,Numero num2, char operador)
         {
+            double resultado;
           
-            switch (ValidarOPerador(operador[0]))
+            switch (ValidarOPerador(operador))
             {
                 case "+":
-                    return num1 + num2;
+                    resultado= num1 + num2;
                     break;
                 case "-":
-                    return num1 - num2;
+                    resultado= num1 - num2;
                     break;
                 case "*":
-                    return num1 * num2;
+                    resultado= num1 * num2;
                     break;
                 case "/":
-                    return num1 / num2;
+                    resultado= num1 / num2;
                     break;
                 default:
-                    return num1 + num2;
+                    resultado= num1 + num2;
                     break;
             }
+
+            return resultado;
             
- 
         }
 
     }

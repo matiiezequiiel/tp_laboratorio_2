@@ -1,0 +1,4 @@
+Nombrar los elementos como se pide (Form1)
+Si se carga algo inválido en el operador se produce una excepción y cierra el programa (motivo suficiente
+para desaprobación, se da por finalizada la corrección).
+Revisar completo, que cumpla todas las condiciones

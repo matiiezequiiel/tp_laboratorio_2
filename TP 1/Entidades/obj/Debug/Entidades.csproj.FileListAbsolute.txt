@@ -4,3 +4,9 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\Entidades\bin\Debug\En
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\Entidades\bin\Debug\Entidades.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\Entidades\obj\Debug\Entidades.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 1\Entidades\obj\Debug\Entidades.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\Entidades\bin\Debug\Entidades.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\Entidades\bin\Debug\Entidades.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\Entidades\obj\Debug\Entidades.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\TP 1\Entidades\obj\Debug\Entidades.pdb
