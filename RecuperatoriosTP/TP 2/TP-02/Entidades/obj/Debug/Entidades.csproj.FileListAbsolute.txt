@@ -17,3 +17,9 @@ C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\Entidades\obj\Debug\E
 C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\Entidades\obj\Debug\Entidades.dll
 C:\Users\maguirre\Source\Repos\tp_laboratorio_2\TP 2\TP-02\Entidades\obj\Debug\Entidades.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\RecuperatoriosTP\TP 2\TP-02\Entidades\bin\Debug\Entidades.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\RecuperatoriosTP\TP 2\TP-02\Entidades\bin\Debug\Entidades.pdb
+C:\Users\maguirre\source\repos\tp_laboratorio_2\RecuperatoriosTP\TP 2\TP-02\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\RecuperatoriosTP\TP 2\TP-02\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\maguirre\source\repos\tp_laboratorio_2\RecuperatoriosTP\TP 2\TP-02\Entidades\obj\Debug\Entidades.dll
+C:\Users\maguirre\source\repos\tp_laboratorio_2\RecuperatoriosTP\TP 2\TP-02\Entidades\obj\Debug\Entidades.pdb

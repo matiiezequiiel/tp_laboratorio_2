@@ -5,9 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
-{
+{//OK
     public class Ciclomotor : Vehiculo
     {
+        /// <summary>
+        /// Constructor de instancia.
+        /// </summary>
+        /// <param name="marca">Marca del ciclomotor.</param>
+        /// <param name="chasis">Chasis del ciclomotor.</param>
+        /// <param name="color">Color del ciclomotor.</param>
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color):base(chasis,marca,color)
         {
         }
@@ -21,6 +27,7 @@ namespace Entidades
             {
                 return ETamanio.Chico;
             }
+           
         }
 
         public override sealed string Mostrar()
@@ -28,7 +35,8 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("CICLOMOTOR");
-            sb.AppendLine((string)this);
+            //sb.AppendLine((string)this);
+            sb.AppendLine(base.Mostrar());
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

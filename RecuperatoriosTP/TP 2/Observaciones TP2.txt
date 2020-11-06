@@ -1,0 +1,6 @@
+ETamanio Tamanio no es abstracta, y es recursiva (StackOverflowException)
+Mostrar() no reutiliza código, y es desprolijo
+Equals(object obj) ni GetHashCode() no se pide en el diagrama
+Sedan no reutiliza los constructores
+Taller() es privado
+Rehacer, mirar los diagramas, seguir las pautas

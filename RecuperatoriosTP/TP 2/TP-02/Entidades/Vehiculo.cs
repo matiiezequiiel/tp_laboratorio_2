@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
-{
+{//OK
     /// <summary>
     /// La clase Vehiculo no deberá permitir que se instancien elementos de este tipo.
-    /// </summary>
-    public class Vehiculo
+    /// </summary> OK
+    public abstract class Vehiculo
     {
         public enum EMarca
         {
@@ -25,6 +25,12 @@ namespace Entidades
         ConsoleColor color;
 
 
+        /// <summary>
+        /// Constructor de instancia.
+        /// </summary>
+        /// <param name="chasis">Chasis del vehiculo.</param>
+        /// <param name="marca">Marca del vehiculo.</param>
+        /// <param name="color">Color del vehiculo.</param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -32,30 +38,12 @@ namespace Entidades
             this.color = color;
         }
 
-        /* private short tamanio;
-
-         protected virtual short  Tamanio
-         {
-             get { return this.Tamanio; }
-
-         }
-        */
-
-       
-
-        protected virtual ETamanio Tamanio
-        {
-            get { return this.Tamanio; }
-       
-        }
-
-
        
         
         /// <summary>
         /// ReadOnly: Retornará el tamaño
         /// </summary>
-       // abstract ETamanio Tamanio { get this.Tamanio ; set; }
+        protected abstract ETamanio Tamanio { get  ; }
 
         /// <summary>
         /// Publica todos los datos del Vehiculo.
@@ -63,7 +51,7 @@ namespace Entidades
         /// <returns></returns>
         public virtual string Mostrar()
         {
-            return this.chasis + this.color +this.marca;
+            return(string)this;
         }
 
         public static explicit operator string(Vehiculo p)
@@ -79,32 +67,7 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public override bool Equals(object obj)
-        {
-            bool aux = false;
-            Vehiculo auxVehiculo = (Vehiculo)obj;
-
-
-            if(obj is Vehiculo)
-            {
-                if (this.chasis == auxVehiculo.chasis)
-                {
-                    aux = true;
-                }
-
-            }
-            
-
-            return aux;
-
-       
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-
-        }
+        
         /// <summary>
         /// Dos vehiculos son iguales si comparten el mismo chasis
         /// </summary>
@@ -113,10 +76,9 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
-         
-          
-            return v1.Equals(v2);
-            
+
+            return (v1.chasis == v2.chasis);
+
         }
 
         /// <summary>
@@ -127,7 +89,7 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return !v1.Equals(v2);
+            return !(v1.chasis == v2.chasis);
         }
     }
 }
