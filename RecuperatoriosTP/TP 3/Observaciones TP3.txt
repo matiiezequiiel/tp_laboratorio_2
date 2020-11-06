@@ -1,0 +1,5 @@
+Jornada.txt no acumula la información, muestra siempre el último.
+Persona falta constructor, por ende no reutiliza constructores
+j.alumnos.Contains(a) y g.profesores.Contains(i) no cumplen lo pedido
+operator !=(Universidad u, EClases clase) ojo la lógica
+Revisar completo

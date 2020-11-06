@@ -20,7 +20,7 @@ namespace Archivos
         /// <returns></returns>
         public bool Guardar(string archivo, string datos)
         {
-            StreamWriter writer = new StreamWriter(archivo);
+            StreamWriter writer = new StreamWriter(archivo, true);
             bool retorno = false;
 
             try

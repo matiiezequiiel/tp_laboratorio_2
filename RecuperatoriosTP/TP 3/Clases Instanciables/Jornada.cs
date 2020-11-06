@@ -181,13 +181,21 @@ namespace Clases_Instanciables
         /// <returns></returns>
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if(!j.alumnos.Contains(a))
+            bool flag = false;
+            foreach (Alumno item in j.Alumnos)
             {
-                j.alumnos.Add(a);
+                if (j == a && item == a)
+                {
+                    flag = true;
+                    break;
+                }
             }
-
+            if (!flag)
+            {
+                j.Alumnos.Add(a);
+            }
             return j;
-           
+
         }
 
 

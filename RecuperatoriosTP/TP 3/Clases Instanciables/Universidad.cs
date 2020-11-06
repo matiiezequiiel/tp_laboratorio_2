@@ -165,10 +165,24 @@ namespace Clases_Instanciables
         public static bool operator == (Universidad g, Alumno a)
         {
             bool retorno = false;
-
-            if (g.alumnos.Contains(a))
+            foreach (Alumno item in g.Alumnos)
             {
-                retorno = true;
+                if (item == a)
+                {
+                    retorno = true;
+                    break;
+                }
+            }
+            if (retorno == false)
+            {
+                foreach (Profesor item in g.Instructores)
+                {
+                    if (item == a)
+                    {
+                        retorno = true;
+                        break;
+                    }
+                }
             }
             return retorno;
         }
@@ -187,13 +201,27 @@ namespace Clases_Instanciables
         public static bool operator ==(Universidad g, Profesor i)
         {
             bool retorno = false;
-
-            if (g.profesores.Contains(i))
+            foreach (Profesor item in g.Instructores)
             {
-                retorno = true;
+                if (item == i)
+                {
+                    retorno = true;
+                    break;
+                }
             }
-
+            if (retorno == false)
+            {
+                foreach (Alumno item in g.Alumnos)
+                {
+                    if (item == i)
+                    {
+                        retorno = true;
+                        break;
+                    }
+                }
+            }
             return retorno;
+           
         }
         public static bool operator !=(Universidad g, Profesor i)
         {
