@@ -19,9 +19,13 @@ namespace Clases_Instanciables
         /// <summary>
         /// True si tiene conexion 5G incluida, False si no.
         /// </summary>
-        public bool Conexion5G
+        public string Conexion5G
         {
-            get { return this.conexion5G; }
+            get {if (this.conexion5G)
+                    return "SI";
+                else
+                    return "NO";
+                }
             //set { myVar = value; }
         }
 
@@ -85,9 +89,10 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat(base.ToString());
-            sb.AppendLine(this.conexion5G.ToString());
-            sb.AppendLine(this.tamanioPantalla.ToString());
+            sb.AppendLine(base.ToString());
+            sb.AppendFormat("Conexion 5G: {0} ",this.Conexion5G.ToString());
+            sb.AppendFormat("Pantalla: {0} pulgadas. ",this.tamanioPantalla.ToString());
+
 
 
             return sb.ToString();

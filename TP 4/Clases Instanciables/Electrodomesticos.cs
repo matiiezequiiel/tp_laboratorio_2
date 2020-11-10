@@ -29,10 +29,15 @@ namespace Clases_Instanciables
         /// <summary>
         /// Propiedad control remoto incluido del electrodomestico.
         /// </summary>
-        public bool ControlRemotoIncluido
+        public string ControlRemotoIncluido
         {
-            get { return this.tieneControlRemoto; }
-            //set { myVar = value; }
+            get
+            {
+                if (this.tieneControlRemoto)
+                    return "SI";
+                else
+                    return "NO";
+            }
         }
 
         /// <summary>
@@ -93,6 +98,11 @@ namespace Clases_Instanciables
 
         #region Metodos
 
+        public override string ToString()
+        {
+            return Mostrar();
+        }
+
         /// <summary>
         /// Muestra los atributos de el electrodomestico.
         /// </summary>
@@ -100,10 +110,10 @@ namespace Clases_Instanciables
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat(base.ToString());
-            sb.AppendLine(this.potencia.ToString());
-            sb.AppendLine(this.tieneControlRemoto.ToString());
-            sb.AppendLine(this.categoria.ToString());
+            sb.AppendLine(base.ToString());
+            sb.AppendFormat("Potencia: {0} W\n" ,this.potencia.ToString());
+            sb.AppendFormat("Control remoto: {0} \n", this.ControlRemotoIncluido);
+            sb.AppendFormat("Categoria: {0} \n", this.categoria.ToString());
 
             return sb.ToString();
         }

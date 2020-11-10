@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Clases_Abstractas
 {
@@ -24,7 +25,7 @@ namespace Clases_Abstractas
             this.codigo = GenerarCodigo();
         }
 
-
+        
         /// <summary>
         /// Constructor de instancia.
         /// </summary>
@@ -151,12 +152,15 @@ namespace Clases_Abstractas
         /// <returns>Codigo aleatorio generado.</returns>
         private string GenerarCodigo()
         {
+          
             string codigoGenerado = string.Empty;
             Random random=new Random();
+            
 
             while(codigoGenerado.Length<=8)
             {
-                codigoGenerado += (char)random.Next(65, 90); 
+                codigoGenerado += (char)random.Next(65, 90);
+                Thread.Sleep(1);                
             }
 
             return codigoGenerado;
@@ -173,11 +177,11 @@ namespace Clases_Abstractas
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(this.Nombre);
-            sb.AppendLine(this.Codigo);
-            sb.AppendLine(this.Precio.ToString());
-            sb.AppendLine(this.Stock.ToString());
-
+            sb.AppendFormat("Producto: {0} \n",this.Nombre);
+            sb.AppendFormat("Codigo: {0} \n",this.Codigo);
+            sb.AppendFormat("Precio: ${0} \n",this.Precio.ToString());
+            sb.AppendFormat("Stock: {0} un.",this.Stock.ToString());
+           
             return sb.ToString();
         }
         #endregion

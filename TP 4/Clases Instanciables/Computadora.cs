@@ -11,38 +11,40 @@ namespace Clases_Instanciables
     {
 
         #region Atributos
-        string procesador;
         bool perifericos;
         bool gamer;
         #endregion
 
         #region Propiedades
 
-        /// <summary>
-        /// Propiedad procesador computadora.
-        /// </summary>
-        public string Procesador
-        {
-            get { return this.procesador; }
-            //set { myVar = value; }
-        }
-        
+          
         /// <summary>
         /// True si tiene perifericos incluidos, False si no.
         /// </summary>
-        public bool Perifericos
+        public string Perifericos
         {
-            get { return this.perifericos; }
+            get
+            {
+                if (this.perifericos)
+                    return "SI";
+                else
+                    return "NO";
+            }
             //set { myVar = value; }
         }
 
         /// <summary>
         /// True si la pc es apta para gaming, False si no.
         /// </summary>
-        public bool Gamer
+        public string Gamer
         {
-            get { return this.gamer; }
-            //set { myVar = value; }
+            get
+            {
+                if (this.gamer)
+                    return "SI";
+                else
+                    return "NO";
+            }
         }
 
 
@@ -96,9 +98,9 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat(base.ToString());
-            sb.AppendLine(this.perifericos.ToString());
-            sb.AppendLine(this.gamer.ToString());
+            sb.AppendLine(base.ToString());
+            sb.AppendFormat("Perifericos incluidos: {0}\n",this.Perifericos.ToString());
+            sb.AppendFormat("Perifericos incluidos: {0}\n",this.Gamer.ToString());
 
             return sb.ToString();
         }

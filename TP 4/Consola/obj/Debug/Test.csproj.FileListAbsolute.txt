@@ -1,0 +1,14 @@
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Consola.exe.config
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Consola.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Consola.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Clases Abstractas.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Clases Instanciables.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\EX.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Clases Abstractas.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Clases Instanciables.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\EX.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Test.csproj.CopyComplete
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Consola.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Consola.pdb

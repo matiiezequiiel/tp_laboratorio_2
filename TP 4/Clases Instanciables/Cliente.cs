@@ -39,7 +39,7 @@ namespace Clases_Instanciables
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat(base.ToString());
-            sb.AppendLine(this.nroCliente.ToString());
+            sb.AppendFormat("\nNumero de cliente: {0}",this.nroCliente.ToString());
        
             return sb.ToString();
 

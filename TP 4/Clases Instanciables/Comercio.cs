@@ -46,7 +46,7 @@ namespace Clases_Instanciables
 
         #region Constructores
 
-        private Comercio()
+        public Comercio()
         {
             inventario = new List<Producto>();
             clientes = new List<Cliente>();
@@ -69,27 +69,33 @@ namespace Clases_Instanciables
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("LISTA DE PRODUCTOS:\n");
             foreach (Producto item in this.inventario)
             {
-                sb.AppendLine(item.Mostrar());
-            }  
-            
+                sb.AppendLine(item.ToString());
+            }
+
+            sb.AppendLine("LISTA DE CLIENTES:\n");
             foreach (Cliente item in this.clientes)
             {
                 sb.AppendLine(item.Mostrar());
+                sb.AppendLine();
             }
 
+            sb.AppendLine("LISTA DE EMPLEADOS:\n");
             foreach (Empleado item in this.empleados)
             {
                 sb.AppendLine(item.Mostrar());
+                sb.AppendLine();
             }
 
+            sb.AppendLine("VENTAS REALIZADAS:\n");
             foreach (Venta item in this.ventas)
             {
                 sb.AppendLine(item.ToString());
             }
            
-            return base.ToString();
+            return sb.ToString();
         }
         //GUARDAR
 
@@ -150,10 +156,6 @@ namespace Clases_Instanciables
                     existe = true;
                     break;
                 }
-                else
-                {
-                    throw new VentaDuplicadaException();
-                }
 
             }
 
@@ -174,9 +176,15 @@ namespace Clases_Instanciables
                 if(item==a)
                 {
                     existe = true;
+                    break;
                 }
+               
             }
-            if (!existe)
+            if (existe)
+            {               
+                throw new VentaDuplicadaException();
+            }
+            else
             {
                 c.ventas.Add(a);
             }

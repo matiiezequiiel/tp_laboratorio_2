@@ -60,7 +60,7 @@ namespace Clases_Instanciables
 
         #region Constructores
 
-        private Venta()
+        public Venta()
         {
             this.carrito = new List<Producto>();
         }
@@ -82,10 +82,10 @@ namespace Clases_Instanciables
             sb.AppendFormat("Ticket numero: {0}\n",this.Ticket.ToString());
             sb.AppendFormat("Cliente: {0}\n",this.Comprador.Nombre);
             sb.AppendFormat("Vendedor: {0}\n",this.Vendedor.Nombre);
-            sb.AppendLine("Productos: ");
+            //sb.AppendLine("Productos vendidos: ");
             foreach (Producto item in this.Carrito)
             {
-                sb.AppendLine(item.Mostrar());
+                sb.AppendLine(item.ToString());
             }
 
             return sb.ToString();
@@ -98,7 +98,7 @@ namespace Clases_Instanciables
 
         public static bool operator == (Venta a, Venta b)
         {
-            if(a.Ticket == b.Ticket && a.carrito.Equals(b.carrito))
+            if(a.Ticket == b.Ticket)
             {
                 return true;
             }

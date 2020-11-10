@@ -51,10 +51,10 @@ namespace Clases_Instanciables
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat(base.ToString());
-            sb.AppendLine(this.legajo.ToString());
-            sb.AppendLine(this.sueldo.ToString());
-            sb.AppendLine(this.fechaDeIngreso.ToString());
+            sb.AppendLine(base.ToString());
+            sb.AppendFormat("Legajo: {0}\n",this.legajo.ToString());
+            sb.AppendFormat("Sueldo: ${0}\n", this.sueldo.ToString());
+            sb.AppendFormat("Fecha de ingreso: {0}\n", this.fechaDeIngreso.ToString());
 
             return sb.ToString();
 

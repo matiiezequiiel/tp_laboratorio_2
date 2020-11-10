@@ -4,3 +4,8 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\o
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CoreCompileInputs.cache
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\obj\Debug\Clases Instanciables.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\obj\Debug\Clases Instanciables.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\bin\Debug\Clases Abstractas.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\bin\Debug\EX.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\bin\Debug\Clases Abstractas.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\bin\Debug\EX.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Instanciables\obj\Debug\Clases Instanciables.csproj.CopyComplete

@@ -48,9 +48,9 @@ namespace Clases_Abstractas
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat(base.ToString());
-            sb.AppendLine(this.memoriaRam.ToString());
-            sb.AppendLine(this.almacenamiento.ToString());
+            sb.AppendLine(base.ToString());
+            sb.AppendFormat("Memoria RAM: {0} GB\n",this.memoriaRam.ToString());
+            sb.AppendFormat("Almacenamiento: {0} GB\n", this.almacenamiento.ToString());
 
             return sb.ToString();
         }
