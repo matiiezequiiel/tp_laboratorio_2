@@ -69,6 +69,16 @@ namespace Clases_Abstractas
         }
 
         /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado sexo
+        /// </summary>
+        public ESexo Sexo
+        {
+            get { return this.sexo; }
+            set { this.sexo = value; }
+        }
+
+
+        /// <summary>
         /// Propiedad de lectura y escritura del atributo privado nacionalidad
         /// </summary>
         public ENacionalidad Nacionalidad
@@ -114,9 +124,10 @@ namespace Clases_Abstractas
         /// <summary>
         /// Constructor de instancia
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <param name="dni"></param>
+        /// <param name="nombre">Nombre de la persona.</param>
+        /// <param name="apellido">Apellido de la persona.</param>
+        /// <param name="dni">DNI de la persona.</param>
+        /// <param name="sexo">Sexo de la persona.</param>
         /// <param name="nacionalidad"> Argentino, Extrajero </param>
         public Persona(string nombre, string apellido, string dni,ESexo sexo, ENacionalidad nacionalidad) : this(nombre, apellido, sexo, nacionalidad)
         {
@@ -239,9 +250,65 @@ namespace Clases_Abstractas
             return sb.ToString();
         }
 
+
+         /// <summary>
+         /// Conversion de bajada de la tabla a Enumerado Sexo.
+         /// </summary>
+         /// <param name="aux"></param>
+         /// <returns>Sexo de la persona.</returns>
+         public static ESexo StringTOSexo(string aux)
+        {
+            ESexo sexo=ESexo.Indefinido;
+            
+            switch (aux)
+            {
+                case "F":
+                    sexo = ESexo.Femenino;
+                    break;
+                case "M":
+                    sexo = ESexo.Masculino;
+                    break;
+                case "I":
+                    sexo = ESexo.Indefinido;
+                    break;
+            
+            }
+
+            return sexo;
+        }
+
+        /// <summary>
+        /// Conversion de bajada de la tabla a Enumerado Nacionalidad.
+        /// </summary>
+        /// <param name="aux"></param>
+        /// <returns>Sexo de la persona.</returns>
+        public static ENacionalidad StringTONac(string aux)
+        {
+            ENacionalidad nacionalidad = ENacionalidad.Otro;
+
+            switch (aux)
+            {
+                case "Argentino":
+                    nacionalidad = ENacionalidad.Argentino;
+                    break;
+                case "Extranjero":
+                    nacionalidad = ENacionalidad.Extranjero;
+                    break;
+                case "Otro":
+                    nacionalidad = ENacionalidad.Otro;
+                    break;
+
+            }
+
+            return nacionalidad;
+        }
+
         #endregion
 
-        }
+
+
+
+    }
     
 
 

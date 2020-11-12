@@ -5,11 +5,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Archivos;
 
 namespace Clases_Instanciables
 {
     [Serializable]
-    public sealed class Venta
+    public sealed class Venta 
     {
 
         #region Atributos
@@ -90,7 +91,43 @@ namespace Clases_Instanciables
 
             return sb.ToString();
         }
-        //GUARDAR
+
+        /// <summary>
+        /// Metodo de clase que guarda la informacion de la clase Venta en un archivo .xml, retorna true si fue correcta
+        /// </summary>
+        /// <param name="uni"> Venta. </param>
+        /// <returns>True si se guardo correctamente, false si no.</returns>
+        public static bool Guardar(string archivo, Venta datos)
+        {
+            string ruta = AppDomain.CurrentDomain.BaseDirectory;
+            bool retorno = false;
+
+            XML<Venta> universidad = new XML<Venta>();
+
+            retorno = universidad.Guardar(ruta + "LISTAVENTAS.xml", datos);
+
+            return retorno;
+        }
+
+        /// <summary>
+        /// Metodo de clase para leer un archivo .xml y retorna su informacion
+        /// </summary>
+        /// <returns>True si se leyo correctamente, false si no.</returns>
+        public static Venta Leer(string archivo)
+        {
+            string ruta = AppDomain.CurrentDomain.BaseDirectory;
+
+            XML<Venta> venta = new XML<Venta>();
+
+            if (!venta.Leer(ruta + archivo, out Venta retornoVenta))
+            {
+                retornoVenta = null;
+
+            }
+
+            return retornoVenta;
+        }
+
 
         #endregion
 

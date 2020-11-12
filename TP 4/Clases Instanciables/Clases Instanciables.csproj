@@ -51,6 +51,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Aguirre.Matias.2D.TP4\Archivos\Archivos.csproj">
+      <Project>{74715186-920b-40a0-9c50-ee70350a9a12}</Project>
+      <Name>Archivos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Clases Abstractas\Clases Abstractas.csproj">
       <Project>{2cc5d02a-b7aa-4524-b69f-b53a4b909b44}</Project>
       <Name>Clases Abstractas</Name>

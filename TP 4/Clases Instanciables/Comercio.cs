@@ -11,6 +11,7 @@ using Excepciones;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public sealed class Comercio
     {
         #region Atributos
