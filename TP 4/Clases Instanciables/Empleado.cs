@@ -95,15 +95,16 @@ namespace Clases_Instanciables
         /// <returns>Sexo de la persona.</returns>
         public static DateTime StringTODate(string aux)
         {
-            string[] fecha = aux.Split('/');
-            int[] fechaInt = new int[2];
+            string[] aux2 = aux.Split(' ');
+            string[] fecha = aux2[0].Split('/');
+            int[] fechaInt = new int[3];
 
             for (int i = 0; i < fecha.Length; i++)
             {
                 fechaInt[i] = int.Parse(fecha[i]);
             }
 
-           return new DateTime(fechaInt[0], fechaInt[1], fechaInt[2]);
+           return new DateTime(fechaInt[2], fechaInt[1], fechaInt[0]);
         }
         #endregion
 

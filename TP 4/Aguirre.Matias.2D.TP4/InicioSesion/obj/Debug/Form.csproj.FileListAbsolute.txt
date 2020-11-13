@@ -1,0 +1,23 @@
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\Form.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.FormIngresoSistema.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.MenuPrincipal.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.Properties.Resources.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\Form.csproj.GenerateResource.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\Form.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\InicioSesion.exe.config
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\InicioSesion.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\InicioSesion.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Clases Instanciables.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\SQL.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Clases Abstractas.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Archivos.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\EX.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Clases Instanciables.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\SQL.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Clases Abstractas.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Archivos.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\EX.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\Form.csproj.CopyComplete
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.exe
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.UserPass.resources

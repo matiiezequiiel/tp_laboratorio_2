@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Clases_Abstractas;
 using Clases_Instanciables;
+using System.Security.Cryptography;
+
 
 namespace SQL
 {
     public static class EmpleadoDB
     {
-        const string STRINGCONNEC = @"Server=agasoluciones.dynamic-dns.net\mssqlserver2;Database=Mensajes;User Id=Alumno;Password=FraUtn;"; //cambiar
+       
+
+
+       // const string STRINGCONNEC = @"Server=DESKTOP-9CR275H\SQLEXPRESS;Database=TP4;"; //cambiar
+        const string STRINGCONNEC = @"Data Source=DESKTOP-9CR275H\SQLEXPRESS;Initial Catalog =TP4;Integrated Security = True"; //cambiar
 
         static SqlConnection sqlConn;
         static SqlCommand command;
@@ -35,7 +41,7 @@ namespace SQL
         public static List<Empleado> TraerPersonas()
         {
             List<Empleado> empleados = new List<Empleado>();
-            string consulta = " Select * from empleados ";
+            string consulta = " Select * from dbo.empleados ";
 
             try
             {
@@ -50,6 +56,48 @@ namespace SQL
                 }
 
                 return empleados;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+
+
+        }
+        
+        /// <summary>
+        /// Consulta y valida contraseña del empleado.
+        /// </summary>
+        /// <returns>Lista de clientes.</returns>
+        public static bool ValidarContraseña(string pass,string legajo)
+        {
+            bool retorno = false;
+            string consulta = " Select pass from dbo.empleados where legajo = @legajo ";
+            command.Parameters.Clear();
+            command.Parameters.Add(new SqlParameter("@legajo", legajo));
+
+            try
+            {
+                command.CommandText = consulta;
+                sqlConn.Open();
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                   if(dr["Pass"].ToString() == Encriptar(pass))
+                    {
+                        retorno = true;
+                    }
+                   
+                }
+
+                return retorno;
 
             }
             catch (Exception)
@@ -101,6 +149,18 @@ namespace SQL
             {
                 sqlConn.Close();
             }
+        }
+
+        static string Encriptar(string pass)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = md5.ComputeHash(encoding.GetBytes(pass));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
+
         }
 
     }

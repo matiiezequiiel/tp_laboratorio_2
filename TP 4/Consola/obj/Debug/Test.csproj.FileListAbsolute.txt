@@ -12,3 +12,5 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Test
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Test.csproj.CopyComplete
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Consola.exe
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\obj\Debug\Consola.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Archivos.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Consola\bin\Debug\Archivos.pdb

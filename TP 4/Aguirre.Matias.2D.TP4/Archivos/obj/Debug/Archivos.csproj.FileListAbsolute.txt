@@ -1,0 +1,9 @@
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\bin\Debug\Archivos.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\bin\Debug\Archivos.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\bin\Debug\EX.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\bin\Debug\EX.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\obj\Debug\Archivos.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\obj\Debug\Archivos.csproj.CopyComplete
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\obj\Debug\Archivos.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Archivos\obj\Debug\Archivos.pdb

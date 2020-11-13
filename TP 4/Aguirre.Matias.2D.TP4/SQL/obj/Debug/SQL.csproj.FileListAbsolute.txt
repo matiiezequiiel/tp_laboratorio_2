@@ -1,0 +1,15 @@
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\obj\Debug\SQL.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\obj\Debug\SQL.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\SQL.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\SQL.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\Clases Abstractas.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\Clases Instanciables.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\EX.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\Archivos.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\Clases Abstractas.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\Clases Instanciables.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\EX.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\bin\Debug\Archivos.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\obj\Debug\SQL.csproj.CopyComplete
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\obj\Debug\SQL.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\SQL\obj\Debug\SQL.pdb

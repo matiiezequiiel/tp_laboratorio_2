@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresoSistema));
             this.label1 = new System.Windows.Forms.Label();
             this.dtgLogin = new System.Windows.Forms.DataGridView();
+            this.chcBox = new System.Windows.Forms.CheckBox();
             this.s = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puestoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sueldoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chcBox = new System.Windows.Forms.CheckBox();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +67,13 @@
             this.dtgLogin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.s,
             this.nombreEmpleado,
-            this.fechaDeIngreso,
             this.apellidoEmpleado,
-            this.puestoEmpleado,
+            this.legajoEmpleado,
             this.dniEmpleado,
-            this.sueldoEmpleado});
+            this.Fecha,
+            this.Sueldo,
+            this.Nacionalidad,
+            this.Sexo});
             this.dtgLogin.GridColor = System.Drawing.Color.White;
             this.dtgLogin.Location = new System.Drawing.Point(79, 117);
             this.dtgLogin.MultiSelect = false;
@@ -80,6 +83,13 @@
             this.dtgLogin.Size = new System.Drawing.Size(397, 274);
             this.dtgLogin.TabIndex = 3;
             this.dtgLogin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLogin_CellContentClick);
+            // 
+            // chcBox
+            // 
+            this.chcBox.Location = new System.Drawing.Point(0, 0);
+            this.chcBox.Name = "chcBox";
+            this.chcBox.Size = new System.Drawing.Size(104, 24);
+            this.chcBox.TabIndex = 0;
             // 
             // s
             // 
@@ -92,58 +102,69 @@
             // 
             // nombreEmpleado
             // 
-            this.nombreEmpleado.DataPropertyName = "nombrePersona";
+            this.nombreEmpleado.DataPropertyName = "Nombre";
             this.nombreEmpleado.HeaderText = "Nombre";
             this.nombreEmpleado.Name = "nombreEmpleado";
             this.nombreEmpleado.ReadOnly = true;
             this.nombreEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // fechaDeIngreso
-            // 
-            this.fechaDeIngreso.DataPropertyName = "FechaIngreso";
-            this.fechaDeIngreso.HeaderText = "Fecha de Ingreso";
-            this.fechaDeIngreso.Name = "fechaDeIngreso";
-            this.fechaDeIngreso.ReadOnly = true;
-            this.fechaDeIngreso.Visible = false;
-            // 
             // apellidoEmpleado
             // 
-            this.apellidoEmpleado.DataPropertyName = "apellidoPersona";
+            this.apellidoEmpleado.DataPropertyName = "Apellido";
             this.apellidoEmpleado.HeaderText = "Apellido";
             this.apellidoEmpleado.Name = "apellidoEmpleado";
             this.apellidoEmpleado.ReadOnly = true;
             this.apellidoEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // puestoEmpleado
+            // legajoEmpleado
             // 
-            this.puestoEmpleado.DataPropertyName = "puestoEmpleado";
-            this.puestoEmpleado.HeaderText = "Puesto";
-            this.puestoEmpleado.Name = "puestoEmpleado";
-            this.puestoEmpleado.ReadOnly = true;
-            this.puestoEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.legajoEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.legajoEmpleado.DataPropertyName = "Legajo";
+            this.legajoEmpleado.HeaderText = "Legajo";
+            this.legajoEmpleado.Name = "legajoEmpleado";
+            this.legajoEmpleado.ReadOnly = true;
+            this.legajoEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.legajoEmpleado.Width = 64;
             // 
             // dniEmpleado
             // 
-            this.dniEmpleado.DataPropertyName = "dniPersona";
+            this.dniEmpleado.DataPropertyName = "DNI";
             this.dniEmpleado.HeaderText = "DNI";
             this.dniEmpleado.Name = "dniEmpleado";
             this.dniEmpleado.ReadOnly = true;
             this.dniEmpleado.Visible = false;
             // 
-            // sueldoEmpleado
+            // Fecha
             // 
-            this.sueldoEmpleado.DataPropertyName = "sueldoEmpleado";
-            this.sueldoEmpleado.HeaderText = "Sueldo";
-            this.sueldoEmpleado.Name = "sueldoEmpleado";
-            this.sueldoEmpleado.ReadOnly = true;
-            this.sueldoEmpleado.Visible = false;
+            this.Fecha.DataPropertyName = "Fecha Ingreso";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Visible = false;
             // 
-            // chcBox
+            // Sueldo
             // 
-            this.chcBox.Location = new System.Drawing.Point(0, 0);
-            this.chcBox.Name = "chcBox";
-            this.chcBox.Size = new System.Drawing.Size(104, 24);
-            this.chcBox.TabIndex = 0;
+            this.Sueldo.DataPropertyName = "Sueldo";
+            this.Sueldo.HeaderText = "Sueldo";
+            this.Sueldo.Name = "Sueldo";
+            this.Sueldo.ReadOnly = true;
+            this.Sueldo.Visible = false;
+            // 
+            // Nacionalidad
+            // 
+            this.Nacionalidad.DataPropertyName = "Nacionalidad";
+            this.Nacionalidad.HeaderText = "Nacionalidad";
+            this.Nacionalidad.Name = "Nacionalidad";
+            this.Nacionalidad.ReadOnly = true;
+            this.Nacionalidad.Visible = false;
+            // 
+            // Sexo
+            // 
+            this.Sexo.DataPropertyName = "Sexo";
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Visible = false;
             // 
             // FormIngresoSistema
             // 
@@ -155,7 +176,6 @@
             this.Controls.Add(this.dtgLogin);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormIngresoSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,11 +194,13 @@
         private System.Windows.Forms.CheckBox chcBox;
         private System.Windows.Forms.DataGridViewCheckBoxColumn s;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puestoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajoEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sueldoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
     }
 }
 
