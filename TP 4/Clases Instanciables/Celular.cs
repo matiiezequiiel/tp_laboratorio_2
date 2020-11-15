@@ -27,6 +27,11 @@ namespace Clases_Instanciables
                     return "NO";
                 }
             //set { myVar = value; }
+        } 
+        public bool Conexion
+        {
+            get {return this.conexion5G;}
+            //set { myVar = value; }
         }
 
         /// <summary>

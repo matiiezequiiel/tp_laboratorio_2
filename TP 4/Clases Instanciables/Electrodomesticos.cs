@@ -118,6 +118,26 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
+        public static ECategoria StringTOCategoria(string cadena)
+        {
+            ECategoria categoria = ECategoria.Cocina;
+
+            switch (cadena)
+            {
+                case "Cocina":
+                    categoria = ECategoria.Cocina;
+                    break;
+                case "Ventilacion":
+                    categoria = ECategoria.Ventilacion;
+                    break;
+                case "Refrigeracion":
+                    categoria = ECategoria.Refrigeracion;
+                    break;
+
+            }
+
+            return categoria;
+        }
         #endregion
 
     }

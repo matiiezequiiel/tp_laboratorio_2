@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresoSistema));
             this.label1 = new System.Windows.Forms.Label();
             this.dtgLogin = new System.Windows.Forms.DataGridView();
-            this.chcBox = new System.Windows.Forms.CheckBox();
             this.s = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +40,14 @@
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chcBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(103, 22);
@@ -83,13 +84,6 @@
             this.dtgLogin.Size = new System.Drawing.Size(397, 274);
             this.dtgLogin.TabIndex = 3;
             this.dtgLogin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLogin_CellContentClick);
-            // 
-            // chcBox
-            // 
-            this.chcBox.Location = new System.Drawing.Point(0, 0);
-            this.chcBox.Name = "chcBox";
-            this.chcBox.Size = new System.Drawing.Size(104, 24);
-            this.chcBox.TabIndex = 0;
             // 
             // s
             // 
@@ -166,21 +160,28 @@
             this.Sexo.ReadOnly = true;
             this.Sexo.Visible = false;
             // 
+            // chcBox
+            // 
+            this.chcBox.Location = new System.Drawing.Point(0, 0);
+            this.chcBox.Name = "chcBox";
+            this.chcBox.Size = new System.Drawing.Size(104, 24);
+            this.chcBox.TabIndex = 0;
+            // 
             // FormIngresoSistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkOrange;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(570, 460);
             this.Controls.Add(this.dtgLogin);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormIngresoSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inicio Sesion";
-            this.Load += new System.EventHandler(this.FormIngresoSistema_Load);
+            this.Text = "Sistema de ventas";
             ((System.ComponentModel.ISupportInitialize)(this.dtgLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

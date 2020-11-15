@@ -33,6 +33,18 @@ namespace Clases_Instanciables
             //set { myVar = value; }
         }
 
+         /// <summary>
+        /// True si tiene perifericos incluidos, False si no.
+        /// </summary>
+        public bool PerifericosBool
+        {
+            get
+            {
+                return this.perifericos;
+            }
+            //set { myVar = value; }
+        }
+
         /// <summary>
         /// True si la pc es apta para gaming, False si no.
         /// </summary>
@@ -44,6 +56,16 @@ namespace Clases_Instanciables
                     return "SI";
                 else
                     return "NO";
+            }
+        } 
+        /// <summary>
+        /// True si la pc es apta para gaming, False si no.
+        /// </summary>
+        public bool GamerBool
+        {
+            get
+            {
+                return this.gamer;
             }
         }
 

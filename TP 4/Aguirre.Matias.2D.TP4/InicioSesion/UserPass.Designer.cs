@@ -29,13 +29,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPass));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnInicio = new System.Windows.Forms.Button();
             this.lblPuesto = new System.Windows.Forms.Label();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,13 +98,13 @@
             this.lblPuesto.TabIndex = 5;
             this.lblPuesto.Text = "Legajo";
             // 
-            // txtPuesto
+            // txtLegajo
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(94, 179);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.ReadOnly = true;
-            this.txtPuesto.Size = new System.Drawing.Size(173, 23);
-            this.txtPuesto.TabIndex = 6;
+            this.txtLegajo.Location = new System.Drawing.Point(94, 179);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.ReadOnly = true;
+            this.txtLegajo.Size = new System.Drawing.Size(173, 23);
+            this.txtLegajo.TabIndex = 6;
             // 
             // btnAtras
             // 
@@ -114,13 +115,14 @@
             this.btnAtras.TabIndex = 5;
             this.btnAtras.Text = "Cancelar";
             this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.button1_Click);
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(37, 14);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(94, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(268, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(172, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -129,11 +131,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkOrange;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(338, 272);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtPuesto);
+            this.Controls.Add(this.txtLegajo);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.txtPass);
@@ -141,6 +143,7 @@
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblUsuario);
             this.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar sesion";
@@ -159,7 +162,7 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label lblPuesto;
-        public System.Windows.Forms.TextBox txtPuesto;
+        public System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

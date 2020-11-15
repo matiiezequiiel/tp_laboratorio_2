@@ -98,6 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Clases Abstractas\Clases Abstractas.csproj">
+      <Project>{2cc5d02a-b7aa-4524-b69f-b53a4b909b44}</Project>
+      <Name>Clases Abstractas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Clases Instanciables\Clases Instanciables.csproj">
       <Project>{ad2abf14-6c0f-49e7-8991-11e0a8140817}</Project>
       <Name>Clases Instanciables</Name>

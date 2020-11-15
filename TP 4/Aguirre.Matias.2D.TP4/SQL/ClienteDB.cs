@@ -12,8 +12,7 @@ namespace SQL
 {
     public static class ClienteDB
     {
-        const string STRINGCONNEC = @"Server=agasoluciones.dynamic-dns.net\mssqlserver2;Database=Mensajes;User Id=Alumno;Password=FraUtn;"; //cambiar
-
+        const string STRINGCONNEC = @"Data Source=DESKTOP-9CR275H\SQLEXPRESS;Initial Catalog =TP4;Integrated Security = True"; 
         static SqlConnection sqlConn;
         static SqlCommand command;
 
@@ -36,7 +35,7 @@ namespace SQL
         public static List<Cliente> TraerClientes()
         {
             List<Cliente> clientes = new List<Cliente>();
-            string consulta = " Select * from clientes ";
+            string consulta = " Select * from dbo.clientes ";
 
             try
             {

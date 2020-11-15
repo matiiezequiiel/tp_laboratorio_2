@@ -21,22 +21,12 @@ namespace InicioSesion
         {
             InitializeComponent();
             dtgLogin.DataSource = EmpleadoDB.TraerPersonas();
-            
-            
-        }
-
-        private void FormIngresoSistema_Load(object sender, EventArgs e)
-        {
-
-           // Comercio.CargarHardcodeo();
-           // dtgLogin.DataSource = Comercio.RetornarListaEmpleados();
-
+                       
         }
 
         private void dtgLogin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
- 
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow linea = this.dtgLogin.Rows[e.RowIndex];
@@ -49,7 +39,7 @@ namespace InicioSesion
 
             UserPass formInicioSesion = new UserPass();
             formInicioSesion.txtUsuario.Text = nombreUsuario + " " + apellidoUsuario;
-            formInicioSesion.txtPuesto.Text = legajo;
+            formInicioSesion.txtLegajo.Text = legajo;
             formInicioSesion.Show();
 
             

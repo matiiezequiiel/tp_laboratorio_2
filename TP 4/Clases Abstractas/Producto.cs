@@ -22,7 +22,7 @@ namespace Clases_Abstractas
         /// </summary>
         public Producto()
         {
-            this.codigo = GenerarCodigo();
+          //  this.codigo = GenerarCodigo();
         }
 
         
@@ -166,6 +166,7 @@ namespace Clases_Abstractas
             return codigoGenerado;
 
         }
+
 
         public abstract string Mostrar();
 

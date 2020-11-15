@@ -7,18 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clases_Instanciables;
+using Clases_Abstractas;
+using SQL;
 
 namespace InicioSesion
 {
     public partial class MenuPrincipal : Form
     {
-        /*
+
+
         #region Atributos
-        List<Producto> listaAuxProdEnCompra = new List<Producto>();
-        List<Producto> listaAuxProd = new List<Producto>();
-        List<Cliente> listaAuxCliente = new List<Cliente>();
-        List<Producto> carroDeCompras = new List<Producto>();
-        int lineaSeleccionada;
+        private List<Cliente> listaAuxCliente;
+        private List<Producto> listaAuxProductos;
+
         #endregion
 
         #region Carga de datos
@@ -26,15 +28,17 @@ namespace InicioSesion
         public MenuPrincipal()
         {
             InitializeComponent();
+            listaAuxCliente = new List<Cliente>();
+            listaAuxProductos = new List<Producto>();
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\AperturaPuerta.wav");
-            player.Play();
+           
             CargarMenuCompras(false);
             CargarListaCliente();
             CargarListaProducto();
+       
         }
         private void nuevaCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -88,50 +92,44 @@ namespace InicioSesion
         public void CargarListaCliente()
         {
             lsvClientes.Items.Clear();
-
-            listaAuxCliente = Comercio.RetornarListaClientes();
-
-
-
-            foreach (Cliente item in listaAuxCliente)
+    
+            foreach (Cliente item in ClienteDB.TraerClientes())
             {
-                ListViewItem aux = new ListViewItem(item.NombrePersona);
-                aux.SubItems.Add(item.ApellidoPersona);
+                ListViewItem aux = new ListViewItem(item.Nombre);
+                aux.SubItems.Add(item.Apellido);
                 lsvClientes.Items.Add(aux);
-
             }
 
         }
-
+        
         public void CargarListaProducto()
         {
 
             lsvProductos.Items.Clear();
-            listaAuxProd = Comercio.RetornarListaProductos();
-            listaAuxProdEnCompra.Clear();
+            List<Informatica> listaInformatica = ProductoDB.TraerProductosInformatica();
+            List<Electrodomesticos> listaElectrodomesticos = ProductoDB.TraerProductosElectrodomesticos();
+           
+         
 
-            foreach (Producto item in listaAuxProd)
+            foreach (Informatica item in listaInformatica)
             {
-                string nombre = item.nombreProducto;
-                int stock = item.stockProducto;
-                //    string categoria = item.CategoriaProducto;
-                int codigo = item.codigoProducto;
-                double precio = item.precioProducto;
+                ListViewItem aux = new ListViewItem(item.Nombre);
+                aux.SubItems.Add(item.Stock.ToString());
+                aux.SubItems.Add(item.Precio.ToString());
+                lsvProductos.Items.Add(aux);
 
-                listaAuxProdEnCompra.Add(new Producto(nombre, item.tipoProducto, precio, stock, codigo));
-            }
+            } 
 
-
-            foreach (Producto item in listaAuxProd)
+            foreach (Electrodomesticos item in listaElectrodomesticos)
             {
-                ListViewItem aux = new ListViewItem(item.nombreProducto);
-                aux.SubItems.Add(item.stockProducto.ToString());
-                aux.SubItems.Add(item.precioProducto.ToString());
+                ListViewItem aux = new ListViewItem(item.Nombre);
+                aux.SubItems.Add(item.Stock.ToString());
+                aux.SubItems.Add(item.Precio.ToString());
                 lsvProductos.Items.Add(aux);
 
             }
         }
-
+        /*
         #endregion
 
         #region Refrescar listas
@@ -549,11 +547,15 @@ namespace InicioSesion
 
             sw.Close();
 
-
+        
         }
 
 
-        #endregion
+        
+        
         */
+        #endregion
+
+      
     }
 }

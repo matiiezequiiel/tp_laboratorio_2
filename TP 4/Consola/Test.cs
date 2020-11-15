@@ -27,11 +27,11 @@ namespace Consola
             
             Empleado e3 = new Empleado("Miguel", "Palermo", "45689878", Persona.ESexo.Masculino, Persona.ENacionalidad.Argentino, 3, 45000, new DateTime(2020, 02, 27));
 
-            Computadora pc1 = new Computadora("Lenovo 4578", 200000.99, 10, 16, 240, true, true);
-            Computadora pc2 = new Computadora("Dell 5000", 250000.99, 5, 8, 120, true, false);
-            Computadora pc3 = new Computadora("HP M4", 180000, 20, 4, 120, false, false);
-            Computadora pc4 = new Computadora("Asus 8000", 3000000, 3, 32, 480, true, true);
-            Computadora pc5 = new Computadora("MSI 1234", 100000, 20, 16, 120, false, true);
+                Computadora pc1 = new Computadora("Lenovo 4578", 200000.99, 10, 16, 240, true, true);
+                Computadora pc2 = new Computadora("Dell 5000", 250000.99, 5, 8, 120, true, false);
+                Computadora pc3 = new Computadora("HP M4", 180000, 20, 4, 120, false, false);
+                Computadora pc4 = new Computadora("Asus 8000", 3000000, 3, 32, 480, true, true);
+                Computadora pc5 = new Computadora("MSI 1234", 100000, 20, 16, 120, false, true);
             
             Celular cel1 = new Celular("Samsung 4578", 10000, 10, 16, 240, true, 8);
             Celular cel2 = new Celular("Nokia 1100", 15000, 5, 8, 120, true, 10);
