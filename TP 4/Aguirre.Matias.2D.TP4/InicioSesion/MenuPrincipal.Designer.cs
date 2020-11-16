@@ -167,6 +167,7 @@
             this.lsvClientes.TabIndex = 3;
             this.lsvClientes.UseCompatibleStateImageBehavior = false;
             this.lsvClientes.View = System.Windows.Forms.View.Details;
+            this.lsvClientes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lsvClientes_ItemCheck);
             // 
             // columnHeader1
             // 
@@ -216,6 +217,7 @@
             this.lsvProductos.TabIndex = 6;
             this.lsvProductos.UseCompatibleStateImageBehavior = false;
             this.lsvProductos.View = System.Windows.Forms.View.Details;
+            this.lsvProductos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lsvProductos_MouseDown);
             // 
             // nombreProducto
             // 
@@ -258,6 +260,8 @@
             this.lsvCarrito.TabIndex = 8;
             this.lsvCarrito.UseCompatibleStateImageBehavior = false;
             this.lsvCarrito.View = System.Windows.Forms.View.Details;
+            this.lsvCarrito.DragDrop += new System.Windows.Forms.DragEventHandler(this.lsvCarrito_DragDrop);
+            this.lsvCarrito.DragOver += new System.Windows.Forms.DragEventHandler(this.lsvCarrito_DragOver);
             // 
             // columnHeader3
             // 
@@ -286,6 +290,7 @@
             this.btnVaciarCarrito.TabIndex = 10;
             this.btnVaciarCarrito.Text = "VACIAR CARRITO";
             this.btnVaciarCarrito.UseVisualStyleBackColor = true;
+            this.btnVaciarCarrito.Click += new System.EventHandler(this.btnVaciarCarrito_Click);
             // 
             // btnConfirmarCompra
             // 
@@ -297,6 +302,7 @@
             this.btnConfirmarCompra.TabIndex = 11;
             this.btnConfirmarCompra.Text = "CONFIRMAR COMPRA";
             this.btnConfirmarCompra.UseVisualStyleBackColor = true;
+            this.btnConfirmarCompra.Click += new System.EventHandler(this.btnConfirmarCompra_Click);
             // 
             // lblTotal
             // 

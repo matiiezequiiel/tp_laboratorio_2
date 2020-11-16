@@ -38,7 +38,7 @@ namespace SQL
         /// Trae todos los empleados de la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public static List<Empleado> TraerPersonas()
+        public static List<Empleado> TraerEmpleados()
         {
             List<Empleado> empleados = new List<Empleado>();
             string consulta = " Select * from dbo.empleados ";

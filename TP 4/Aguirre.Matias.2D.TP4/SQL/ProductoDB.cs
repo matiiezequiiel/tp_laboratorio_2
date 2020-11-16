@@ -32,7 +32,7 @@ namespace SQL
         /// Trae todos los productos de infomatica de la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public static List<Informatica> TraerProductosInformatica()
+        private static List<Informatica> TraerProductosInformatica()
         {
             List<Informatica> productos = new List<Informatica>();
             string consulta = " Select * from dbo.productos_informatica ";
@@ -81,7 +81,7 @@ namespace SQL
         /// Trae todos los electrodomesticos de la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public static List<Electrodomesticos> TraerProductosElectrodomesticos()
+        private static List<Electrodomesticos> TraerProductosElectrodomesticos()
         {
             List<Electrodomesticos> productos = new List<Electrodomesticos>();
             string consulta = " Select * from dbo.productos_electrodomesticos ";
@@ -114,12 +114,86 @@ namespace SQL
 
         }
 
+        public static List<Producto> TraerProductos()
+        {
+            List<Informatica> listaInformatica = ProductoDB.TraerProductosInformatica();
+            List<Electrodomesticos> listaElectrodomesticos = ProductoDB.TraerProductosElectrodomesticos();
+            List<Producto> inventarioGeneral = new List<Producto>();
+
+            foreach (Informatica item in listaInformatica)
+            {
+                inventarioGeneral.Add(item);
+            }
+
+            foreach (Electrodomesticos item in listaElectrodomesticos)
+            {
+                inventarioGeneral.Add(item);
+            }
+
+            return inventarioGeneral;   
+        }
+
 
         /// <summary>
         /// Inserta un cliente en la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
         public static bool InstertarProducto(Informatica producto)
+        {
+            string consulta = " INSERT INTO dbo.productos_informatica ([Modelo],[Precio],[Stock],[Memoria RAM],[Almacenamiento],[Perifericos],[Gamer],[Conexion 5G],[Tamaño Pantalla]) VALUES (@modelo ,@precio,@stock,@memoria,@almacenamiento,@perifericos,@gamer,@conexion,@pantalla)";
+
+            
+            try      
+            {
+                command.CommandText = consulta; 
+                command.Parameters.Clear();
+                command.Parameters.Add(new SqlParameter("@modelo", producto.Nombre));
+                command.Parameters.Add(new SqlParameter("@precio", producto.Precio.ToString()));
+                command.Parameters.Add(new SqlParameter("@stock", producto.Stock.ToString()));
+                command.Parameters.Add(new SqlParameter("@memoria", producto.MemoriaRam.ToString()));
+                command.Parameters.Add(new SqlParameter("@almacenamiento", producto.Almacenamiento.ToString()));
+
+                if(producto.GetType() == typeof(Celular))
+                {
+                    Celular aux = (Celular)producto;
+                    command.Parameters.Add(new SqlParameter("@perifericos", null));
+                    command.Parameters.Add(new SqlParameter("@gamer", null));
+                    command.Parameters.Add(new SqlParameter("@conexion",  (Convert.ToInt32(aux.Conexion)).ToString() ));
+                    command.Parameters.Add(new SqlParameter("@pantalla", aux.TamañoPantalla.ToString()));
+
+                }
+                else
+                {
+                    Computadora aux = (Computadora)producto;
+
+                    command.Parameters.Add(new SqlParameter("@perifericos", (Convert.ToInt32(aux.PerifericosBool)).ToString() ));
+                    command.Parameters.Add(new SqlParameter("@gamer", (Convert.ToInt32(aux.GamerBool)).ToString()));
+                    command.Parameters.Add(new SqlParameter("@conexion", null));
+                    command.Parameters.Add(new SqlParameter("@pantalla", null));
+                }
+              
+
+
+                sqlConn.Open();
+                int retorno = command.ExecuteNonQuery();
+
+                return retorno != -1;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+        }
+        
+        /// <summary>
+        /// Actualizar stock de los productos vendidos en la base de datos.
+        /// </summary>
+        /// <returns>Lista de clientes.</returns>
+        public static bool ActualizarStockProducto(Producto producto)
         {
             string consulta = " INSERT INTO dbo.productos_informatica ([Modelo],[Precio],[Stock],[Memoria RAM],[Almacenamiento],[Perifericos],[Gamer],[Conexion 5G],[Tamaño Pantalla]) VALUES (@modelo ,@precio,@stock,@memoria,@almacenamiento,@perifericos,@gamer,@conexion,@pantalla)";
 

@@ -98,6 +98,39 @@ namespace Clases_Instanciables
            
             return sb.ToString();
         }
+
+        public void NuevaVenta(List<Producto> productosVendidos,string nombreVendedor,string nombreComprador)
+        {
+            Cliente comprador=null;
+            Empleado vendedor = null;
+            Venta nuevaVenta;
+          
+            foreach (Empleado item in this.Empleados)
+            {
+                if(item.Nombre== nombreVendedor)
+                {
+                    vendedor = item;
+                    break;
+                }
+            }
+
+            foreach (Cliente item in this.clientes)
+            {
+                if(item.Nombre== nombreVendedor)
+                {
+                    comprador = item;
+                    break;
+                }
+            }
+
+            nuevaVenta = new Venta(productosVendidos, this.ventas.Count + 1, comprador, vendedor);
+
+            this.ventas.Add(nuevaVenta);
+            //ACTUALIZAR BASE DE DATOS
+            //ACTUALIZAR LISTA DE PRODUCTOS
+
+        }
+        
         //GUARDAR
 
         #endregion

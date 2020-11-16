@@ -45,5 +45,10 @@ namespace Clases_Instanciables
 
         }
         #endregion
+
+        public static Cliente operator == (string c)
+        {
+            if(this.)
+        }
     }
 }

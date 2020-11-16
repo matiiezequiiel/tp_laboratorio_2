@@ -20,7 +20,7 @@ namespace InicioSesion
         public FormIngresoSistema()
         {
             InitializeComponent();
-            dtgLogin.DataSource = EmpleadoDB.TraerPersonas();
+            dtgLogin.DataSource = EmpleadoDB.TraerEmpleados();
                        
         }
 
