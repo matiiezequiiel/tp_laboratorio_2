@@ -7,6 +7,7 @@ using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public sealed class Celular : Informatica
     {
         #region Atributos
@@ -31,7 +32,7 @@ namespace Clases_Instanciables
         public bool Conexion
         {
             get {return this.conexion5G;}
-            //set { myVar = value; }
+            set { this.conexion5G = value; }
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace Clases_Instanciables
         public float TamañoPantalla
         {
             get { return this.tamanioPantalla; }
-            //set { myVar = value; }
+            set { this.tamanioPantalla = value; }
         }
 
 
@@ -48,7 +49,10 @@ namespace Clases_Instanciables
 
         #region Constructores
 
+        public Celular()
+        {
 
+        }
         /// <summary>
         /// Constructor de instancia.
         /// </summary>

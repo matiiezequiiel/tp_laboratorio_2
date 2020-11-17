@@ -13,7 +13,7 @@ using SQL;
 
 namespace InicioSesion
 {
-    public delegate void miDelegado(List<Producto> productosVendidos,string vendedor,string comprador);
+    public delegate Venta miDelegado(Comercio c,Venta nuevaVenta);
    
     public partial class MenuPrincipal : Form
     {
@@ -23,22 +23,19 @@ namespace InicioSesion
         List<Producto> listaAuxiliar;
         Venta ventaParcial=new Venta();
         public event miDelegado NuevaVenta;
-
-
-
+        int lineaSeleccionada;
         #endregion
 
         #region Carga de datos
 
         public MenuPrincipal()
         {
-            InitializeComponent();
-              
+            InitializeComponent();         
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-   
+            CargarVendedor();
             CargarListaCliente();
             CargarListaProducto();
             NuevaVenta += miComercio.NuevaVenta;
@@ -49,7 +46,19 @@ namespace InicioSesion
           //HILOS PARA VARIAS COMPRAS.
         }
 
-      
+        public void CargarVendedor()
+        {
+            foreach (Empleado item in miComercio.Empleados)
+            {
+                if(txtLegajo.Text==item.Legajo.ToString())
+                {
+                    ventaParcial.Vendedor = item;
+                    break;
+
+                }
+            }
+        }
+
         public void CargarListaCliente()
         {
             lsvClientes.Items.Clear();
@@ -58,6 +67,7 @@ namespace InicioSesion
             {
                 ListViewItem aux = new ListViewItem(item.Nombre);
                 aux.SubItems.Add(item.Apellido);
+                aux.SubItems.Add(item.NroCliente.ToString());
                 lsvClientes.Items.Add(aux);
             }
 
@@ -130,6 +140,18 @@ namespace InicioSesion
                 if (auxLista.Checked == true)
                 {
                     lsvClientes.CheckBoxes = false;
+
+                    foreach (Cliente item in miComercio.Clientes)
+                    {
+                        if(item.NroCliente.ToString() == auxLista.SubItems[2].Text)
+                        {
+                            ventaParcial.Comprador = item;
+                            break;
+                        }
+                    }
+
+                   //BUSCAR CLIENTE
+                    
                     seleccionoCliente = true;
                     break;
                 }
@@ -230,7 +252,15 @@ namespace InicioSesion
 
         }
 
-       
+        public void LimpiarPantalla()
+        {
+            lsvCarrito.Items.Clear();
+            lblTotalCompra.Text = "";
+            lsvClientes.CheckBoxes = true;
+        }
+
+
+
         #endregion
 
         #region Botones
@@ -242,7 +272,6 @@ namespace InicioSesion
                 ventaParcial.Carrito.Clear();
                 lsvClientes.CheckBoxes = true;
                 this.lblTotalCompra.Text = "";
-                this.lblTotalDescuento.Text = "";
                 CargarListaProducto();
 
             }
@@ -259,32 +288,91 @@ namespace InicioSesion
 
             if (ventaParcial.Carrito.Count > 0)
             {
-                NuevaVenta.Invoke(ventaParcial.Carrito,this.txtEmpleadoLogeado.Text,lsvClientes.SelectedItems.ToString());
-               /*
-                nroTicket = Comercio.CargarVenta(carroDeCompras, this.txtEmpleadoLogeado.Text);
-                GenerarTicket(carroDeCompras, nroTicket);
-                Comercio.ActualizarListaStock(listaAuxProdEnCompra);
-                listaAuxProdEnCompra.Clear();
-                lsvCarrito.Items.Clear();
-                lblTotalCompra.Text = "";
-                lblTotalDescuento.Text = "";
-                lsvClientes.CheckBoxes = true;
-                carroDeCompras.Clear();
+               
+
+                Venta ventaConfirmada=NuevaVenta.Invoke(miComercio,ventaParcial);
+
+                ProductoDB.ActualizarStockProducto(ventaConfirmada.Carrito);
+
+                miComercio.Inventario = ProductoDB.TraerProductos();
+                listaAuxiliar.Clear();
+                ventaParcial.Carrito.Clear();
+
                 CargarListaProducto();
 
+                LimpiarPantalla();
                 MessageBox.Show("Su venta fue registrada correctamente.");
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".\data\GraciasVuelvaPronto.wav");
-                player.Play();
-               */
+               
             }
             else
             {
                 MessageBox.Show("El carrito esta vacio.");
             }
         }
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            this.Close();
+        }
+        #endregion
+
+        #region Botones mas informacion
+
+        private void btnDetalleEmpleado_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ventaParcial.Vendedor.Mostrar());      
+        }
+
+        private void lsvClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                menuCliente.Show(lsvClientes, e.X, e.Y);
+                try
+                {
+                    lineaSeleccionada = lsvClientes.HitTest(e.X, e.Y).Item.Index;
+                }
+                catch (Exception)
+                {
+                    //No tiene sentido informar al usuario que clickeo fuera de el area.
+                }
+
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string nroCliente=string.Empty;
+
+
+            foreach (ListViewItem item in lsvClientes.Items)
+            {
+                if (item.Index == lineaSeleccionada)
+                {
+                    nroCliente = item.SubItems[2].Text;
+                  
+                    break;
+                }
+            }
+
+            foreach (Cliente item in miComercio.Clientes)
+            {
+                if (item.NroCliente.ToString() == nroCliente)
+                {
+                    MessageBox.Show(item.Mostrar());
+                    break;
+                }
+            }
+
+        }
+
 
         #endregion
 
-
+        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Comercio.Guardar(miComercio);
+        }
     }
 }

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfVenta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Venta>
+    <Carrito>
+      <Producto xsi:type="Computadora">
+        <Nombre>Lenovo 4578</Nombre>
+        <Precio>200000.99</Precio>
+        <Stock>8</Stock>
+        <MemoriaRam>16</MemoriaRam>
+        <Almacenamiento>240</Almacenamiento>
+        <PerifericosBool>true</PerifericosBool>
+        <GamerBool>true</GamerBool>
+      </Producto>
+      <Producto xsi:type="Celular">
+        <Nombre>Motorola C115</Nombre>
+        <Precio>18000</Precio>
+        <Stock>19</Stock>
+        <MemoriaRam>4</MemoriaRam>
+        <Almacenamiento>120</Almacenamiento>
+        <Conexion>false</Conexion>
+        <TamañoPantalla>9</TamañoPantalla>
+      </Producto>
+      <Producto xsi:type="Electrodomesticos">
+        <Nombre>Ventilador</Nombre>
+        <Precio>8000</Precio>
+        <Stock>19</Stock>
+        <Potencia>1600</Potencia>
+        <ControlRemoto>false</ControlRemoto>
+        <Categoria>Ventilacion</Categoria>
+      </Producto>
+    </Carrito>
+    <Ticket>1</Ticket>
+    <Comprador>
+      <Nombre>Maria</Nombre>
+      <Apellido>Gaitan</Apellido>
+      <DNI>46512739</DNI>
+      <Sexo>Femenino</Sexo>
+      <Nacionalidad>Argentino</Nacionalidad>
+    </Comprador>
+    <Vendedor>
+      <Nombre>Miguel</Nombre>
+      <Apellido>Palermo</Apellido>
+      <DNI>45689878</DNI>
+      <Sexo>Masculino</Sexo>
+      <Nacionalidad>Argentino</Nacionalidad>
+    </Vendedor>
+  </Venta>
+</ArrayOfVenta>

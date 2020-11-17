@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public sealed class Cliente : Persona
     {
         #region Atributos
@@ -46,9 +47,6 @@ namespace Clases_Instanciables
         }
         #endregion
 
-        public static Cliente operator == (string c)
-        {
-            if(this.)
-        }
+      
     }
 }

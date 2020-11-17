@@ -193,46 +193,42 @@ namespace SQL
         /// Actualizar stock de los productos vendidos en la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public static bool ActualizarStockProducto(Producto producto)
+        public static bool ActualizarStockProducto(List<Producto> productos)
         {
-            string consulta = " INSERT INTO dbo.productos_informatica ([Modelo],[Precio],[Stock],[Memoria RAM],[Almacenamiento],[Perifericos],[Gamer],[Conexion 5G],[Tamaño Pantalla]) VALUES (@modelo ,@precio,@stock,@memoria,@almacenamiento,@perifericos,@gamer,@conexion,@pantalla)";
+            string updateInformatica = "UPDATE dbo.productos_informatica SET [Stock]=@stock where [Codigo Producto]=@codigo";
+            string updateElectrodomesticos = "UPDATE dbo.productos_electrodomesticos SET [Stock]=@stockprue where [Codigo]=@codigoprue";
+            int retorno=0;
 
-            
+
+
             try      
             {
-                command.CommandText = consulta; 
-                command.Parameters.Clear();
-                command.Parameters.Add(new SqlParameter("@modelo", producto.Nombre));
-                command.Parameters.Add(new SqlParameter("@precio", producto.Precio.ToString()));
-                command.Parameters.Add(new SqlParameter("@stock", producto.Stock.ToString()));
-                command.Parameters.Add(new SqlParameter("@memoria", producto.MemoriaRam.ToString()));
-                command.Parameters.Add(new SqlParameter("@almacenamiento", producto.Almacenamiento.ToString()));
-
-                if(producto.GetType() == typeof(Celular))
-                {
-                    Celular aux = (Celular)producto;
-                    command.Parameters.Add(new SqlParameter("@perifericos", null));
-                    command.Parameters.Add(new SqlParameter("@gamer", null));
-                    command.Parameters.Add(new SqlParameter("@conexion",  (Convert.ToInt32(aux.Conexion)).ToString() ));
-                    command.Parameters.Add(new SqlParameter("@pantalla", aux.TamañoPantalla.ToString()));
-
-                }
-                else
-                {
-                    Computadora aux = (Computadora)producto;
-
-                    command.Parameters.Add(new SqlParameter("@perifericos", (Convert.ToInt32(aux.PerifericosBool)).ToString() ));
-                    command.Parameters.Add(new SqlParameter("@gamer", (Convert.ToInt32(aux.GamerBool)).ToString()));
-                    command.Parameters.Add(new SqlParameter("@conexion", null));
-                    command.Parameters.Add(new SqlParameter("@pantalla", null));
-                }
-              
-
-
                 sqlConn.Open();
-                int retorno = command.ExecuteNonQuery();
+                command.CommandText = string.Empty;
+                foreach (Producto item in productos)
+                {
+                    if(item.GetType() == typeof(Celular) || item.GetType() == typeof(Computadora))
+                    {
+                        command.CommandText = updateInformatica;
+                        command.Parameters.Clear();
+                        command.Parameters.Add(new SqlParameter("@codigo",item.Codigo ));
+                        command.Parameters.Add(new SqlParameter("@stock",item.Stock.ToString() ));
+                    }
+                    else
+                    {
+                        command.CommandText = updateElectrodomesticos;
+                        command.Parameters.Clear();
+                        command.Parameters.Add(new SqlParameter("@stockprue", item.Codigo));
+                        command.Parameters.Add(new SqlParameter("@codigoprue", item.Stock.ToString()));
+                    }
 
+                    retorno = command.ExecuteNonQuery();
+                    command.CommandText = string.Empty;
+                  
+                }
+             
                 return retorno != -1;
+
             }
             catch (Exception)
             {

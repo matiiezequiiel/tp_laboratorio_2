@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Xml.Serialization;
+
 
 namespace Clases_Abstractas
 {
+    [Serializable]
+    [XmlInclude(typeof(Informatica))]
+    [XmlInclude(typeof(Clases_Instanciables.Electrodomesticos))]
     public abstract class Producto
     {
         #region Atributos

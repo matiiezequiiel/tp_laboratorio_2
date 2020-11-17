@@ -7,6 +7,7 @@ using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public sealed class Electrodomesticos : Producto
     {
         #region Atributos
@@ -23,7 +24,7 @@ namespace Clases_Instanciables
         public int Potencia
         {
             get { return this.potencia; }
-          //  set { myVar = value; }
+            set {  this.potencia = value; }
         }
 
         /// <summary>
@@ -38,6 +39,15 @@ namespace Clases_Instanciables
                 else
                     return "NO";
             }
+        } 
+        
+        /// <summary>
+        /// Propiedad control remoto incluido del electrodomestico.
+        /// </summary>
+        public bool ControlRemoto
+        {
+            get {return this.tieneControlRemoto; }
+            set { this.tieneControlRemoto = value; }
         }
 
         /// <summary>
@@ -46,7 +56,7 @@ namespace Clases_Instanciables
         public ECategoria Categoria
         {
             get { return this.categoria; }
-         //   set { myVar = value; }
+            set { this.categoria = value; }
         }
 
         #endregion

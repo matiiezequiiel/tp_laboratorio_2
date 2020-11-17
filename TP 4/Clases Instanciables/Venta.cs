@@ -10,8 +10,10 @@ using Archivos;
 namespace Clases_Instanciables
 {
     [Serializable]
+   
     public sealed class Venta 
     {
+       
 
         #region Atributos
         Cliente comprador;
@@ -27,7 +29,7 @@ namespace Clases_Instanciables
         public List<Producto> Carrito
         {
             get { return this.carrito; }
-           // set { myVar = value; }
+            set { this.carrito = value; }
         }
 
         /// <summary>
@@ -36,7 +38,7 @@ namespace Clases_Instanciables
         public int Ticket
         {
             get { return this.ticket; }
-           // set { myVar = value; }
+            set { this.ticket = value; }
         }
 
         /// <summary>
@@ -45,7 +47,7 @@ namespace Clases_Instanciables
         public Cliente Comprador
         {
             get { return this.comprador; }
-            // set { myVar = value; }
+            set { this.comprador = value; }
         }
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace Clases_Instanciables
         public Empleado Vendedor
         {
             get { return this.vendedor; }
-            // set { myVar = value; }
+            set { this.vendedor = value; }
         }
 
         #endregion

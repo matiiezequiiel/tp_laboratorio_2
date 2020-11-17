@@ -7,6 +7,7 @@ using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public sealed class Computadora : Informatica
     {
 
@@ -42,7 +43,7 @@ namespace Clases_Instanciables
             {
                 return this.perifericos;
             }
-            //set { myVar = value; }
+            set { this.perifericos = value; }
         }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Clases_Instanciables
             {
                 return this.gamer;
             }
+            set { this.gamer = value; }
         }
 
 
@@ -74,6 +76,13 @@ namespace Clases_Instanciables
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor sin parametros para la serializacion.
+        /// </summary>
+        private Computadora()
+        {
+               
+        }
 
         /// <summary>
         /// Constructor de instancia.

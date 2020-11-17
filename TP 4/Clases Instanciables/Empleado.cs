@@ -7,6 +7,7 @@ using Clases_Abstractas;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public sealed class Empleado : Persona
     {
         #region Atributos

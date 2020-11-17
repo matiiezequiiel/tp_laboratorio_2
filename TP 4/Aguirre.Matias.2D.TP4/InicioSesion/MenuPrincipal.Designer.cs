@@ -42,6 +42,7 @@
             this.lsvClientes = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblListaClientes = new System.Windows.Forms.Label();
             this.lblListaProductos = new System.Windows.Forms.Label();
             this.lsvProductos = new System.Windows.Forms.ListView();
@@ -55,14 +56,14 @@
             this.btnVaciarCarrito = new System.Windows.Forms.Button();
             this.btnConfirmarCompra = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.lblDescuento = new System.Windows.Forms.Label();
             this.lblTotalCompra = new System.Windows.Forms.Label();
-            this.lblTotalDescuento = new System.Windows.Forms.Label();
             this.lblEmpleadoLogeado = new System.Windows.Forms.Label();
             this.txtEmpleadoLogeado = new System.Windows.Forms.TextBox();
             this.btnDetalleEmpleado = new System.Windows.Forms.Button();
             this.menuCliente = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblLegajo = new System.Windows.Forms.Label();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.menuCliente.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +149,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // lsvClientes
             // 
@@ -155,7 +157,8 @@
             this.lsvClientes.CheckBoxes = true;
             this.lsvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader4});
             this.lsvClientes.Cursor = System.Windows.Forms.Cursors.Default;
             this.lsvClientes.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvClientes.FullRowSelect = true;
@@ -168,6 +171,7 @@
             this.lsvClientes.UseCompatibleStateImageBehavior = false;
             this.lsvClientes.View = System.Windows.Forms.View.Details;
             this.lsvClientes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lsvClientes_ItemCheck);
+            this.lsvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsvClientes_MouseClick);
             // 
             // columnHeader1
             // 
@@ -177,7 +181,11 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Apellido";
-            this.columnHeader2.Width = 72;
+            this.columnHeader2.Width = 69;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Nro Cliente";
             // 
             // lblListaClientes
             // 
@@ -314,16 +322,6 @@
             this.lblTotal.TabIndex = 12;
             this.lblTotal.Text = "Total:";
             // 
-            // lblDescuento
-            // 
-            this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(476, 393);
-            this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(74, 18);
-            this.lblDescuento.TabIndex = 13;
-            this.lblDescuento.Text = "Descuento:";
-            // 
             // lblTotalCompra
             // 
             this.lblTotalCompra.AutoSize = true;
@@ -332,15 +330,6 @@
             this.lblTotalCompra.Name = "lblTotalCompra";
             this.lblTotalCompra.Size = new System.Drawing.Size(0, 19);
             this.lblTotalCompra.TabIndex = 14;
-            // 
-            // lblTotalDescuento
-            // 
-            this.lblTotalDescuento.AutoSize = true;
-            this.lblTotalDescuento.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDescuento.Location = new System.Drawing.Point(566, 392);
-            this.lblTotalDescuento.Name = "lblTotalDescuento";
-            this.lblTotalDescuento.Size = new System.Drawing.Size(0, 19);
-            this.lblTotalDescuento.TabIndex = 15;
             // 
             // lblEmpleadoLogeado
             // 
@@ -364,13 +353,14 @@
             // btnDetalleEmpleado
             // 
             this.btnDetalleEmpleado.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalleEmpleado.Location = new System.Drawing.Point(273, 35);
+            this.btnDetalleEmpleado.Location = new System.Drawing.Point(406, 38);
             this.btnDetalleEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetalleEmpleado.Name = "btnDetalleEmpleado";
             this.btnDetalleEmpleado.Size = new System.Drawing.Size(82, 21);
             this.btnDetalleEmpleado.TabIndex = 19;
             this.btnDetalleEmpleado.Text = "Mas info";
             this.btnDetalleEmpleado.UseVisualStyleBackColor = true;
+            this.btnDetalleEmpleado.Click += new System.EventHandler(this.btnDetalleEmpleado_Click);
             // 
             // menuCliente
             // 
@@ -380,6 +370,7 @@
             this.menuCliente.Name = "menuCliente";
             this.menuCliente.Size = new System.Drawing.Size(132, 26);
             this.menuCliente.Text = "Mas datos.";
+            this.menuCliente.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -387,18 +378,38 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.toolStripMenuItem1.Text = "Mas datos.";
             // 
+            // lblLegajo
+            // 
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegajo.Location = new System.Drawing.Point(278, 37);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(52, 18);
+            this.lblLegajo.TabIndex = 20;
+            this.lblLegajo.Text = "Legajo:";
+            // 
+            // txtLegajo
+            // 
+            this.txtLegajo.Enabled = false;
+            this.txtLegajo.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLegajo.Location = new System.Drawing.Point(336, 35);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.ReadOnly = true;
+            this.txtLegajo.Size = new System.Drawing.Size(43, 24);
+            this.txtLegajo.TabIndex = 21;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.txtLegajo);
+            this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.btnDetalleEmpleado);
             this.Controls.Add(this.txtEmpleadoLogeado);
             this.Controls.Add(this.lblEmpleadoLogeado);
-            this.Controls.Add(this.lblTotalDescuento);
             this.Controls.Add(this.lblTotalCompra);
-            this.Controls.Add(this.lblDescuento);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnConfirmarCompra);
             this.Controls.Add(this.btnVaciarCarrito);
@@ -414,6 +425,7 @@
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -440,9 +452,7 @@
         private System.Windows.Forms.Button btnVaciarCarrito;
         private System.Windows.Forms.Button btnConfirmarCompra;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblDescuento;
         private System.Windows.Forms.Label lblTotalCompra;
-        private System.Windows.Forms.Label lblTotalDescuento;
         private System.Windows.Forms.ColumnHeader nombreProducto;
         private System.Windows.Forms.ColumnHeader stockProducto;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -459,5 +469,8 @@
         private System.Windows.Forms.Button btnDetalleEmpleado;
         private System.Windows.Forms.ContextMenuStrip menuCliente;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Label lblLegajo;
+        public System.Windows.Forms.TextBox txtLegajo;
     }
 }

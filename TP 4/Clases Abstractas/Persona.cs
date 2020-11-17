@@ -7,6 +7,7 @@ using Excepciones;
 
 namespace Clases_Abstractas
 {
+    [Serializable]
     public abstract class Persona
     {
         public enum ESexo { Masculino, Femenino, Indefinido };
@@ -244,6 +245,8 @@ namespace Clases_Abstractas
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("NOMBRE COMPLETO: {0}, {1} \n", this.apellido, this.nombre);
+            sb.AppendFormat("DNI: {0}\n",this.dni);
+            sb.AppendFormat("SEXO: {0} \n", this.sexo);
             sb.AppendFormat("NACIONALIDAD: {0}", this.nacionalidad);
 
 

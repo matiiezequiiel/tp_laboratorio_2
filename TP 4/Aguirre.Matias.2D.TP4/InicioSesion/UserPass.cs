@@ -34,7 +34,8 @@ namespace InicioSesion
             if (EmpleadoDB.ValidarContraseña(txtPass.Text, txtLegajo.Text))
             {
                 MessageBox.Show("Acceso correcto", "Inicio de sesion de " + txtUsuario.Text, MessageBoxButtons.OK);
-             //   formMenu.txtEmpleadoLogeado.Text = txtUsuario.Text;
+                formMenu.txtEmpleadoLogeado.Text = txtUsuario.Text;
+                formMenu.txtLegajo.Text = txtLegajo.Text;
                 this.Hide();
                 formMenu.Show(); 
             }

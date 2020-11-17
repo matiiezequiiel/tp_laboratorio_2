@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Clases_Abstractas;
 using Excepciones;
+using Archivos;
+
+
 
 namespace Clases_Instanciables
 {
@@ -25,22 +28,24 @@ namespace Clases_Instanciables
         public List<Producto> Inventario
         {
             get { return this.inventario; }
-          //  set { myVar = value; }
+            set {
+                this.inventario.Clear();
+                this.inventario = value; }
         }
         public List<Cliente> Clientes
         {
             get { return this.clientes; }
-          //  set { myVar = value; }
+            set { this.clientes = value; }
         }
         public List<Empleado> Empleados
         {
             get { return this.empleados; }
-          //  set { myVar = value; }
+            set { this.empleados = value; }
         }
         public List<Venta> Ventas
         {
             get { return this.ventas; }
-          //  set { myVar = value; }
+            set { this.ventas = value; }
         }
 
         #endregion
@@ -54,6 +59,7 @@ namespace Clases_Instanciables
             empleados = new List<Empleado>();
             ventas = new List<Venta>();
         }
+
 
         public Comercio(List<Producto> inventario, List<Empleado> empleados, List<Cliente> clientes, List<Venta> ventas) : this()
         {
@@ -99,39 +105,62 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
-        public void NuevaVenta(List<Producto> productosVendidos,string nombreVendedor,string nombreComprador)
+        public Venta NuevaVenta(Comercio c,Venta nuevaVenta)
         {
-            Cliente comprador=null;
-            Empleado vendedor = null;
-            Venta nuevaVenta;
-          
-            foreach (Empleado item in this.Empleados)
+
+            c += nuevaVenta;
+
+            GenerarTicket(nuevaVenta);
+
+            return nuevaVenta;
+
+        }
+
+        private void GenerarTicket(Venta nuevaVenta)
+        {
+            StringBuilder sb = new StringBuilder();
+            string ruta = AppDomain.CurrentDomain.BaseDirectory;
+            string nombreTicket = nuevaVenta.Ticket.ToString()+".txt";
+            double total = 0;
+
+            Texto auxTexto = new Texto();
+
+            sb.AppendFormat("Usted fue atendido por: {0} {1} \n",nuevaVenta.Vendedor.Nombre,nuevaVenta.Vendedor.Apellido);
+            sb.AppendFormat("Fecha: {0}\n", DateTime.Now);
+            sb.AppendFormat("Cliente: {0} {1} \n",nuevaVenta.Comprador.Nombre,nuevaVenta.Comprador.Apellido);
+
+            sb.AppendLine("");
+            sb.AppendLine("");
+            sb.AppendLine("Lista de productos: ");
+            sb.AppendLine("-----------------------------------");
+
+            foreach (Producto item in nuevaVenta.Carrito)
             {
-                if(item.Nombre== nombreVendedor)
-                {
-                    vendedor = item;
-                    break;
-                }
+                sb.AppendFormat("{0,-28}   ${1,-20}\n", item.Nombre, item.Precio);
+                total = total + item.Precio;
             }
+            sb.AppendLine("-----------------------------------");
+            sb.AppendFormat("Total:         {0,20} \n", total.ToString());
+            sb.AppendLine("-----------------------------------");
+            sb.AppendLine("-----------------------------------");
+            sb.AppendFormat("Nro de ticket: {0,20} \n", nuevaVenta.Ticket.ToString());
+            sb.AppendLine("-----------------------------------");
 
-            foreach (Cliente item in this.clientes)
-            {
-                if(item.Nombre== nombreVendedor)
-                {
-                    comprador = item;
-                    break;
-                }
-            }
+            auxTexto.Guardar(ruta + nombreTicket, sb.ToString());
 
-            nuevaVenta = new Venta(productosVendidos, this.ventas.Count + 1, comprador, vendedor);
-
-            this.ventas.Add(nuevaVenta);
-            //ACTUALIZAR BASE DE DATOS
-            //ACTUALIZAR LISTA DE PRODUCTOS
 
         }
         
-        //GUARDAR
+        public static void Guardar(Comercio datosComercio)
+        {
+            string ruta = AppDomain.CurrentDomain.BaseDirectory;
+           
+
+            XML<List<Venta>> ventasComercio = new XML<List<Venta>>();
+
+                ventasComercio.Guardar(ruta + "XMLVENTAS.xml", datosComercio.ventas);
+   
+        }
 
         #endregion
 
@@ -207,7 +236,7 @@ namespace Clases_Instanciables
 
             foreach (Venta item in c.ventas)
             {
-                if(item==a)
+                if(item.Ticket==a.Ticket)
                 {
                     existe = true;
                     break;
@@ -220,7 +249,16 @@ namespace Clases_Instanciables
             }
             else
             {
-                c.ventas.Add(a);
+
+                List<Producto> l = new List<Producto>();
+                l.AddRange(a.Carrito);
+                int ticket=c.ventas.Count + 1;
+                Cliente cl = new Cliente();
+                cl=a.Comprador;
+                Empleado v = new Empleado();
+                v = a.Vendedor;
+                c.ventas.Add(new Venta(l,ticket,cl,v));
+
             }
            
             return c;
