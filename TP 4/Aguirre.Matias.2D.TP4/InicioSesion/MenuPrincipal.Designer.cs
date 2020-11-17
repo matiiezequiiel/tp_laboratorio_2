@@ -52,7 +52,7 @@
             this.lblCarrito = new System.Windows.Forms.Label();
             this.lsvCarrito = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblNuevoCliente = new System.Windows.Forms.Button();
+            this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnVaciarCarrito = new System.Windows.Forms.Button();
             this.btnConfirmarCompra = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             this.comprasPorEmpleadoToolStripMenuItem,
             this.productoConMenosDe10UnidadesToolStripMenuItem});
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
-            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadosToolStripMenuItem.Text = "Listados";
             // 
             // stockDeProductosToolStripMenuItem
@@ -140,8 +140,9 @@
             // altaProductoToolStripMenuItem
             // 
             this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.altaProductoToolStripMenuItem.Text = "Alta Producto";
+            this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -276,16 +277,17 @@
             this.columnHeader3.Text = "Productos seleccionados";
             this.columnHeader3.Width = 144;
             // 
-            // lblNuevoCliente
+            // btnNuevoCliente
             // 
-            this.lblNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNuevoCliente.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoCliente.Location = new System.Drawing.Point(45, 360);
-            this.lblNuevoCliente.Name = "lblNuevoCliente";
-            this.lblNuevoCliente.Size = new System.Drawing.Size(151, 50);
-            this.lblNuevoCliente.TabIndex = 9;
-            this.lblNuevoCliente.Text = "INGRESAR NUEVO CLIENTE";
-            this.lblNuevoCliente.UseVisualStyleBackColor = true;
+            this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoCliente.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCliente.Location = new System.Drawing.Point(45, 360);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(151, 50);
+            this.btnNuevoCliente.TabIndex = 9;
+            this.btnNuevoCliente.Text = "INGRESAR NUEVO CLIENTE";
+            this.btnNuevoCliente.UseVisualStyleBackColor = true;
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
             // btnVaciarCarrito
             // 
@@ -413,7 +415,7 @@
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnConfirmarCompra);
             this.Controls.Add(this.btnVaciarCarrito);
-            this.Controls.Add(this.lblNuevoCliente);
+            this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.lsvCarrito);
             this.Controls.Add(this.lblCarrito);
             this.Controls.Add(this.lsvProductos);
@@ -448,7 +450,7 @@
         private System.Windows.Forms.ListView lsvProductos;
         private System.Windows.Forms.Label lblCarrito;
         private System.Windows.Forms.ListView lsvCarrito;
-        private System.Windows.Forms.Button lblNuevoCliente;
+        private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.Button btnVaciarCarrito;
         private System.Windows.Forms.Button btnConfirmarCompra;
         private System.Windows.Forms.Label lblTotal;

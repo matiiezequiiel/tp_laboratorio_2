@@ -1,15 +1,15 @@
-Usted fue atendido por: Miguel Palermo 
-Fecha: 16/11/2020 21:27:39
-Cliente: Maria Gaitan 
+Usted fue atendido por: Marcos Acuña 
+Fecha: 17/11/2020 20:17:32
+Cliente: Claudia Garcia 
 
 
 Lista de productos: 
 -----------------------------------
 Lenovo 4578                    $200000,99           
-Motorola C115                  $18000               
-Ventilador                     $8000                
+Xiaomi 1234                    $40000               
+Licuadora                      $5000                
 -----------------------------------
-Total:                    226000,99 
+Total:                    245000,99 
 -----------------------------------
 -----------------------------------
 Nro de ticket:                    0 

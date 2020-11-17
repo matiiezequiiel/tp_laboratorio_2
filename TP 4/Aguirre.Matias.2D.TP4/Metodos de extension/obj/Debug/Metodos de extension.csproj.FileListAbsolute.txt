@@ -1,0 +1,6 @@
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Metodos de extension\bin\Debug\Metodos de extension.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Metodos de extension\bin\Debug\Metodos de extension.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Metodos de extension\obj\Debug\Metodos de extension.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Metodos de extension\obj\Debug\Metodos de extension.csproj.CoreCompileInputs.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Metodos de extension\obj\Debug\Metodos de extension.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\Metodos de extension\obj\Debug\Metodos de extension.pdb

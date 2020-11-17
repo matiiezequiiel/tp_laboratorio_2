@@ -135,12 +135,13 @@ namespace SQL
 
 
         /// <summary>
-        /// Inserta un cliente en la base de datos.
+        /// Inserta un producto de informatica en la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public static bool InstertarProducto(Informatica producto)
+        public static bool InsertarProductosInformatica(Informatica producto)
         {
-            string consulta = " INSERT INTO dbo.productos_informatica ([Modelo],[Precio],[Stock],[Memoria RAM],[Almacenamiento],[Perifericos],[Gamer],[Conexion 5G],[Tamaño Pantalla]) VALUES (@modelo ,@precio,@stock,@memoria,@almacenamiento,@perifericos,@gamer,@conexion,@pantalla)";
+            string consulta = " INSERT INTO dbo.productos_informatica ([Modelo],[Precio],[Stock],[Memoria RAM],[Almacenamiento],[Perifericos],[Gamer],[Conexion 5G],[Tamaño Pantalla]) VALUES (@modelo,@precio,@stock,@memoria,@almacenamiento,@perifericos,@gamer,@conexion,@pantalla)"; 
+            
 
             
             try      
@@ -152,14 +153,18 @@ namespace SQL
                 command.Parameters.Add(new SqlParameter("@stock", producto.Stock.ToString()));
                 command.Parameters.Add(new SqlParameter("@memoria", producto.MemoriaRam.ToString()));
                 command.Parameters.Add(new SqlParameter("@almacenamiento", producto.Almacenamiento.ToString()));
+              
 
-                if(producto.GetType() == typeof(Celular))
+                
+                if (producto.GetType() == typeof(Celular))
                 {
                     Celular aux = (Celular)producto;
-                    command.Parameters.Add(new SqlParameter("@perifericos", null));
-                    command.Parameters.Add(new SqlParameter("@gamer", null));
-                    command.Parameters.Add(new SqlParameter("@conexion",  (Convert.ToInt32(aux.Conexion)).ToString() ));
+                    command.Parameters.Add(new SqlParameter("@perifericos", DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@gamer", DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@conexion", (Convert.ToInt32(aux.Conexion)).ToString()));
                     command.Parameters.Add(new SqlParameter("@pantalla", aux.TamañoPantalla.ToString()));
+
+
 
                 }
                 else
@@ -168,10 +173,48 @@ namespace SQL
 
                     command.Parameters.Add(new SqlParameter("@perifericos", (Convert.ToInt32(aux.PerifericosBool)).ToString() ));
                     command.Parameters.Add(new SqlParameter("@gamer", (Convert.ToInt32(aux.GamerBool)).ToString()));
-                    command.Parameters.Add(new SqlParameter("@conexion", null));
-                    command.Parameters.Add(new SqlParameter("@pantalla", null));
+                    command.Parameters.Add(new SqlParameter("@conexion", DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@pantalla", DBNull.Value));
                 }
               
+
+                
+                sqlConn.Open();
+                int retorno = command.ExecuteNonQuery();
+
+                return retorno != -1;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+        } 
+
+        /// <summary>
+        /// Inserta un producto de electrodomestico en la base de datos.
+        /// </summary>
+        /// <returns>Lista de clientes.</returns>
+        public static bool InsertarProductosElectro(Electrodomesticos producto)
+        {
+            string consulta = " INSERT INTO dbo.productos_electrodomesticos ([Nombre],[Precio],[Stock],[Potencia],[Control],[Categoria]) VALUES (@nombre ,@precio,@stock,@potencia,@control,@categoria)"; 
+            
+
+            
+            try      
+            {
+                command.CommandText = consulta; 
+                command.Parameters.Clear();
+                command.Parameters.Add(new SqlParameter("@nombre", producto.Nombre));
+                command.Parameters.Add(new SqlParameter("@precio", producto.Precio.ToString()));
+                command.Parameters.Add(new SqlParameter("@stock", producto.Stock.ToString()));
+                command.Parameters.Add(new SqlParameter("@potencia", producto.Potencia.ToString()));
+                command.Parameters.Add(new SqlParameter("@control", (Convert.ToInt32(producto.ControlRemoto)).ToString()));
+                command.Parameters.Add(new SqlParameter("@categoria", producto.Categoria.ToString()));
+
 
 
                 sqlConn.Open();
@@ -198,8 +241,8 @@ namespace SQL
             string updateInformatica = "UPDATE dbo.productos_informatica SET [Stock]=@stock where [Codigo Producto]=@codigo";
             string updateElectrodomesticos = "UPDATE dbo.productos_electrodomesticos SET [Stock]=@stockprue where [Codigo]=@codigoprue";
             int retorno=0;
-
-
+           
+          
 
             try      
             {
@@ -208,18 +251,18 @@ namespace SQL
                 foreach (Producto item in productos)
                 {
                     if(item.GetType() == typeof(Celular) || item.GetType() == typeof(Computadora))
-                    {
-                        command.CommandText = updateInformatica;
-                        command.Parameters.Clear();
-                        command.Parameters.Add(new SqlParameter("@codigo",item.Codigo ));
-                        command.Parameters.Add(new SqlParameter("@stock",item.Stock.ToString() ));
-                    }
-                    else
+                     {
+                      command.CommandText = updateInformatica;
+                      command.Parameters.Clear();
+                      command.Parameters.Add(new SqlParameter("@codigo",item.Codigo ));
+                      command.Parameters.Add(new SqlParameter("@stock",item.Stock.ToString() ));
+                     }
+                     else
                     {
                         command.CommandText = updateElectrodomesticos;
                         command.Parameters.Clear();
-                        command.Parameters.Add(new SqlParameter("@stockprue", item.Codigo));
-                        command.Parameters.Add(new SqlParameter("@codigoprue", item.Stock.ToString()));
+                        command.Parameters.Add(new SqlParameter("@codigoprue", item.Codigo.ToString()));
+                        command.Parameters.Add(new SqlParameter("@stockprue", item.Stock.ToString()));
                     }
 
                     retorno = command.ExecuteNonQuery();

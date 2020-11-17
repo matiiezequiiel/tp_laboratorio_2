@@ -28,6 +28,10 @@ namespace Clases_Instanciables
         {
            
         }
+        public Cliente(string nombre,string apellido,string dni,ESexo sexo,ENacionalidad nacionalidad) : base(nombre,apellido,dni,sexo,nacionalidad)
+        {
+            
+        }
         public Cliente(string nombre,string apellido,string dni,ESexo sexo,ENacionalidad nacionalidad,int nroCliente) : base(nombre,apellido,dni,sexo,nacionalidad)
         {
             this.nroCliente = nroCliente;

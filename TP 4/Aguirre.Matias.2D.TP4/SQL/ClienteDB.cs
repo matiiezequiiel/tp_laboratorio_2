@@ -72,9 +72,9 @@ namespace SQL
         /// Inserta un cliente en la base de datos.
         /// </summary>
         /// <returns>Lista de clientes.</returns>
-        public static bool InstertarEmpleado(Cliente cliente)
+        public static bool InsertarCliente(Cliente cliente)
         {
-            string consulta = " INSERT INTO empleados ([Nombre],[Apellido],[DNI],[Sexo],[Nacionalidad],[Numero cliente) VALUES (@nombre ,@apellido,@dni,@sexo,@nacionalidad,@nrocliente)";
+            string consulta = " INSERT INTO dbo.clientes ([Nombre],[Apellido],[DNI],[Sexo],[Nacionalidad]) VALUES (@nombre ,@apellido,@dni,@sexo,@nacionalidad)";
 
             try
             {
@@ -82,10 +82,9 @@ namespace SQL
                 command.Parameters.Clear();
                 command.Parameters.Add(new SqlParameter("@nombre", cliente.Nombre));
                 command.Parameters.Add(new SqlParameter("@apellido", cliente.Apellido));
-                command.Parameters.Add(new SqlParameter("@dni", cliente.DNI));
-                command.Parameters.Add(new SqlParameter("@sexo", cliente.Sexo));
-                command.Parameters.Add(new SqlParameter("@nacionalidad", cliente.Nacionalidad));
-                command.Parameters.Add(new SqlParameter("@nrocliente", cliente.NroCliente));
+                command.Parameters.Add(new SqlParameter("@dni", cliente.DNI.ToString()));
+                command.Parameters.Add(new SqlParameter("@sexo", cliente.Sexo.ToString()));
+                command.Parameters.Add(new SqlParameter("@nacionalidad", cliente.Nacionalidad.ToString()));
 
 
                 sqlConn.Open();

@@ -21,3 +21,7 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.exe
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.UserPass.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.NuevoCliente.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\obj\Debug\InicioSesion.AgregarProducto.resources
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Metodos de extension.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Aguirre.Matias.2D.TP4\InicioSesion\bin\Debug\Metodos de extension.pdb

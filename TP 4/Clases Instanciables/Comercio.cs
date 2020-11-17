@@ -116,6 +116,7 @@ namespace Clases_Instanciables
 
         }
 
+
         private void GenerarTicket(Venta nuevaVenta)
         {
             StringBuilder sb = new StringBuilder();
@@ -193,7 +194,7 @@ namespace Clases_Instanciables
 
             foreach (Cliente item in c.Clientes)
             {
-                if(item.NroCliente == a.NroCliente)
+                if(item.DNI == a.DNI)
                 {
                     existe = true;
                     break;

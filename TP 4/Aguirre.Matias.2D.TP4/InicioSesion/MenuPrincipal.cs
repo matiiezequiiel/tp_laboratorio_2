@@ -19,7 +19,7 @@ namespace InicioSesion
     {
 
         #region Atributos
-        Comercio miComercio = new Comercio(ProductoDB.TraerProductos(), EmpleadoDB.TraerEmpleados(), ClienteDB.TraerClientes(),new List<Venta>());
+        public Comercio miComercio = new Comercio(ProductoDB.TraerProductos(), EmpleadoDB.TraerEmpleados(), ClienteDB.TraerClientes(),new List<Venta>());
         List<Producto> listaAuxiliar;
         Venta ventaParcial=new Venta();
         public event miDelegado NuevaVenta;
@@ -61,8 +61,11 @@ namespace InicioSesion
 
         public void CargarListaCliente()
         {
+            
             lsvClientes.Items.Clear();
-    
+
+            miComercio.Clientes = ClienteDB.TraerClientes();
+
             foreach (Cliente item in miComercio.Clientes)
             {
                 ListViewItem aux = new ListViewItem(item.Nombre);
@@ -370,9 +373,27 @@ namespace InicioSesion
 
         #endregion
 
+
+        #region Botones nuevos FORMS
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            NuevoCliente formAgregarCliente = new NuevoCliente(this);
+            this.Hide();
+            formAgregarCliente.Show();
+        }
+
+        private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarProducto formAgregarProducto = new AgregarProducto(this);
+            this.Hide();
+            formAgregarProducto.Show();
+        }
+
+        #endregion
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Comercio.Guardar(miComercio);
+          //  Comercio.Guardar(miComercio);
         }
     }
 }
