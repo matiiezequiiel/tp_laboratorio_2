@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using Clases_Abstractas;
 using Excepciones;
 using Archivos;
-
-
+using System.IO;
 
 namespace Clases_Instanciables
 {
@@ -180,17 +179,50 @@ namespace Clases_Instanciables
         /// Guarda las ventas del comercio
         /// </summary>
         /// <param name="datosComercio">Comercio.</param>
-        public static void Guardar(Comercio datosComercio)
+        public static void Guardar(Venta ventaRealizada)
         {
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
-            string nombre = datosComercio.ventas.Count.ToString() + ".xml";
+            string nombre = ventaRealizada.Ticket.ToString() + ".xml";
            
 
-            XML<List<Venta>> ventasComercio = new XML<List<Venta>>();
+            XML<Venta> ventasComercio = new XML<Venta>();
 
-                ventasComercio.Guardar(ruta + nombre, datosComercio.ventas);
+                ventasComercio.Guardar(ruta + nombre, ventaRealizada);
    
         }
+
+        /// <summary>
+        /// Metodo de clase para leer un archivo .xml y retorna su informacion
+        /// </summary>
+        /// <returns>True si se leyo correctamente, false si no.</returns>
+        public static List<Venta> Leer()
+        {
+          
+            DirectoryInfo di = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            FileInfo[] archivos = di.GetFiles("*.xml");
+            Venta retornoVenta=new Venta();
+            List<Venta> listaCargada = new List<Venta>();
+
+            XML<Venta> venta = new XML<Venta>();
+
+
+
+            for (int i = 0; i < archivos.Length; i++)
+            {
+                if (!venta.Leer(AppDomain.CurrentDomain.BaseDirectory+archivos[i].ToString(), out retornoVenta))
+                {
+                    retornoVenta = null;
+                }
+                else
+                {
+                    listaCargada.Add(retornoVenta);
+                }
+            }       
+           
+            return listaCargada;
+            
+        }
+
 
         #endregion
 
@@ -306,7 +338,7 @@ namespace Clases_Instanciables
 
                 List<Producto> l = new List<Producto>();
                 l.AddRange(a.Carrito);
-                int ticket=c.ventas.Count + 1;
+                int ticket=c.ventas.Count;
                 Cliente cl = new Cliente();
                 cl=a.Comprador;
                 Empleado v = new Empleado();

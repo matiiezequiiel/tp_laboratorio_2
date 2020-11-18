@@ -1,13 +1,13 @@
 Usted fue atendido por: Marcos Acuña 
-Fecha: 17/11/2020 23:25:00
-Cliente: Marcos Gonzalez 
+Fecha: 18/11/2020 12:00:35
+Cliente: Maria Gaitan 
 
 
 Lista de productos: 
 -----------------------------------
-Lenovo Thinkpad                $80000               
+Motorola C115                  $18000               
 -----------------------------------
-Total:                        80000 
+Total:                        18000 
 -----------------------------------
 -----------------------------------
 Nro de ticket:                    0 

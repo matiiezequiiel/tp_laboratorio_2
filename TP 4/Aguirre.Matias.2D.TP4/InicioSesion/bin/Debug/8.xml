@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Venta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Carrito>
+    <Producto xsi:type="Computadora">
+      <Nombre>Lenovo Thinkpad</Nombre>
+      <Codigo>16</Codigo>
+      <Precio>80000</Precio>
+      <Stock>494</Stock>
+      <MemoriaRam>16</MemoriaRam>
+      <Almacenamiento>800</Almacenamiento>
+      <PerifericosBool>true</PerifericosBool>
+      <GamerBool>true</GamerBool>
+    </Producto>
+    <Producto xsi:type="Computadora">
+      <Nombre>Lenovo Thinkpad</Nombre>
+      <Codigo>16</Codigo>
+      <Precio>80000</Precio>
+      <Stock>494</Stock>
+      <MemoriaRam>16</MemoriaRam>
+      <Almacenamiento>800</Almacenamiento>
+      <PerifericosBool>true</PerifericosBool>
+      <GamerBool>true</GamerBool>
+    </Producto>
+  </Carrito>
+  <Ticket>8</Ticket>
+  <Comprador>
+    <Nombre>Carla</Nombre>
+    <Apellido>Gomez</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>60789712</DNI>
+    <Sexo>Femenino</Sexo>
+    <NroCliente>11</NroCliente>
+  </Comprador>
+  <Vendedor>
+    <Nombre>Marcos</Nombre>
+    <Apellido>Acuña</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45689785</DNI>
+    <Sexo>Masculino</Sexo>
+    <Legajo>1</Legajo>
+    <Sueldo>45000</Sueldo>
+    <FechaIngreso>2020-05-17T00:00:00</FechaIngreso>
+  </Vendedor>
+</Venta>

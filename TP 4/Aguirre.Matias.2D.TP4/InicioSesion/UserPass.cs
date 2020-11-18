@@ -13,7 +13,6 @@ namespace InicioSesion
 {
     public partial class UserPass : Form
     {
-        public static MenuPrincipal formMenu = new MenuPrincipal();
 
         public UserPass()
         {
@@ -33,11 +32,11 @@ namespace InicioSesion
 
             if (EmpleadoDB.ValidarContraseña(txtPass.Text, txtLegajo.Text))
             {
-                MessageBox.Show("Acceso correcto", "Inicio de sesion de " + txtUsuario.Text, MessageBoxButtons.OK);
-                formMenu.txtEmpleadoLogeado.Text = txtUsuario.Text;
-                formMenu.txtLegajo.Text = txtLegajo.Text;
+                MessageBox.Show("Acceso correcto", "Inicio de sesion de " + txtUsuario.Text, MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MenuPrincipal formMenu = new MenuPrincipal(this);
                 this.Hide();
-                formMenu.Show(); 
+                formMenu.Show();
+                this.Hide();
             }
             else
             {

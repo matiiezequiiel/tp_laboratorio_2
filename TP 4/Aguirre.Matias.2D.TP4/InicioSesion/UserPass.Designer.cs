@@ -64,6 +64,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Location = new System.Drawing.Point(93, 85);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(173, 23);
@@ -100,6 +101,7 @@
             // 
             // txtLegajo
             // 
+            this.txtLegajo.Enabled = false;
             this.txtLegajo.Location = new System.Drawing.Point(94, 179);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.ReadOnly = true;

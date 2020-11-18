@@ -16,9 +16,9 @@ namespace Clases_Abstractas
         #region Atributos
         protected string nombre;
         protected string apellido;
+        protected ENacionalidad nacionalidad;
         protected int dni;
         protected ESexo sexo;
-        protected ENacionalidad nacionalidad;
         #endregion
 
 
@@ -60,13 +60,24 @@ namespace Clases_Abstractas
 
         }
 
+
+        /// <summary>
+        /// Propiedad de lectura y escritura del atributo privado nacionalidad
+        /// </summary>
+        public ENacionalidad Nacionalidad
+        {
+            get { return this.nacionalidad; }
+            set { this.nacionalidad = value; }
+        }
+
+
         /// <summary>
         /// Valida si el dni se encuentra entre los valores correspondondientes a la nacionalidad indicada, de lo contrario lanza una excepcion-
         /// </summary>
         public int DNI
         {
             get { return this.dni; }
-            set { this.dni = ValidarDni(this.nacionalidad, value); }
+            set { this.dni = ValidarDni(this.Nacionalidad, value); }
         }
 
         /// <summary>
@@ -80,20 +91,12 @@ namespace Clases_Abstractas
 
 
         /// <summary>
-        /// Propiedad de lectura y escritura del atributo privado nacionalidad
-        /// </summary>
-        public ENacionalidad Nacionalidad
-        {
-            get { return this.nacionalidad; }
-            set { this.nacionalidad = value; }
-        }
-
-        /// <summary>
         /// Convierte cadena a entero y valida que el numero este dentro del rango 1/99999999 que es el permitido para un dni.
         /// </summary>
         public string StringToDNI
         {
-            set { this.dni = ValidarDni(this.Nacionalidad, value); }
+            set { this.dni = ValidarDni(this.Nacionalidad, value);}
+            
         }
         #endregion
 
@@ -107,6 +110,7 @@ namespace Clases_Abstractas
 
 
         }
+        
 
         /// <summary>
         /// Constructor de instancia
@@ -114,13 +118,15 @@ namespace Clases_Abstractas
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
         /// <param name="nacionalidad"> Argentino, Extranjero </param>
-        public Persona(string nombre, string apellido,ESexo sexo, ENacionalidad nacionalidad)
+        public Persona(string nombre, string apellido,string dni,ESexo sexo, ENacionalidad nacionalidad)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.sexo = sexo;
             this.nacionalidad = nacionalidad;
+            this.StringToDNI = dni;
         }
+        
 
         /// <summary>
         /// Constructor de instancia
@@ -130,12 +136,16 @@ namespace Clases_Abstractas
         /// <param name="dni">DNI de la persona.</param>
         /// <param name="sexo">Sexo de la persona.</param>
         /// <param name="nacionalidad"> Argentino, Extrajero </param>
-        public Persona(string nombre, string apellido, string dni,ESexo sexo, ENacionalidad nacionalidad) : this(nombre, apellido, sexo, nacionalidad)
+        public Persona(string nombre, string apellido, int dni,ESexo sexo, ENacionalidad nacionalidad) 
         {
-            this.StringToDNI = dni;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.sexo = sexo;
+            this.nacionalidad = nacionalidad;
+            this.DNI = dni;
         }
-
-
+        
+        
         #endregion
 
         #region Metodos
@@ -171,7 +181,7 @@ namespace Clases_Abstractas
 
 
         }
-
+      
         /// <summary>
         /// Valida dni del tipo string si esta dentro de los rangos para cada nacionalidad.
         /// </summary>
@@ -265,13 +275,13 @@ namespace Clases_Abstractas
             
             switch (aux)
             {
-                case "F":
+                case "Femenino":
                     sexo = ESexo.Femenino;
                     break;
-                case "M":
+                case "Masculino":
                     sexo = ESexo.Masculino;
                     break;
-                case "I":
+                case "Indefinido":
                     sexo = ESexo.Indefinido;
                     break;
             

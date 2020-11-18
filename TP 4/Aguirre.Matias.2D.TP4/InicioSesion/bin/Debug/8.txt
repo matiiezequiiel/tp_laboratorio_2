@@ -1,0 +1,15 @@
+Usted fue atendido por: Marcos Acuña 
+Fecha: 18/11/2020 14:16:44
+Cliente: Carla Gomez 
+
+
+Lista de productos: 
+-----------------------------------
+Lenovo Thinkpad                $80000               
+Lenovo Thinkpad                $80000               
+-----------------------------------
+Total:                       160000 
+-----------------------------------
+-----------------------------------
+Nro de ticket:                    8 
+-----------------------------------

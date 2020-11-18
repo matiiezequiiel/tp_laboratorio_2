@@ -43,6 +43,7 @@ namespace InicioSesion
             cmbGamer.DataSource = Enum.GetValues(typeof(EOpcion));
             cmbPerifericos.DataSource = Enum.GetValues(typeof(EOpcion));
             CargarMenu(false);
+            cmbTipo.Text = string.Empty;
             
         }
 
@@ -164,7 +165,8 @@ namespace InicioSesion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            UserPass.formMenu.Show();
+           // UserPass.formMenu.Show();
+            auxMenu.Show();
         }
 
 

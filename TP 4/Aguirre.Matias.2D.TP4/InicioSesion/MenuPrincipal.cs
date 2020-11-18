@@ -20,7 +20,7 @@ namespace InicioSesion
     {
 
         #region Atributos
-        public Comercio miComercio = new Comercio(ProductoDB.TraerProductos(), EmpleadoDB.TraerEmpleados(), ClienteDB.TraerClientes(),new List<Venta>());
+        public Comercio miComercio = new Comercio(ProductoDB.TraerProductos(), EmpleadoDB.TraerEmpleados(), ClienteDB.TraerClientes(),Comercio.Leer());
         List<Producto> listaAuxiliar;
         Venta ventaParcial=new Venta();
         public event miDelegado NuevaVenta;
@@ -30,9 +30,11 @@ namespace InicioSesion
 
         #region Carga de datos
 
-        public MenuPrincipal()
+        public MenuPrincipal(UserPass a)
         {
-            InitializeComponent();         
+            InitializeComponent();
+            this.txtEmpleadoLogeado.Text = a.txtUsuario.Text;
+            this.txtLegajo.Text = a.txtLegajo.Text;
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -41,15 +43,9 @@ namespace InicioSesion
             CargarListaCliente();
             CargarListaProducto();
             NuevaVenta += miComercio.NuevaVenta;
-      //      CambioEnLista += CargarListaCliente;
-      //      CambioEnLista += CargarListaProducto;
        
         }
-        private void nuevaCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          //HILOS PARA VARIAS COMPRAS.
-        }
-
+       
         public void CargarVendedor()
         {
             foreach (Empleado item in miComercio.Empleados)
@@ -156,8 +152,6 @@ namespace InicioSesion
                             break;
                         }
                     }
-
-                   //BUSCAR CLIENTE
                     
                     seleccionoCliente = true;
                     break;
@@ -295,10 +289,10 @@ namespace InicioSesion
 
             if (ventaParcial.Carrito.Count > 0)
             {
-               
 
+                ventaParcial.Ticket = miComercio.Ventas.Count;
                 Venta ventaConfirmada=NuevaVenta.Invoke(miComercio,ventaParcial);
-                //ventaConfirmada.Guardar()
+                Comercio.Guardar(ventaConfirmada);
 
                 ProductoDB.ActualizarStockProducto(ventaConfirmada.Carrito);
 
@@ -328,7 +322,7 @@ namespace InicioSesion
 
         private void btnDetalleEmpleado_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ventaParcial.Vendedor.Mostrar());      
+            MessageBox.Show(ventaParcial.Vendedor.Mostrar(),"Informacion del empleado",MessageBoxButtons.OK);      
         }
 
         private void lsvClientes_MouseClick(object sender, MouseEventArgs e)
@@ -368,7 +362,7 @@ namespace InicioSesion
             {
                 if (item.NroCliente.ToString() == nroCliente)
                 {
-                    MessageBox.Show(item.Mostrar());
+                    MessageBox.Show(item.Mostrar(),"Informacion del cliente",MessageBoxButtons.OK);
                     break;
                 }
             }
@@ -395,12 +389,15 @@ namespace InicioSesion
             formAgregarProducto.Show();
         }
 
-        #endregion
-        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void ventasRealizadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Comercio.Guardar(miComercio);
-          
+            VentasRealizadas ventas = new VentasRealizadas(this);
+            this.Hide();
+            ventas.Show();
         }
+
+        #endregion
 
       
     }

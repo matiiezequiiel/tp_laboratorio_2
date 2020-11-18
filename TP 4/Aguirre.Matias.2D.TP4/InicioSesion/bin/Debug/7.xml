@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Venta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Carrito>
+    <Producto xsi:type="Celular">
+      <Nombre>Nokia</Nombre>
+      <Codigo>12</Codigo>
+      <Precio>500</Precio>
+      <Stock>97</Stock>
+      <MemoriaRam>8</MemoriaRam>
+      <Almacenamiento>32</Almacenamiento>
+      <Conexion>true</Conexion>
+      <TamañoPantalla>0</TamañoPantalla>
+    </Producto>
+    <Producto xsi:type="Celular">
+      <Nombre>Motorola G5</Nombre>
+      <Codigo>14</Codigo>
+      <Precio>80000</Precio>
+      <Stock>199</Stock>
+      <MemoriaRam>16</MemoriaRam>
+      <Almacenamiento>120</Almacenamiento>
+      <Conexion>true</Conexion>
+      <TamañoPantalla>7</TamañoPantalla>
+    </Producto>
+  </Carrito>
+  <Ticket>7</Ticket>
+  <Comprador>
+    <Nombre>Marta</Nombre>
+    <Apellido>Anido</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45678978</DNI>
+    <Sexo>Femenino</Sexo>
+    <NroCliente>7</NroCliente>
+  </Comprador>
+  <Vendedor>
+    <Nombre>Marcos</Nombre>
+    <Apellido>Acuña</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45689785</DNI>
+    <Sexo>Masculino</Sexo>
+    <Legajo>1</Legajo>
+    <Sueldo>45000</Sueldo>
+    <FechaIngreso>2020-05-17T00:00:00</FechaIngreso>
+  </Vendedor>
+</Venta>

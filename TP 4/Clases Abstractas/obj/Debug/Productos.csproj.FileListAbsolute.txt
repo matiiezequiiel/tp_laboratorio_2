@@ -1,11 +1,11 @@
-C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Productos.csprojAssemblyReference.cache
-C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Productos.csproj.CoreCompileInputs.cache
-C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Clases Abstractas.dll
-C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Clases Abstractas.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\bin\Debug\Clases Abstractas.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\bin\Debug\Clases Abstractas.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\bin\Debug\Archivos.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\bin\Debug\EX.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\bin\Debug\Archivos.pdb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\bin\Debug\EX.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Productos.csprojAssemblyReference.cache
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Productos.csproj.CoreCompileInputs.cache
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Productos.csproj.CopyComplete
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Clases Abstractas.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Clases Abstractas\obj\Debug\Clases Abstractas.pdb

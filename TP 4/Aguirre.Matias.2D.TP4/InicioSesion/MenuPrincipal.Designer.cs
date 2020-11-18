@@ -55,7 +55,10 @@
             this.lblLegajo = new System.Windows.Forms.Label();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.btnAgregarProdu = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ventrasRealizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCliente.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvClientes
@@ -318,12 +321,30 @@
             this.btnAgregarProdu.UseVisualStyleBackColor = true;
             this.btnAgregarProdu.Click += new System.EventHandler(this.btnAgregarProdu_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ventrasRealizadasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.TabIndex = 23;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ventrasRealizadasToolStripMenuItem
+            // 
+            this.ventrasRealizadasToolStripMenuItem.Name = "ventrasRealizadasToolStripMenuItem";
+            this.ventrasRealizadasToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.ventrasRealizadasToolStripMenuItem.Text = "Ventas Realizadas";
+            this.ventrasRealizadasToolStripMenuItem.Click += new System.EventHandler(this.ventasRealizadasToolStripMenuItem_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnAgregarProdu);
             this.Controls.Add(this.txtLegajo);
             this.Controls.Add(this.lblLegajo);
@@ -341,12 +362,14 @@
             this.Controls.Add(this.lblListaProductos);
             this.Controls.Add(this.lblListaClientes);
             this.Controls.Add(this.lsvClientes);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuCliente.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +402,7 @@
         private System.Windows.Forms.Label lblLegajo;
         public System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Button btnAgregarProdu;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ventrasRealizadasToolStripMenuItem;
     }
 }

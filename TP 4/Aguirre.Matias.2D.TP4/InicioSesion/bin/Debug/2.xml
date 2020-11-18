@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Venta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Carrito>
+    <Producto xsi:type="Computadora">
+      <Nombre>HP M4</Nombre>
+      <Codigo>3</Codigo>
+      <Precio>180000</Precio>
+      <Stock>12</Stock>
+      <MemoriaRam>4</MemoriaRam>
+      <Almacenamiento>120</Almacenamiento>
+      <PerifericosBool>false</PerifericosBool>
+      <GamerBool>false</GamerBool>
+    </Producto>
+  </Carrito>
+  <Ticket>2</Ticket>
+  <Comprador>
+    <Nombre>Matias</Nombre>
+    <Apellido>Aguirre</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>39375098</DNI>
+    <Sexo>Masculino</Sexo>
+    <NroCliente>5</NroCliente>
+  </Comprador>
+  <Vendedor>
+    <Nombre>Miguel</Nombre>
+    <Apellido>Palermo</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45689878</DNI>
+    <Sexo>Masculino</Sexo>
+    <Legajo>2</Legajo>
+    <Sueldo>50000.8</Sueldo>
+    <FechaIngreso>2020-02-27T00:00:00</FechaIngreso>
+  </Vendedor>
+</Venta>

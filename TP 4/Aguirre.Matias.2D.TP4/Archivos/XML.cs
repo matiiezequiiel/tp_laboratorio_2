@@ -56,6 +56,9 @@ namespace Archivos
             XmlTextReader reader = new XmlTextReader(archivo);
             bool retorno = false;
 
+            T algo = new T();
+          
+
 
             try
             {

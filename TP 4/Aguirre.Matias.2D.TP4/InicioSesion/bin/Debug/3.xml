@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Venta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Carrito>
+    <Producto xsi:type="Computadora">
+      <Nombre>MSI 1234</Nombre>
+      <Codigo>5</Codigo>
+      <Precio>100000</Precio>
+      <Stock>14</Stock>
+      <MemoriaRam>16</MemoriaRam>
+      <Almacenamiento>120</Almacenamiento>
+      <PerifericosBool>false</PerifericosBool>
+      <GamerBool>true</GamerBool>
+    </Producto>
+  </Carrito>
+  <Ticket>3</Ticket>
+  <Comprador>
+    <Nombre>Marta</Nombre>
+    <Apellido>Anido</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45678978</DNI>
+    <Sexo>Femenino</Sexo>
+    <NroCliente>7</NroCliente>
+  </Comprador>
+  <Vendedor>
+    <Nombre>Marcos</Nombre>
+    <Apellido>Acuña</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45689785</DNI>
+    <Sexo>Masculino</Sexo>
+    <Legajo>1</Legajo>
+    <Sueldo>45000</Sueldo>
+    <FechaIngreso>2020-05-17T00:00:00</FechaIngreso>
+  </Vendedor>
+</Venta>

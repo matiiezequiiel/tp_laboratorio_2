@@ -1,0 +1,16 @@
+Usted fue atendido por: Marcos Acuña 
+Fecha: 18/11/2020 14:04:55
+Cliente: Ezequiel Ramirez 
+
+
+Lista de productos: 
+-----------------------------------
+HP M4                          $180000              
+Lenovo Thinkpad                $80000               
+Lenovo Thinkpad                $80000               
+-----------------------------------
+Total:                       340000 
+-----------------------------------
+-----------------------------------
+Nro de ticket:                    1 
+-----------------------------------

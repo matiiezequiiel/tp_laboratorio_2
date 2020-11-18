@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Clases_Instanciables;
 using Clases_Abstractas;
 using SQL;
+using Excepciones;
 
 namespace InicioSesion
 {
@@ -33,8 +34,6 @@ namespace InicioSesion
         {
             cmbNacio.DataSource = Enum.GetValues(typeof(Persona.ENacionalidad));
             cmbSexo.DataSource = Enum.GetValues(typeof(Persona.ESexo));
-        //    cmbNacio.SelectedIndex = 0;
-         //   cmbSexo.SelectedIndex = 0;
         }
 
         #endregion
@@ -170,18 +169,22 @@ namespace InicioSesion
 
             if (this.txtNombre.TextLength > 0 && txtApellido.TextLength > 0)
             {
-                Cliente nuevoCliente = new Cliente(this.txtNombre.Text, this.txtApellido.Text,this.txtDNI.Text,(Persona.ESexo) this.cmbSexo.SelectedIndex, (Persona.ENacionalidad)this.cmbNacio.SelectedIndex);
-
-                ClienteDB.InsertarCliente(nuevoCliente);
-
-                CambioEnListaCliente.Invoke();
-                //auxMenu.CargarListaCliente();
-
-                MessageBox.Show("Cliente agregado correctamente.");
-
-                LimpiarCampos();
-
-
+                try
+                {
+                    Cliente nuevoCliente = new Cliente(this.txtNombre.Text, this.txtApellido.Text, this.txtDNI.Text, (Persona.ESexo)this.cmbSexo.SelectedIndex, (Persona.ENacionalidad)this.cmbNacio.SelectedIndex);
+                    ClienteDB.InsertarCliente(nuevoCliente);
+                    CambioEnListaCliente.Invoke();
+                    MessageBox.Show("Cliente agregado correctamente.");
+                }
+                catch(DniInvalidoException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error en la carga de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);    
+                }
+                catch(NacionalidadInvalidaException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error en la carga de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
             }
             else
             {
@@ -205,7 +208,8 @@ namespace InicioSesion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            UserPass.formMenu.Show();
+            //UserPass.formMenu.Show();
+            auxMenu.Show();
         }
 
        

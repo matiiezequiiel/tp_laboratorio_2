@@ -28,5 +28,18 @@ namespace Metodos_de_extension
                     throw new InvalidCastException("No se pudo convertir el valor.");
             }
         }
+
+        public static string ToCharSexo(this string value)
+        {
+            switch (value.ToLower())
+            {
+                case "Masculino":
+                    return "M";
+                case "Femenino":
+                    return "F";
+                default:
+                    throw new InvalidCastException("No se pudo convertir el valor.");
+            }
+        }
     }
 }

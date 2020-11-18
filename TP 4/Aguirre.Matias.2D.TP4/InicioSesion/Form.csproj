@@ -78,6 +78,12 @@
     <Compile Include="UserPass.Designer.cs">
       <DependentUpon>UserPass.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentasRealizadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentasRealizadas.Designer.cs">
+      <DependentUpon>VentasRealizadas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +108,9 @@
     <EmbeddedResource Include="UserPass.resx">
       <DependentUpon>UserPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentasRealizadas.resx">
+      <DependentUpon>VentasRealizadas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +132,10 @@
     <ProjectReference Include="..\..\Clases Instanciables\Entidades.csproj">
       <Project>{ad2abf14-6c0f-49e7-8991-11e0a8140817}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EX\Excepciones.csproj">
+      <Project>{cb2aa867-da92-436b-be0a-8d76eaa3a52a}</Project>
+      <Name>Excepciones</Name>
     </ProjectReference>
     <ProjectReference Include="..\Metodos de extension\Metodos de extension.csproj">
       <Project>{3d0491b5-aa88-46b1-8d51-c37d21f4252a}</Project>

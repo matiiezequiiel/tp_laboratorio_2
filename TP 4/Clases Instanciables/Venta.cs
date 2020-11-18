@@ -109,27 +109,6 @@ namespace Clases_Instanciables
 
   
 
-        /// <summary>
-        /// Metodo de clase para leer un archivo .xml y retorna su informacion
-        /// </summary>
-        /// <returns>True si se leyo correctamente, false si no.</returns>
-        public static Venta Leer(string archivo)
-        {
-            string ruta = AppDomain.CurrentDomain.BaseDirectory;
-
-            XML<Venta> venta = new XML<Venta>();
-
-            
-
-            if (!venta.Leer(ruta + archivo, out Venta retornoVenta))
-            {
-                retornoVenta = null;
-
-            }
-
-            return retornoVenta;
-        }
-
 
         #endregion
 
