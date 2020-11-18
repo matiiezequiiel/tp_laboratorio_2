@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDelNegocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasPorEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productoConMenosDe10UnidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lsvClientes = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,93 +54,9 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.txtLegajo = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
+            this.btnAgregarProdu = new System.Windows.Forms.Button();
             this.menuCliente.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mToolStripMenuItem,
-            this.gestionDelNegocioToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(784, 26);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mToolStripMenuItem
-            // 
-            this.mToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaCompraToolStripMenuItem});
-            this.mToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mToolStripMenuItem.Name = "mToolStripMenuItem";
-            this.mToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
-            this.mToolStripMenuItem.Text = "Compras";
-            // 
-            // nuevaCompraToolStripMenuItem
-            // 
-            this.nuevaCompraToolStripMenuItem.Name = "nuevaCompraToolStripMenuItem";
-            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.nuevaCompraToolStripMenuItem.Text = "Nueva compra";
-            this.nuevaCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaCompraToolStripMenuItem_Click);
-            // 
-            // gestionDelNegocioToolStripMenuItem
-            // 
-            this.gestionDelNegocioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadosToolStripMenuItem,
-            this.altaProductoToolStripMenuItem});
-            this.gestionDelNegocioToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestionDelNegocioToolStripMenuItem.Name = "gestionDelNegocioToolStripMenuItem";
-            this.gestionDelNegocioToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.gestionDelNegocioToolStripMenuItem.Text = "Gestion del negocio";
-            // 
-            // listadosToolStripMenuItem
-            // 
-            this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stockDeProductosToolStripMenuItem,
-            this.comprasPorEmpleadoToolStripMenuItem,
-            this.productoConMenosDe10UnidadesToolStripMenuItem});
-            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
-            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listadosToolStripMenuItem.Text = "Listados";
-            // 
-            // stockDeProductosToolStripMenuItem
-            // 
-            this.stockDeProductosToolStripMenuItem.Name = "stockDeProductosToolStripMenuItem";
-            this.stockDeProductosToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
-            this.stockDeProductosToolStripMenuItem.Text = "Stock de productos";
-            // 
-            // comprasPorEmpleadoToolStripMenuItem
-            // 
-            this.comprasPorEmpleadoToolStripMenuItem.Name = "comprasPorEmpleadoToolStripMenuItem";
-            this.comprasPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
-            this.comprasPorEmpleadoToolStripMenuItem.Text = "Compras por empleado";
-            // 
-            // productoConMenosDe10UnidadesToolStripMenuItem
-            // 
-            this.productoConMenosDe10UnidadesToolStripMenuItem.Name = "productoConMenosDe10UnidadesToolStripMenuItem";
-            this.productoConMenosDe10UnidadesToolStripMenuItem.Size = new System.Drawing.Size(290, 22);
-            this.productoConMenosDe10UnidadesToolStripMenuItem.Text = "Producto con menos de 10 unidades";
-            // 
-            // altaProductoToolStripMenuItem
-            // 
-            this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.altaProductoToolStripMenuItem.Text = "Alta Producto";
-            this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // lsvClientes
             // 
@@ -400,12 +306,25 @@
             this.txtLegajo.Size = new System.Drawing.Size(43, 24);
             this.txtLegajo.TabIndex = 21;
             // 
+            // btnAgregarProdu
+            // 
+            this.btnAgregarProdu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProdu.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProdu.Location = new System.Drawing.Point(261, 360);
+            this.btnAgregarProdu.Name = "btnAgregarProdu";
+            this.btnAgregarProdu.Size = new System.Drawing.Size(151, 50);
+            this.btnAgregarProdu.TabIndex = 22;
+            this.btnAgregarProdu.Text = "INGRESAR NUEVO PRODUCTO";
+            this.btnAgregarProdu.UseVisualStyleBackColor = true;
+            this.btnAgregarProdu.Click += new System.EventHandler(this.btnAgregarProdu_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.btnAgregarProdu);
             this.Controls.Add(this.txtLegajo);
             this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.btnDetalleEmpleado);
@@ -422,15 +341,11 @@
             this.Controls.Add(this.lblListaProductos);
             this.Controls.Add(this.lblListaClientes);
             this.Controls.Add(this.lsvClientes);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.menuCliente.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -438,12 +353,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem nuevaCompraToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem gestionDelNegocioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ListView lsvClientes;
         private System.Windows.Forms.Label lblListaClientes;
         private System.Windows.Forms.Label lblListaProductos;
@@ -461,11 +370,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader precioProducto;
-        private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stockDeProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasPorEmpleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productoConMenosDe10UnidadesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
         private System.Windows.Forms.Label lblEmpleadoLogeado;
         public System.Windows.Forms.TextBox txtEmpleadoLogeado;
         private System.Windows.Forms.Button btnDetalleEmpleado;
@@ -474,5 +378,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label lblLegajo;
         public System.Windows.Forms.TextBox txtLegajo;
+        private System.Windows.Forms.Button btnAgregarProdu;
     }
 }

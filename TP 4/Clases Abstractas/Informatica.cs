@@ -20,11 +20,17 @@ namespace Clases_Abstractas
         #endregion
 
         #region Propiedades
+        /// <summary>
+        /// Atributo memoria ram publico para la serializacion.
+        /// </summary>
         public int MemoriaRam
         {
             get { return this.memoriaRam; }
             set { this.memoriaRam = value; }
         }
+        /// <summary>
+        /// Atributo memoria  publico para la serializacion.
+        /// </summary>
         public int Almacenamiento
         {
             get { return this.almacenamiento; }
@@ -35,25 +41,51 @@ namespace Clases_Abstractas
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor sin parametro para serializacion.
+        /// </summary>
         public Informatica()
         {
 
         }
 
+        /// <summary>
+        ///  Constructor de instancia para producto desde BD con el codigo de producto.
+        /// </summary>
+        /// <param name="nombre">Nombre del producto.</param>
+        /// <param name="codigo">Codigo del producto.</param>
+        /// <param name="precio">Precio del producto.</param>
+        /// <param name="stock">Stock del producto.</param>
+        /// <param name="memoriaRam">RAM del producto.</param>
+        /// <param name="almacenamiento">Almacenamiento del producto.</param>
         public Informatica(string nombre, string codigo, double precio, int stock, int memoriaRam, int almacenamiento) : base(nombre,codigo,precio,stock)
+        {
+            this.memoriaRam = memoriaRam;
+            this.almacenamiento = almacenamiento;
+        }
+
+        /// <summary>
+        /// Constructor de instancia para subida producto a BD sin el codigo de producto.
+        /// </summary>
+        /// <param name="nombre">Nombre del producto.</param>
+        /// <param name="codigo">Codigo del producto.</param>
+        /// <param name="precio">Precio del producto.</param>
+        /// <param name="stock">Stock del producto.</param>
+        /// <param name="memoriaRam">RAM del producto.</param>
+        /// <param name="almacenamiento">Almacenamiento del producto.</param>
+        public Informatica(string nombre,double precio, int stock, int memoriaRam, int almacenamiento) : base(nombre,precio,stock)
         {
             this.memoriaRam = memoriaRam;
             this.almacenamiento = almacenamiento;
         } 
         
-        public Informatica(string nombre, double precio, int stock, int memoriaRam, int almacenamiento) : base(nombre,precio,stock)
-        {
-            this.memoriaRam = memoriaRam;
-            this.almacenamiento = almacenamiento;
-        }
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Muestra los atributos del producto.
+        /// </summary>
+        /// <returns>Cadena con los atributos.</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

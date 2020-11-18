@@ -23,11 +23,11 @@ namespace Clases_Abstractas
 
         #region Constructores
         /// <summary>
-        /// Constructor por defecto.
+        /// Constructor sin parametros para la serializacion.
         /// </summary>
         public Producto()
         {
-          //  this.codigo = GenerarCodigo();
+        
         }
 
         
@@ -62,7 +62,6 @@ namespace Clases_Abstractas
 
         /// <summary>
         /// Propiedad valida nombre de el producto.
-        /// </summary>
         public string Nombre
         {
             get { return this.nombre; }
@@ -75,6 +74,7 @@ namespace Clases_Abstractas
         public string Codigo
         {
             get { return this.codigo; }
+            set { this.codigo = value; }
         }
 
         /// <summary>
@@ -151,28 +151,7 @@ namespace Clases_Abstractas
             return (int)ValidarNumeroPrecio(numero);      
         }
 
-        /// <summary>
-        /// Genera un codigo aleatorio de 8 caracteres.
-        /// </summary>
-        /// <returns>Codigo aleatorio generado.</returns>
-        private string GenerarCodigo()
-        {
-          
-            string codigoGenerado = string.Empty;
-            Random random=new Random();
-            
-
-            while(codigoGenerado.Length<=8)
-            {
-                codigoGenerado += (char)random.Next(65, 90);
-                Thread.Sleep(1);                
-            }
-
-            return codigoGenerado;
-
-        }
-
-
+       
         public abstract string Mostrar();
 
         /// <summary>
@@ -192,7 +171,14 @@ namespace Clases_Abstractas
         }
         #endregion
 
+
         #region Sobrecargas
+        /// <summary>
+        /// Un producto es igual a otro si tienen el mismo codigo.
+        /// </summary>
+        /// <param name="a">Producto A</param>
+        /// <param name="b">Producto B</param>
+        /// <returns>True si son iguales, false si no.</returns>
         public static bool operator ==(Producto a, Producto b)
         {
             bool sonIguales = false;
@@ -206,7 +192,13 @@ namespace Clases_Abstractas
             }
 
             return sonIguales;
-        } 
+        }
+        /// <summary>
+        /// Un producto no es igual a otro si tiene otro codigo codigo.
+        /// </summary>
+        /// <param name="a">Producto A</param>
+        /// <param name="b">Producto B</param>
+        /// <returns>False si son iguales, true si no.</returns>
         public static bool operator !=(Producto a, Producto b)
         {
             return !(a == b);

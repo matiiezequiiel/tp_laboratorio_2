@@ -49,12 +49,16 @@ namespace Clases_Instanciables
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor sin parametros para la serializacion.
+        /// </summary>
         public Celular()
         {
 
         }
+
         /// <summary>
-        /// Constructor de instancia.
+        /// Constructor de instancia para producto desde BD con el codigo de producto.
         /// </summary>
         /// <param name="nombre">Nombre de el celular.</param>
         /// <param name="codigo">Codigo de el celular.</param>
@@ -71,9 +75,10 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// Constructor de instancia.
+        /// Constructor de instancia para subida producto a BD sin el codigo de producto.
         /// </summary>
         /// <param name="nombre">Nombre de el celular.</param>
+        /// <param name="codigo">Codigo de el celular.</param>
         /// <param name="precio">Precio de el celular.</param>
         /// <param name="stock">Stock de el celular.</param>
         /// <param name="memoriaRam">Memoria Ram de el celular.</param>
@@ -81,10 +86,12 @@ namespace Clases_Instanciables
         /// <param name="conexion5G">True si incluye conexion 5G, false si no.</param>
         /// <param name="tamanioPantalla">Tamaño de pantalla de el celular.</param>
         public Celular(string nombre, double precio, int stock, int memoriaRam, int almacenamiento, bool conexion5G, float tamanioPantalla) : base(nombre, precio, stock, memoriaRam, almacenamiento)
-        {          
+        {
             this.conexion5G = conexion5G;
             this.tamanioPantalla = tamanioPantalla;
         }
+
+
 
         #endregion
 

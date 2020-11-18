@@ -52,6 +52,9 @@ namespace Clases_Instanciables
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor por defecto.
+        /// </summary>
         public Comercio()
         {
             inventario = new List<Producto>();
@@ -61,6 +64,13 @@ namespace Clases_Instanciables
         }
 
 
+        /// <summary>
+        /// Constructor de instancia
+        /// </summary>
+        /// <param name="inventario">Inventario del comercio.</param>
+        /// <param name="empleados">Empleados del comercio.</param>
+        /// <param name="clientes">Clientes del comercio.</param>
+        /// <param name="ventas">Ventas del comercio.</param>
         public Comercio(List<Producto> inventario, List<Empleado> empleados, List<Cliente> clientes, List<Venta> ventas) : this()
         {
             this.inventario = inventario;
@@ -73,6 +83,10 @@ namespace Clases_Instanciables
 
         #region Metodos
 
+        /// <summary>
+        /// Muestra los datos del comercio.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -105,6 +119,12 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Carga una nueva venta.
+        /// </summary>
+        /// <param name="c">Comercio.</param>
+        /// <param name="nuevaVenta">Nueva venta.</param>
+        /// <returns>Venta</returns>
         public Venta NuevaVenta(Comercio c,Venta nuevaVenta)
         {
 
@@ -117,6 +137,10 @@ namespace Clases_Instanciables
         }
 
 
+        /// <summary>
+        /// Genera un archivo TXT por cada venta.
+        /// </summary>
+        /// <param name="nuevaVenta"></param>
         private void GenerarTicket(Venta nuevaVenta)
         {
             StringBuilder sb = new StringBuilder();
@@ -152,14 +176,19 @@ namespace Clases_Instanciables
 
         }
         
+        /// <summary>
+        /// Guarda las ventas del comercio
+        /// </summary>
+        /// <param name="datosComercio">Comercio.</param>
         public static void Guardar(Comercio datosComercio)
         {
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
+            string nombre = datosComercio.ventas.Count.ToString() + ".xml";
            
 
             XML<List<Venta>> ventasComercio = new XML<List<Venta>>();
 
-                ventasComercio.Guardar(ruta + "XMLVENTAS.xml", datosComercio.ventas);
+                ventasComercio.Guardar(ruta + nombre, datosComercio.ventas);
    
         }
 
@@ -167,6 +196,12 @@ namespace Clases_Instanciables
 
         #region Sobrecargas
 
+        /// <summary>
+        /// Agregar empleados para la prueba de TEST, esta funcionalidad no esta en el formulario.
+        /// </summary>
+        /// <param name="c">Comercio.</param>
+        /// <param name="e">Empleado.</param>
+        /// <returns>Comercio.</returns>
         public static Comercio operator +(Comercio c,Empleado e)
         {
             bool existe = false;
@@ -188,6 +223,12 @@ namespace Clases_Instanciables
             return c;
         }
         
+        /// <summary>
+        /// Agrega un cliente al comercio para la prueba TEST, en el formulario se inserta directamente en la base de datos.
+        /// </summary>
+        /// <param name="c">Comercio.</param>
+        /// <param name="a">Cliente</param>
+        /// <returns>Comercio</returns>
         public static Comercio operator +(Comercio c,Cliente a)
         {
             bool existe = false;
@@ -208,7 +249,13 @@ namespace Clases_Instanciables
 
             return c;
         }
-        
+
+        /// <summary>
+        /// Agrega un producto al comercio para la prueba TEST, en el formulario se inserta directamente en la base de datos.
+        /// </summary>
+        /// <param name="c">Comercio.</param>
+        /// <param name="a">Producto</param>
+        /// <returns>Comercio</returns>
         public static Comercio operator +(Comercio c,Producto p)
         {
             bool existe = false;
@@ -231,13 +278,19 @@ namespace Clases_Instanciables
             return c;
         }
 
+        /// <summary>
+        /// Agrega una venta al comercio para la prueba TEST, en el formulario guarda en un XML.
+        /// </summary>
+        /// <param name="c">Comercio.</param>
+        /// <param name="a">Venta</param>
+        /// <returns>Comercio</returns>
         public static Comercio operator + (Comercio c, Venta a)
         {
             bool existe = false;
 
             foreach (Venta item in c.ventas)
             {
-                if(item.Ticket==a.Ticket)
+                if(item==a)
                 {
                     existe = true;
                     break;

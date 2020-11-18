@@ -23,7 +23,7 @@ namespace Clases_Instanciables
         public int Legajo
         {
             get { return this.legajo; }
-           // set { myVar = value; }
+            set { this.legajo = value; }
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Clases_Instanciables
         public double Sueldo
         {
             get { return this.sueldo; }
-           // set { myVar = value; }
+            set { this.sueldo = value; }
         }
         /// <summary>
         /// Propiedad de el atributo fecha de ingreso.
@@ -40,7 +40,7 @@ namespace Clases_Instanciables
         public DateTime FechaIngreso
         {
             get { return this.fechaDeIngreso; }
-           // set { myVar = value; }
+            set { this.fechaDeIngreso = value; }
         }
         #endregion
 

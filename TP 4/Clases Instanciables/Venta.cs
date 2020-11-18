@@ -63,11 +63,21 @@ namespace Clases_Instanciables
 
         #region Constructores
 
+        /// <summary>
+        /// Constructor por defecto.
+        /// </summary>
         public Venta()
         {
             this.carrito = new List<Producto>();
         }
 
+        /// <summary>
+        /// Constructor de instancia.
+        /// </summary>
+        /// <param name="carritoDeCompras">Lista de productos vendidos.</param>
+        /// <param name="nroTicket">Numero de ticket.</param>
+        /// <param name="comprador">Cliente que realizo la compra.</param>
+        /// <param name="vendedor">Vendedor que reakuzi la venta,</param>
         public Venta(List<Producto> carritoDeCompras, int nroTicket,Cliente comprador,Empleado vendedor)
         {
             this.carrito = carritoDeCompras;
@@ -79,13 +89,16 @@ namespace Clases_Instanciables
 
         #region Metodos
 
+        /// <summary>
+        /// Muestra los datos de la venta.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendFormat("Ticket numero: {0}\n",this.Ticket.ToString());
             sb.AppendFormat("Cliente: {0}\n",this.Comprador.Nombre);
             sb.AppendFormat("Vendedor: {0}\n",this.Vendedor.Nombre);
-            //sb.AppendLine("Productos vendidos: ");
             foreach (Producto item in this.Carrito)
             {
                 sb.AppendLine(item.ToString());
@@ -94,22 +107,7 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
-        /// <summary>
-        /// Metodo de clase que guarda la informacion de la clase Venta en un archivo .xml, retorna true si fue correcta
-        /// </summary>
-        /// <param name="uni"> Venta. </param>
-        /// <returns>True si se guardo correctamente, false si no.</returns>
-        public static bool Guardar(string archivo, Venta datos)
-        {
-            string ruta = AppDomain.CurrentDomain.BaseDirectory;
-            bool retorno = false;
-
-            XML<Venta> universidad = new XML<Venta>();
-
-            retorno = universidad.Guardar(ruta + "LISTAVENTAS.xml", datos);
-
-            return retorno;
-        }
+  
 
         /// <summary>
         /// Metodo de clase para leer un archivo .xml y retorna su informacion
@@ -120,6 +118,8 @@ namespace Clases_Instanciables
             string ruta = AppDomain.CurrentDomain.BaseDirectory;
 
             XML<Venta> venta = new XML<Venta>();
+
+            
 
             if (!venta.Leer(ruta + archivo, out Venta retornoVenta))
             {
@@ -135,6 +135,12 @@ namespace Clases_Instanciables
 
         #region Sobrecargas
 
+        /// <summary>
+        /// Una venta es igual a otra si tienen el mismo numero de ticket.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns>True si existe la venta, false si no.</returns>
         public static bool operator == (Venta a, Venta b)
         {
             if(a.Ticket == b.Ticket)
@@ -152,24 +158,6 @@ namespace Clases_Instanciables
             return !(a == b);      
         }
 
-        public static Venta operator +(Venta v, Cliente c)
-        {
-            v.comprador = c;
-            return v;
-        }
-
-        public static Venta operator +(Venta v, Empleado p)
-        {
-            v.vendedor = p;
-            return v;
-        }
-
-
-        public static Venta operator + (Venta v,Producto p)
-        {
-            v.carrito.Add(p);
-            return v;
-        }
 
         #endregion
     }

@@ -1,15 +1,13 @@
 Usted fue atendido por: Marcos Acuña 
-Fecha: 17/11/2020 20:17:32
-Cliente: Claudia Garcia 
+Fecha: 17/11/2020 23:25:00
+Cliente: Marcos Gonzalez 
 
 
 Lista de productos: 
 -----------------------------------
-Lenovo 4578                    $200000,99           
-Xiaomi 1234                    $40000               
-Licuadora                      $5000                
+Lenovo Thinkpad                $80000               
 -----------------------------------
-Total:                    245000,99 
+Total:                        80000 
 -----------------------------------
 -----------------------------------
 Nro de ticket:                    0 

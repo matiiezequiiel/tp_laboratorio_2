@@ -31,7 +31,7 @@ namespace Clases_Instanciables
                 else
                     return "NO";
             }
-            //set { myVar = value; }
+          
         }
 
          /// <summary>
@@ -64,10 +64,7 @@ namespace Clases_Instanciables
         /// </summary>
         public bool GamerBool
         {
-            get
-            {
-                return this.gamer;
-            }
+            get { return this.gamer; }
             set { this.gamer = value; }
         }
 
@@ -79,13 +76,13 @@ namespace Clases_Instanciables
         /// <summary>
         /// Constructor sin parametros para la serializacion.
         /// </summary>
-        private Computadora()
+        public Computadora()
         {
                
         }
 
         /// <summary>
-        /// Constructor de instancia.
+        ///  Constructor de instancia para producto desde BD con el codigo de producto.
         /// </summary>
         /// <param name="nombre">Nombre de la computadora.</param>
         /// <param name="codigo">Codigo de la computadora.</param>
@@ -102,7 +99,7 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// Constructor de instancia sin codigo de producto para ser generado automaticamente.
+        ///  Constructor de instancia para subida producto a BD sin el codigo de producto.
         /// </summary>
         /// <param name="nombre">Nombre de la computadora.</param>
         /// <param name="precio">Precio de la computadora.</param>

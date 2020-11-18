@@ -63,14 +63,15 @@ namespace Clases_Instanciables
 
         #region Constructores
         /// <summary>
-        /// Constructor por defecto.
+        /// Constructor sin parametros para serializacion.
         /// </summary>
-        private Electrodomesticos()
+        public Electrodomesticos()
         {
           
         }
+
         /// <summary>
-        /// Constructor de instancia sin codigo de producto para que se genere automaticamente.
+        ///  Constructor de instancia para producto desde BD con el codigo de producto.
         /// </summary>
         /// <param name="nombre">Nombre del electrodomestico.</param>
         /// <param name="precio">Precio del electrodomestico.</param>
@@ -87,7 +88,7 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// Constructor de instancia sin codigo de producto para que se genere automaticamente.
+        ///  Constructor de instancia para subida producto a BD sin el codigo de producto.
         /// </summary>
         /// <param name="nombre">Nombre del electrodomestico.</param>
         /// <param name="codigo">Codigo del electrodomestico.</param>
@@ -108,11 +109,7 @@ namespace Clases_Instanciables
 
         #region Metodos
 
-        public override string ToString()
-        {
-            return Mostrar();
-        }
-
+      
         /// <summary>
         /// Muestra los atributos de el electrodomestico.
         /// </summary>
@@ -128,6 +125,11 @@ namespace Clases_Instanciables
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Convierte la categoria del electrodomestico en el tipo enumerado ECategoria.
+        /// </summary>
+        /// <param name="cadena"></param>
+        /// <returns></returns>
         public static ECategoria StringTOCategoria(string cadena)
         {
             ECategoria categoria = ECategoria.Cocina;

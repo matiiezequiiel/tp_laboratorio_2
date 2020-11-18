@@ -14,12 +14,14 @@ using Metodos_de_extension;
 
 namespace InicioSesion
 {
+    delegate void ActualizarProducto();
     public partial class AgregarProducto : Form
     {
         ErrorProvider error = new ErrorProvider();
         MenuPrincipal auxMenu;
         enum ETipoProducto { Celular,Computadora,Electrodomestico };
         enum EOpcion { SI,NO };
+        event ActualizarCliente CambioEnListaProducto;
 
 
         public AgregarProducto(MenuPrincipal m)
@@ -27,6 +29,9 @@ namespace InicioSesion
             InitializeComponent();
             auxMenu = m;
             CargarMenu(false);
+            CambioEnListaProducto += auxMenu.CargarListaProducto;
+            CambioEnListaProducto += LimpiarCampos;
+            
             
         }
         private void AgregarProducto_Load(object sender, EventArgs e)
@@ -89,8 +94,8 @@ namespace InicioSesion
                             Celular nuevoCel = new Celular(this.txtNombre.Text, double.Parse(this.txtPrecio.Text), int.Parse(this.txtStockInicial.Text), int.Parse(this.txtMemoria.Text), int.Parse(this.txtAlmacenamiento.Text), this.cmbConexion.Text.ToBoolean(), float.Parse(this.txtPantalla.Text));
                             ProductoDB.InsertarProductosInformatica(nuevoCel);
                             MessageBox.Show("Producto agregado correctamente.");
-                            LimpiarCampos();
-                            auxMenu.CargarListaProducto();
+                            
+                            CambioEnListaProducto.Invoke();
 
                         }
                         else
@@ -106,8 +111,8 @@ namespace InicioSesion
                             Electrodomesticos nuevoElectro = new Electrodomesticos(this.txtNombre.Text, double.Parse(this.txtPrecio.Text), int.Parse(this.txtStockInicial.Text), int.Parse(this.txtPotencia.Text), this.cmbControl.Text.ToBoolean(), Electrodomesticos.StringTOCategoria(this.cmbCategoria.Text));
                             MessageBox.Show("Producto agregado correctamente.");
                             ProductoDB.InsertarProductosElectro(nuevoElectro);
-                            LimpiarCampos();
-                            auxMenu.CargarListaProducto();
+
+                            CambioEnListaProducto.Invoke();
                         }
                         else
                         {
@@ -123,8 +128,8 @@ namespace InicioSesion
                             Computadora nuevaComputadora = new Computadora(this.txtNombre.Text, double.Parse(this.txtPrecio.Text), int.Parse(this.txtStockInicial.Text), int.Parse(this.txtMemoria.Text), int.Parse(this.txtAlmacenamiento.Text), this.cmbPerifericos.Text.ToBoolean(), this.cmbGamer.Text.ToBoolean());
                             ProductoDB.InsertarProductosInformatica(nuevaComputadora);
                             MessageBox.Show("Producto agregado correctamente.");
-                            LimpiarCampos();
-                            auxMenu.CargarListaProducto(); 
+
+                            CambioEnListaProducto.Invoke();
                         }
                         else
                         {

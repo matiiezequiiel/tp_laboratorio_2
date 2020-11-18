@@ -43,18 +43,19 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Comercio.cs" />
-    <Compile Include="Venta.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aguirre.Matias.2D.TP4\Archivos\Archivos.csproj">
       <Project>{74715186-920b-40a0-9c50-ee70350a9a12}</Project>
       <Name>Archivos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Clases Abstractas\Clases Abstractas.csproj">
+    <ProjectReference Include="..\Clases Abstractas\Productos.csproj">
       <Project>{2cc5d02a-b7aa-4524-b69f-b53a4b909b44}</Project>
-      <Name>Clases Abstractas</Name>
+      <Name>Productos</Name>
     </ProjectReference>
     <ProjectReference Include="..\EX\Excepciones.csproj">
       <Project>{cb2aa867-da92-436b-be0a-8d76eaa3a52a}</Project>

@@ -31,7 +31,7 @@ namespace SQL
         /// <summary>
         /// Trae todos los productos de infomatica de la base de datos.
         /// </summary>
-        /// <returns>Lista de clientes.</returns>
+        /// <returns>Lista de productos de informatica.</returns>
         private static List<Informatica> TraerProductosInformatica()
         {
             List<Informatica> productos = new List<Informatica>();
@@ -80,7 +80,7 @@ namespace SQL
         /// <summary>
         /// Trae todos los electrodomesticos de la base de datos.
         /// </summary>
-        /// <returns>Lista de clientes.</returns>
+        /// <returns>Lista de productos de electrodomesticos.</returns>
         private static List<Electrodomesticos> TraerProductosElectrodomesticos()
         {
             List<Electrodomesticos> productos = new List<Electrodomesticos>();
@@ -114,6 +114,10 @@ namespace SQL
 
         }
 
+        /// <summary>
+        /// Une las listas de productos traida de la base de datos.
+        /// </summary>
+        /// <returns>Lista de productos.</returns>
         public static List<Producto> TraerProductos()
         {
             List<Informatica> listaInformatica = ProductoDB.TraerProductosInformatica();
@@ -137,7 +141,7 @@ namespace SQL
         /// <summary>
         /// Inserta un producto de informatica en la base de datos.
         /// </summary>
-        /// <returns>Lista de clientes.</returns>
+        /// <returns>True si inserto, false si no.</returns>
         public static bool InsertarProductosInformatica(Informatica producto)
         {
             string consulta = " INSERT INTO dbo.productos_informatica ([Modelo],[Precio],[Stock],[Memoria RAM],[Almacenamiento],[Perifericos],[Gamer],[Conexion 5G],[Tamaño Pantalla]) VALUES (@modelo,@precio,@stock,@memoria,@almacenamiento,@perifericos,@gamer,@conexion,@pantalla)"; 
@@ -192,12 +196,12 @@ namespace SQL
             {
                 sqlConn.Close();
             }
-        } 
+        }
 
         /// <summary>
         /// Inserta un producto de electrodomestico en la base de datos.
         /// </summary>
-        /// <returns>Lista de clientes.</returns>
+        /// <returns>True si inserto, false si no.</returns>
         public static bool InsertarProductosElectro(Electrodomesticos producto)
         {
             string consulta = " INSERT INTO dbo.productos_electrodomesticos ([Nombre],[Precio],[Stock],[Potencia],[Control],[Categoria]) VALUES (@nombre ,@precio,@stock,@potencia,@control,@categoria)"; 
@@ -231,11 +235,11 @@ namespace SQL
                 sqlConn.Close();
             }
         }
-        
+
         /// <summary>
         /// Actualizar stock de los productos vendidos en la base de datos.
         /// </summary>
-        /// <returns>Lista de clientes.</returns>
+        /// <returns>True si hizo el update, false si no.</returns>
         public static bool ActualizarStockProducto(List<Producto> productos)
         {
             string updateInformatica = "UPDATE dbo.productos_informatica SET [Stock]=@stock where [Codigo Producto]=@codigo";

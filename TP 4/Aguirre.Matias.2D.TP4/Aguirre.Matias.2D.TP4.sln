@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Consola\Test.csproj", "{2D0A32EC-512D-48E6-BE98-E04CF2B87345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Abstractas", "..\Clases Abstractas\Clases Abstractas.csproj", "{2CC5D02A-B7AA-4524-B69F-B53A4B909B44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Productos", "..\Clases Abstractas\Productos.csproj", "{2CC5D02A-B7AA-4524-B69F-B53A4B909B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Instanciables", "..\Clases Instanciables\Clases Instanciables.csproj", "{AD2ABF14-6C0F-49E7-8991-11E0A8140817}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "..\Clases Instanciables\Entidades.csproj", "{AD2ABF14-6C0F-49E7-8991-11E0A8140817}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Unitarios", "..\Test Unitarios\Test Unitarios.csproj", "{88115DE6-B7E1-4934-A940-228006AD9D6D}"
 EndProject

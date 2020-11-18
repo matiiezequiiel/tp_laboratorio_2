@@ -13,18 +13,20 @@ using SQL;
 
 namespace InicioSesion
 {
+    delegate void ActualizarCliente();
     public partial class NuevoCliente : Form
     {
         ErrorProvider error = new ErrorProvider();
         MenuPrincipal auxMenu;
+        event ActualizarCliente CambioEnListaCliente;
 
         #region Carga de datos
         public NuevoCliente(MenuPrincipal m)
         {
             InitializeComponent();
             auxMenu = m;
-
-
+            CambioEnListaCliente += auxMenu.CargarListaCliente;
+             
         }
 
         private void NuevoCliente_Load(object sender, EventArgs e)
@@ -171,8 +173,9 @@ namespace InicioSesion
                 Cliente nuevoCliente = new Cliente(this.txtNombre.Text, this.txtApellido.Text,this.txtDNI.Text,(Persona.ESexo) this.cmbSexo.SelectedIndex, (Persona.ENacionalidad)this.cmbNacio.SelectedIndex);
 
                 ClienteDB.InsertarCliente(nuevoCliente);
-                              
-                auxMenu.CargarListaCliente();
+
+                CambioEnListaCliente.Invoke();
+                //auxMenu.CargarListaCliente();
 
                 MessageBox.Show("Cliente agregado correctamente.");
 

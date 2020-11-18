@@ -45,11 +45,14 @@
     <Compile Include="Computadora.cs" />
     <Compile Include="Electrodomesticos.cs" />
     <Compile Include="Informatica.cs" />
-    <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Aguirre.Matias.2D.TP4\Archivos\Archivos.csproj">
+      <Project>{74715186-920b-40a0-9c50-ee70350a9a12}</Project>
+      <Name>Archivos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EX\Excepciones.csproj">
       <Project>{cb2aa867-da92-436b-be0a-8d76eaa3a52a}</Project>
       <Name>Excepciones</Name>

@@ -3,46 +3,34 @@
   <Venta>
     <Carrito>
       <Producto xsi:type="Computadora">
-        <Nombre>Lenovo 4578</Nombre>
-        <Precio>200000.99</Precio>
-        <Stock>8</Stock>
+        <Nombre>Lenovo Thinkpad</Nombre>
+        <Codigo>16</Codigo>
+        <Precio>80000</Precio>
+        <Stock>498</Stock>
         <MemoriaRam>16</MemoriaRam>
-        <Almacenamiento>240</Almacenamiento>
+        <Almacenamiento>800</Almacenamiento>
         <PerifericosBool>true</PerifericosBool>
         <GamerBool>true</GamerBool>
-      </Producto>
-      <Producto xsi:type="Celular">
-        <Nombre>Motorola C115</Nombre>
-        <Precio>18000</Precio>
-        <Stock>19</Stock>
-        <MemoriaRam>4</MemoriaRam>
-        <Almacenamiento>120</Almacenamiento>
-        <Conexion>false</Conexion>
-        <TamañoPantalla>9</TamañoPantalla>
-      </Producto>
-      <Producto xsi:type="Electrodomesticos">
-        <Nombre>Ventilador</Nombre>
-        <Precio>8000</Precio>
-        <Stock>19</Stock>
-        <Potencia>1600</Potencia>
-        <ControlRemoto>false</ControlRemoto>
-        <Categoria>Ventilacion</Categoria>
       </Producto>
     </Carrito>
     <Ticket>1</Ticket>
     <Comprador>
-      <Nombre>Maria</Nombre>
-      <Apellido>Gaitan</Apellido>
-      <DNI>46512739</DNI>
-      <Sexo>Femenino</Sexo>
+      <Nombre>Marcos</Nombre>
+      <Apellido>Gonzalez</Apellido>
+      <DNI>45987638</DNI>
+      <Sexo>Indefinido</Sexo>
       <Nacionalidad>Argentino</Nacionalidad>
+      <NroCliente>6</NroCliente>
     </Comprador>
     <Vendedor>
-      <Nombre>Miguel</Nombre>
-      <Apellido>Palermo</Apellido>
-      <DNI>45689878</DNI>
+      <Nombre>Marcos</Nombre>
+      <Apellido>Acuña</Apellido>
+      <DNI>45689785</DNI>
       <Sexo>Masculino</Sexo>
       <Nacionalidad>Argentino</Nacionalidad>
+      <Legajo>1</Legajo>
+      <Sueldo>45000</Sueldo>
+      <FechaIngreso>2020-05-17T00:00:00</FechaIngreso>
     </Vendedor>
   </Venta>
 </ArrayOfVenta>

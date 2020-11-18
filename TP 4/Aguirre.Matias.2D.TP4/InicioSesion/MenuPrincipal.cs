@@ -14,6 +14,7 @@ using SQL;
 namespace InicioSesion
 {
     public delegate Venta miDelegado(Comercio c,Venta nuevaVenta);
+
    
     public partial class MenuPrincipal : Form
     {
@@ -23,6 +24,7 @@ namespace InicioSesion
         List<Producto> listaAuxiliar;
         Venta ventaParcial=new Venta();
         public event miDelegado NuevaVenta;
+        
         int lineaSeleccionada;
         #endregion
 
@@ -39,6 +41,8 @@ namespace InicioSesion
             CargarListaCliente();
             CargarListaProducto();
             NuevaVenta += miComercio.NuevaVenta;
+      //      CambioEnLista += CargarListaCliente;
+      //      CambioEnLista += CargarListaProducto;
        
         }
         private void nuevaCompraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -294,6 +298,7 @@ namespace InicioSesion
                
 
                 Venta ventaConfirmada=NuevaVenta.Invoke(miComercio,ventaParcial);
+                //ventaConfirmada.Guardar()
 
                 ProductoDB.ActualizarStockProducto(ventaConfirmada.Carrito);
 
@@ -383,7 +388,7 @@ namespace InicioSesion
             formAgregarCliente.Show();
         }
 
-        private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnAgregarProdu_Click(object sender, EventArgs e)
         {
             AgregarProducto formAgregarProducto = new AgregarProducto(this);
             this.Hide();
@@ -393,7 +398,10 @@ namespace InicioSesion
         #endregion
         private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-          //  Comercio.Guardar(miComercio);
+            Comercio.Guardar(miComercio);
+          
         }
+
+      
     }
 }
