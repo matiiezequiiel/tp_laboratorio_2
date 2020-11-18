@@ -34,8 +34,8 @@ namespace InicioSesion
             this.columnaVendedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaTicket = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lsvProductos = new System.Windows.Forms.ListView();
-            this.columnaPrecio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaProducto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnaPrecio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnaCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -64,12 +64,12 @@ namespace InicioSesion
             // columnaComprador
             // 
             this.columnaComprador.Text = "Comprador";
-            this.columnaComprador.Width = 96;
+            this.columnaComprador.Width = 140;
             // 
             // columnaVendedor
             // 
             this.columnaVendedor.Text = "Vendedor";
-            this.columnaVendedor.Width = 104;
+            this.columnaVendedor.Width = 143;
             // 
             // columnaTicket
             // 
@@ -95,16 +95,14 @@ namespace InicioSesion
             this.lsvProductos.UseCompatibleStateImageBehavior = false;
             this.lsvProductos.View = System.Windows.Forms.View.Details;
             // 
-            // columnaPrecio
-            // 
-            this.columnaPrecio.DisplayIndex = 1;
-            this.columnaPrecio.Text = "Precio";
-            // 
             // columnaProducto
             // 
-            this.columnaProducto.DisplayIndex = 0;
             this.columnaProducto.Text = "Producto";
-            this.columnaProducto.Width = 91;
+            this.columnaProducto.Width = 167;
+            // 
+            // columnaPrecio
+            // 
+            this.columnaPrecio.Text = "Precio";
             // 
             // columnaCodigo
             // 

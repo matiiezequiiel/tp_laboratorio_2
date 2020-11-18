@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Clases_Instanciables;
 using Clases_Abstractas;
 using SQL;
+using System.Threading;
 
 namespace InicioSesion
 {
@@ -20,21 +21,21 @@ namespace InicioSesion
     {
 
         #region Atributos
-        public Comercio miComercio = new Comercio(ProductoDB.TraerProductos(), EmpleadoDB.TraerEmpleados(), ClienteDB.TraerClientes(),Comercio.Leer());
+        public Comercio miComercio;
         List<Producto> listaAuxiliar;
         Venta ventaParcial=new Venta();
         public event miDelegado NuevaVenta;
-        
         int lineaSeleccionada;
         #endregion
 
         #region Carga de datos
-
-        public MenuPrincipal(UserPass a)
+      
+        public MenuPrincipal(Comercio datosComercio,UserPass a)
         {
             InitializeComponent();
             this.txtEmpleadoLogeado.Text = a.txtUsuario.Text;
             this.txtLegajo.Text = a.txtLegajo.Text;
+            miComercio = datosComercio;
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -378,6 +379,7 @@ namespace InicioSesion
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             NuevoCliente formAgregarCliente = new NuevoCliente(this);
+           
             this.Hide();
             formAgregarCliente.Show();
         }
@@ -397,8 +399,8 @@ namespace InicioSesion
             ventas.Show();
         }
 
+
         #endregion
 
-      
     }
 }

@@ -8,17 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQL;
+using Clases_Instanciables;
+using Clases_Abstractas;
+using System.Threading;
 
 namespace InicioSesion
 {
+    
     public partial class UserPass : Form
     {
+        static Comercio datosComercioTabla;
+        Thread cargaDeDatos = new Thread(cargarDatosComercio);
+
 
         public UserPass()
         {
             InitializeComponent();
+            cargaDeDatos.Start();
 
         }
+
+        public static void cargarDatosComercio()
+        {
+            List<Empleado> empleados = EmpleadoDB.TraerEmpleados();
+            List<Cliente> clientes = ClienteDB.TraerClientes();
+            List<Producto> productos = ProductoDB.TraerProductos();
+            List<Venta> ventasRealizadas = Comercio.Leer();
+
+            datosComercioTabla = new Comercio(productos, empleados, clientes, ventasRealizadas);
+
+        }
+
 
         private void UserPass_Load(object sender, EventArgs e)
         {
@@ -33,7 +53,7 @@ namespace InicioSesion
             if (EmpleadoDB.ValidarContraseña(txtPass.Text, txtLegajo.Text))
             {
                 MessageBox.Show("Acceso correcto", "Inicio de sesion de " + txtUsuario.Text, MessageBoxButtons.OK,MessageBoxIcon.Information);
-                MenuPrincipal formMenu = new MenuPrincipal(this);
+                MenuPrincipal formMenu = new MenuPrincipal(datosComercioTabla,this);
                 this.Hide();
                 formMenu.Show();
                 this.Hide();
@@ -50,6 +70,14 @@ namespace InicioSesion
                 this.Close();
                 FormIngresoSistema formInicio = new FormIngresoSistema();
                 formInicio.Show();
+        }
+
+        private void UserPass_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(cargaDeDatos.IsAlive)
+            {
+                cargaDeDatos.Abort();
+            }
         }
     }
 }

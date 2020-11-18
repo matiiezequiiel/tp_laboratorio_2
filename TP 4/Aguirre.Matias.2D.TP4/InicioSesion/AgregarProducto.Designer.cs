@@ -104,7 +104,7 @@ namespace InicioSesion
             this.txtNombre.Location = new System.Drawing.Point(141, 59);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(111, 20);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
             this.txtNombre.Validated += new System.EventHandler(this.txtNombre_Validated);
             // 
@@ -113,7 +113,7 @@ namespace InicioSesion
             this.txtPrecio.Location = new System.Drawing.Point(141, 96);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(111, 20);
-            this.txtPrecio.TabIndex = 5;
+            this.txtPrecio.TabIndex = 2;
             this.txtPrecio.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrecio_Validating);
             this.txtPrecio.Validated += new System.EventHandler(this.txtPrecio_Validated);
             // 
@@ -122,7 +122,7 @@ namespace InicioSesion
             this.txtStockInicial.Location = new System.Drawing.Point(141, 134);
             this.txtStockInicial.Name = "txtStockInicial";
             this.txtStockInicial.Size = new System.Drawing.Size(111, 20);
-            this.txtStockInicial.TabIndex = 6;
+            this.txtStockInicial.TabIndex = 3;
             this.txtStockInicial.Validating += new System.ComponentModel.CancelEventHandler(this.txtStockInicial_Validating);
             this.txtStockInicial.Validated += new System.EventHandler(this.txtStockInicial_Validated);
             // 
@@ -132,7 +132,7 @@ namespace InicioSesion
             this.cmbTipo.Location = new System.Drawing.Point(141, 21);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(111, 21);
-            this.cmbTipo.TabIndex = 7;
+            this.cmbTipo.TabIndex = 0;
             this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
             this.cmbTipo.Validating += new System.ComponentModel.CancelEventHandler(this.cmbTipo_Validating);
             this.cmbTipo.Validated += new System.EventHandler(this.cmbTipo_Validated);
@@ -143,7 +143,7 @@ namespace InicioSesion
             this.btnAgregar.Location = new System.Drawing.Point(399, 313);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 37);
-            this.btnAgregar.TabIndex = 8;
+            this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -154,7 +154,7 @@ namespace InicioSesion
             this.btnSalir.Location = new System.Drawing.Point(247, 313);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 37);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -165,7 +165,7 @@ namespace InicioSesion
             this.cmbCategoria.Location = new System.Drawing.Point(480, 211);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(111, 21);
-            this.cmbCategoria.TabIndex = 10;
+            this.cmbCategoria.TabIndex = 12;
             this.cmbCategoria.Validating += new System.ComponentModel.CancelEventHandler(this.cmbPerifericos_Validating);
             this.cmbCategoria.Validated += new System.EventHandler(this.cmbPerifericos_Validated);
             // 
@@ -184,7 +184,7 @@ namespace InicioSesion
             this.txtMemoria.Location = new System.Drawing.Point(141, 172);
             this.txtMemoria.Name = "txtMemoria";
             this.txtMemoria.Size = new System.Drawing.Size(111, 20);
-            this.txtMemoria.TabIndex = 13;
+            this.txtMemoria.TabIndex = 4;
             this.txtMemoria.Validating += new System.ComponentModel.CancelEventHandler(this.txtMemoria_Validating);
             this.txtMemoria.Validated += new System.EventHandler(this.txtMemoria_Validated);
             // 
@@ -203,7 +203,7 @@ namespace InicioSesion
             this.txtAlmacenamiento.Location = new System.Drawing.Point(141, 214);
             this.txtAlmacenamiento.Name = "txtAlmacenamiento";
             this.txtAlmacenamiento.Size = new System.Drawing.Size(111, 20);
-            this.txtAlmacenamiento.TabIndex = 15;
+            this.txtAlmacenamiento.TabIndex = 5;
             this.txtAlmacenamiento.Validating += new System.ComponentModel.CancelEventHandler(this.txtAlmacenamiento_Validating);
             this.txtAlmacenamiento.Validated += new System.EventHandler(this.txtAlmacenamiento_Validated);
             // 
@@ -230,6 +230,7 @@ namespace InicioSesion
             // cmbConexion
             // 
             this.cmbConexion.FormattingEnabled = true;
+            this.cmbConexion.ItemHeight = 13;
             this.cmbConexion.Location = new System.Drawing.Point(141, 254);
             this.cmbConexion.Name = "cmbConexion";
             this.cmbConexion.Size = new System.Drawing.Size(111, 21);
@@ -242,7 +243,7 @@ namespace InicioSesion
             this.txtPantalla.Location = new System.Drawing.Point(480, 24);
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(111, 20);
-            this.txtPantalla.TabIndex = 19;
+            this.txtPantalla.TabIndex = 7;
             this.txtPantalla.Validating += new System.ComponentModel.CancelEventHandler(this.txtPantalla_Validating);
             this.txtPantalla.Validated += new System.EventHandler(this.txtPantalla_Validated);
             // 
@@ -282,7 +283,7 @@ namespace InicioSesion
             this.cmbGamer.Location = new System.Drawing.Point(480, 61);
             this.cmbGamer.Name = "cmbGamer";
             this.cmbGamer.Size = new System.Drawing.Size(111, 21);
-            this.cmbGamer.TabIndex = 23;
+            this.cmbGamer.TabIndex = 8;
             this.cmbGamer.Validating += new System.ComponentModel.CancelEventHandler(this.cmbGamer_Validating);
             this.cmbGamer.Validated += new System.EventHandler(this.cmbGamer_Validated);
             // 
@@ -292,7 +293,7 @@ namespace InicioSesion
             this.cmbPerifericos.Location = new System.Drawing.Point(480, 97);
             this.cmbPerifericos.Name = "cmbPerifericos";
             this.cmbPerifericos.Size = new System.Drawing.Size(111, 21);
-            this.cmbPerifericos.TabIndex = 24;
+            this.cmbPerifericos.TabIndex = 9;
             this.cmbPerifericos.Validating += new System.ComponentModel.CancelEventHandler(this.cmbCategoria_Validating);
             this.cmbPerifericos.Validated += new System.EventHandler(this.cmbCategoria_Validated);
             // 
@@ -301,7 +302,7 @@ namespace InicioSesion
             this.txtPotencia.Location = new System.Drawing.Point(480, 172);
             this.txtPotencia.Name = "txtPotencia";
             this.txtPotencia.Size = new System.Drawing.Size(111, 20);
-            this.txtPotencia.TabIndex = 26;
+            this.txtPotencia.TabIndex = 11;
             this.txtPotencia.Validating += new System.ComponentModel.CancelEventHandler(this.txtPotencia_Validating);
             this.txtPotencia.Validated += new System.EventHandler(this.txtPotencia_Validated);
             // 
@@ -321,7 +322,7 @@ namespace InicioSesion
             this.cmbControl.Location = new System.Drawing.Point(480, 134);
             this.cmbControl.Name = "cmbControl";
             this.cmbControl.Size = new System.Drawing.Size(111, 21);
-            this.cmbControl.TabIndex = 28;
+            this.cmbControl.TabIndex = 10;
             this.cmbControl.Validating += new System.ComponentModel.CancelEventHandler(this.cmbControl_Validating);
             this.cmbControl.Validated += new System.EventHandler(this.cmbControl_Validated);
             // 

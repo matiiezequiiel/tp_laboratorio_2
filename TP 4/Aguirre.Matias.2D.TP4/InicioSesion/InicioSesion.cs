@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQL;
-using Clases_Instanciables;
+
 
 namespace InicioSesion
 {
@@ -18,15 +18,15 @@ namespace InicioSesion
         public string nombreUsuario;
         public string apellidoUsuario;
         public string legajo;
-        
+       
 
         public FormIngresoSistema()
         {
             InitializeComponent();
-            dtgLogin.DataSource = EmpleadoDB.TraerEmpleados();
-          
+            dtgLogin.DataSource = EmpleadoDB.TraerEmpleados();        
                        
         }
+
 
         private void dtgLogin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
