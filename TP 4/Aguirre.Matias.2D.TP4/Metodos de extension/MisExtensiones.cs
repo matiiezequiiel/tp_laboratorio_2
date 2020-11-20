@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,11 @@ namespace Metodos_de_extension
 {
     public static class MisExtensiones
     {
+        /// <summary>
+        /// Transforma string "si","no","1","0","true","false" en bool. IMPLEMENTACION METODO DE EXTENSION
+        /// </summary>
+        /// <param name="value">valor a convertir</param>
+        /// <returns></returns>
         public static bool ToBoolean(this string value)
         {
             switch (value.ToLower())
@@ -29,17 +34,5 @@ namespace Metodos_de_extension
             }
         }
 
-        public static string ToCharSexo(this string value)
-        {
-            switch (value.ToLower())
-            {
-                case "Masculino":
-                    return "M";
-                case "Femenino":
-                    return "F";
-                default:
-                    throw new InvalidCastException("No se pudo convertir el valor.");
-            }
-        }
     }
 }

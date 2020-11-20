@@ -9,6 +9,9 @@ using Clases_Instanciables;
 
 namespace SQL
 {
+    /// <summary>
+    /// IMPLEMENTACION DE BD
+    /// </summary>
     public class ProductoDB
     {
         const string STRINGCONNEC = @"Data Source=DESKTOP-9CR275H\SQLEXPRESS;Initial Catalog =TP4;Integrated Security = True";

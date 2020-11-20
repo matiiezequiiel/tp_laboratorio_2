@@ -38,6 +38,11 @@ namespace InicioSesion
             miComercio = datosComercio;
         }
 
+        /// <summary>
+        /// IMPLEMENTACION DE EVENTOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             CargarVendedor();
@@ -60,12 +65,12 @@ namespace InicioSesion
             }
         }
 
+       
         public void CargarListaCliente()
         {
             
             lsvClientes.Items.Clear();
 
-            miComercio.Clientes = ClienteDB.TraerClientes();
 
             foreach (Cliente item in miComercio.Clientes)
             {
@@ -82,7 +87,7 @@ namespace InicioSesion
 
             lsvProductos.Items.Clear();
 
-            listaAuxiliar = ProductoDB.TraerProductos();
+            listaAuxiliar = miComercio.Inventario;
           
             foreach (Producto item in listaAuxiliar)
             {
@@ -285,6 +290,11 @@ namespace InicioSesion
 
         }
 
+        /// <summary>
+        /// IMPLEMENTACION DE BD, EVENTOS, ARCHIVOS.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirmarCompra_Click(object sender, EventArgs e)
         {
 

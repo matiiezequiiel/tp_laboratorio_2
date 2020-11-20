@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Venta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Carrito>
+    <Producto xsi:type="Computadora">
+      <Nombre>Asus 8000</Nombre>
+      <Codigo>4</Codigo>
+      <Precio>3000000</Precio>
+      <Stock>1</Stock>
+      <MemoriaRam>32</MemoriaRam>
+      <Almacenamiento>480</Almacenamiento>
+      <PerifericosBool>true</PerifericosBool>
+      <GamerBool>true</GamerBool>
+    </Producto>
+  </Carrito>
+  <Ticket>9</Ticket>
+  <Comprador>
+    <Nombre>Maria</Nombre>
+    <Apellido>Gaitan</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>46512739</DNI>
+    <Sexo>Femenino</Sexo>
+    <NroCliente>4</NroCliente>
+  </Comprador>
+  <Vendedor>
+    <Nombre>Marcos</Nombre>
+    <Apellido>Acuña</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45689785</DNI>
+    <Sexo>Masculino</Sexo>
+    <Legajo>1</Legajo>
+    <Sueldo>45000</Sueldo>
+    <FechaIngreso>2020-05-17T00:00:00</FechaIngreso>
+  </Vendedor>
+</Venta>

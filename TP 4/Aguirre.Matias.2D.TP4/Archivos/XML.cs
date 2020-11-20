@@ -9,6 +9,10 @@ using Excepciones;
 
 namespace Archivos
 {
+    /// <summary>
+    /// IMPLEMENTACION DE GENERICS.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class XML<T> : IArchivo<T> where T:class, new()
     {
         /// <summary>

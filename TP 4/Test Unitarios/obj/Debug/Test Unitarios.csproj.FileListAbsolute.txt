@@ -15,3 +15,11 @@ C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\obj\Deb
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\obj\Debug\Test Unitarios.csproj.CopyComplete
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\obj\Debug\Test Unitarios.dll
 C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\obj\Debug\Test Unitarios.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\Archivos.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\Clases Abstractas.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\Clases Instanciables.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\EX.dll
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\Archivos.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\Clases Abstractas.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\Clases Instanciables.pdb
+C:\Users\matii\Desktop\PROYECTOS\C#\TP's LABORATORIO\TP 4\Test Unitarios\bin\Debug\EX.pdb

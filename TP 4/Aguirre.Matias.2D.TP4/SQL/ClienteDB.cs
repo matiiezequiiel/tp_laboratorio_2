@@ -10,6 +10,10 @@ using Clases_Instanciables;
 
 namespace SQL
 {
+
+    /// <summary>
+    /// IMPLEMENTACION DE BD
+    /// </summary>
     public static class ClienteDB
     {
         const string STRINGCONNEC = @"Data Source=DESKTOP-9CR275H\SQLEXPRESS;Initial Catalog =TP4;Integrated Security = True"; 

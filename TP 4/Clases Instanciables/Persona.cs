@@ -151,7 +151,7 @@ namespace Clases_Abstractas
         #region Metodos
 
         /// <summary>
-        /// Valida dni del tipo int si esta dentro de los rangos para cada nacionalidad.
+        /// Valida dni del tipo int si esta dentro de los rangos para cada nacionalidad. IMPLEMENTACION DE EXCEPCIONES
         /// </summary>
         /// <param name="nacionalidad">Nacionalidad </param>
         /// <param name="dato">Dni a validar.</param>
@@ -181,9 +181,9 @@ namespace Clases_Abstractas
 
 
         }
-      
+
         /// <summary>
-        /// Valida dni del tipo string si esta dentro de los rangos para cada nacionalidad.
+        /// Valida dni del tipo string si esta dentro de los rangos para cada nacionalidad. IMPLEMENTACION DE EXCEPCIONES
         /// </summary>
         /// <param name="nacionalidad">Nacionalidad </param>
         /// <param name="dato">Dni a validar.</param>

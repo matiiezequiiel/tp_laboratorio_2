@@ -9,6 +9,9 @@ using Excepciones;
 
 namespace Consola
 {
+    /// <summary>
+    /// TEST DE CONSOLO PARA PRUEBA PONER COMO PROYECTO DE INICIO.
+    /// </summary>
     class Test
     {
         static void Main(string[] args)

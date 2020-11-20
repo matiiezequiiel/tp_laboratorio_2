@@ -19,8 +19,8 @@ namespace InicioSesion
     {
         ErrorProvider error = new ErrorProvider();
         MenuPrincipal auxMenu;
-        enum ETipoProducto { Celular,Computadora,Electrodomestico };
-        enum EOpcion { SI,NO };
+        enum ETipoProducto { Celular, Computadora, Electrodomestico };
+        enum EOpcion { SI, NO };
         event ActualizarCliente CambioEnListaProducto;
 
 
@@ -32,7 +32,8 @@ namespace InicioSesion
             CambioEnListaProducto += auxMenu.CargarListaProducto;
             CambioEnListaProducto += LimpiarCampos;
             
-            
+
+
         }
         private void AgregarProducto_Load(object sender, EventArgs e)
         {
@@ -44,42 +45,88 @@ namespace InicioSesion
             cmbPerifericos.DataSource = Enum.GetValues(typeof(EOpcion));
             CargarMenu(false);
             cmbTipo.Text = string.Empty;
-            
+
         }
 
+        #region Manejo de listas
         public void CargarMenu(bool estado)
         {
-          
-              lblAlmacenamiento.Enabled = estado;
-              lblCategoria.Enabled = estado;
-              lblConexion.Enabled = estado;
-              lblControl.Enabled = estado;
-              lblGamer.Enabled = estado;
-              lblMemoria.Enabled = estado;
-              lblNombre.Enabled = estado;
-              lblPantalla.Enabled = estado;
-              lblPerifericos.Enabled = estado;
-              lblPotencia.Enabled = estado;
-              lblPrecio.Enabled = estado;
-              lblStockInicial.Enabled = estado;
-              txtAlmacenamiento.Enabled = estado;
-              txtMemoria.Enabled = estado;
-              txtNombre.Enabled = estado;
-              txtPantalla.Enabled = estado;
-              txtPotencia.Enabled = estado;
-              txtPrecio.Enabled = estado;
-              txtStockInicial.Enabled = estado;
-              cmbCategoria.Enabled = estado;
-              cmbConexion.Enabled = estado;
-              cmbControl.Enabled = estado;
-              cmbGamer.Enabled = estado;
-              cmbPerifericos.Enabled = estado;
-            
-           
+
+            lblAlmacenamiento.Enabled = estado;
+            lblCategoria.Enabled = estado;
+            lblConexion.Enabled = estado;
+            lblControl.Enabled = estado;
+            lblGamer.Enabled = estado;
+            lblMemoria.Enabled = estado;
+            lblNombre.Enabled = estado;
+            lblPantalla.Enabled = estado;
+            lblPerifericos.Enabled = estado;
+            lblPotencia.Enabled = estado;
+            lblPrecio.Enabled = estado;
+            lblStockInicial.Enabled = estado;
+            txtAlmacenamiento.Enabled = estado;
+            txtMemoria.Enabled = estado;
+            txtNombre.Enabled = estado;
+            txtPantalla.Enabled = estado;
+            txtPotencia.Enabled = estado;
+            txtPrecio.Enabled = estado;
+            txtStockInicial.Enabled = estado;
+            cmbCategoria.Enabled = estado;
+            cmbConexion.Enabled = estado;
+            cmbControl.Enabled = estado;
+            cmbGamer.Enabled = estado;
+            cmbPerifericos.Enabled = estado;
+
+
+        }
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (cmbTipo.Text)
+            {
+                case "Celular":
+                    CargarMenu(true);
+                    this.txtPotencia.Enabled = false;
+                    this.cmbGamer.Enabled = false;
+                    this.cmbControl.Enabled = false;
+                    this.cmbCategoria.Enabled = false;
+                    this.cmbPerifericos.Enabled = false;
+
+                    break;
+
+                case "Electrodomestico":
+                    CargarMenu(true);
+                    this.cmbGamer.Enabled = false;
+                    this.cmbPerifericos.Enabled = false;
+                    this.cmbConexion.Enabled = false;
+                    this.txtAlmacenamiento.Enabled = false;
+                    this.txtMemoria.Enabled = false;
+                    this.txtPantalla.Enabled = false;
+
+
+                    break;
+
+                case "Computadora":
+                    CargarMenu(true);
+                    this.txtPotencia.Enabled = false;
+                    this.txtPantalla.Enabled = false;
+                    this.cmbConexion.Enabled = false;
+                    this.cmbControl.Enabled = false;
+                    this.cmbCategoria.Enabled = false;
+
+                    break;
+
+            }
+
         }
 
-      
+        #endregion
 
+        /// <summary>
+        /// IMPLEMENTACION DE EVENTOS,BD Y METODO DE EXTENSION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
           
@@ -94,6 +141,8 @@ namespace InicioSesion
                         {
                             Celular nuevoCel = new Celular(this.txtNombre.Text, double.Parse(this.txtPrecio.Text), int.Parse(this.txtStockInicial.Text), int.Parse(this.txtMemoria.Text), int.Parse(this.txtAlmacenamiento.Text), this.cmbConexion.Text.ToBoolean(), float.Parse(this.txtPantalla.Text));
                             ProductoDB.InsertarProductosInformatica(nuevoCel);
+                            auxMenu.miComercio.Inventario.Clear();
+                            auxMenu.miComercio.Inventario = ProductoDB.TraerProductos();
                             MessageBox.Show("Producto agregado correctamente.");
                             
                             CambioEnListaProducto.Invoke();
@@ -110,8 +159,11 @@ namespace InicioSesion
                         if (this.txtPotencia.Text != string.Empty && this.cmbControl.Text != string.Empty && this.cmbCategoria.Text != string.Empty)
                         {
                             Electrodomesticos nuevoElectro = new Electrodomesticos(this.txtNombre.Text, double.Parse(this.txtPrecio.Text), int.Parse(this.txtStockInicial.Text), int.Parse(this.txtPotencia.Text), this.cmbControl.Text.ToBoolean(), Electrodomesticos.StringTOCategoria(this.cmbCategoria.Text));
-                            MessageBox.Show("Producto agregado correctamente.");
                             ProductoDB.InsertarProductosElectro(nuevoElectro);
+                            auxMenu.miComercio.Inventario.Clear();
+                            auxMenu.miComercio.Inventario = ProductoDB.TraerProductos();
+                            MessageBox.Show("Producto agregado correctamente.");
+
 
                             CambioEnListaProducto.Invoke();
                         }
@@ -128,6 +180,8 @@ namespace InicioSesion
 
                             Computadora nuevaComputadora = new Computadora(this.txtNombre.Text, double.Parse(this.txtPrecio.Text), int.Parse(this.txtStockInicial.Text), int.Parse(this.txtMemoria.Text), int.Parse(this.txtAlmacenamiento.Text), this.cmbPerifericos.Text.ToBoolean(), this.cmbGamer.Text.ToBoolean());
                             ProductoDB.InsertarProductosInformatica(nuevaComputadora);
+                            auxMenu.miComercio.Inventario.Clear();
+                            auxMenu.miComercio.Inventario = ProductoDB.TraerProductos();
                             MessageBox.Show("Producto agregado correctamente.");
 
                             CambioEnListaProducto.Invoke();
@@ -165,7 +219,6 @@ namespace InicioSesion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-           // UserPass.formMenu.Show();
             auxMenu.Show();
         }
 
@@ -491,45 +544,6 @@ namespace InicioSesion
 
         #endregion
 
-        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-            switch (cmbTipo.Text)
-            {
-                case "Celular":
-                    CargarMenu(true);
-                    this.txtPotencia.Enabled = false;
-                    this.cmbGamer.Enabled = false;
-                    this.cmbControl.Enabled = false;
-                    this.cmbCategoria.Enabled = false;
-                    this.cmbPerifericos.Enabled = false;
-
-                    break;
-                        
-                case "Electrodomestico":
-                    CargarMenu(true);
-                    this.cmbGamer.Enabled = false;
-                    this.cmbPerifericos.Enabled = false;
-                    this.cmbConexion.Enabled = false;
-                    this.txtAlmacenamiento.Enabled = false;
-                    this.txtMemoria.Enabled = false;
-                    this.txtPantalla.Enabled = false;
-                
-                  
-                    break;
-
-                case "Computadora":
-                    CargarMenu(true);
-                    this.txtPotencia.Enabled = false;
-                    this.txtPantalla.Enabled = false;
-                    this.cmbConexion.Enabled = false;
-                    this.cmbControl.Enabled = false;
-                    this.cmbCategoria.Enabled = false;
-                  
-                    break;
-
-            }
-           
-        }
+       
     }
 }

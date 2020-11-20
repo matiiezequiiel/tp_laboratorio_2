@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Venta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Carrito>
+    <Producto xsi:type="Celular">
+      <Nombre>Motorola C115</Nombre>
+      <Codigo>9</Codigo>
+      <Precio>18000</Precio>
+      <Stock>12</Stock>
+      <MemoriaRam>4</MemoriaRam>
+      <Almacenamiento>120</Almacenamiento>
+      <Conexion>false</Conexion>
+      <TamañoPantalla>9</TamañoPantalla>
+    </Producto>
+    <Producto xsi:type="Electrodomesticos">
+      <Nombre>Ventilador</Nombre>
+      <Codigo>201</Codigo>
+      <Precio>8000</Precio>
+      <Stock>18</Stock>
+      <Potencia>1600</Potencia>
+      <ControlRemoto>false</ControlRemoto>
+      <Categoria>Ventilacion</Categoria>
+    </Producto>
+  </Carrito>
+  <Ticket>13</Ticket>
+  <Comprador>
+    <Nombre>Nicolas</Nombre>
+    <Apellido>Soste</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>50789457</DNI>
+    <Sexo>Masculino</Sexo>
+    <NroCliente>10</NroCliente>
+  </Comprador>
+  <Vendedor>
+    <Nombre>Marcos</Nombre>
+    <Apellido>Acuña</Apellido>
+    <Nacionalidad>Argentino</Nacionalidad>
+    <DNI>45689785</DNI>
+    <Sexo>Masculino</Sexo>
+    <Legajo>1</Legajo>
+    <Sueldo>45000</Sueldo>
+    <FechaIngreso>2020-05-17T00:00:00</FechaIngreso>
+  </Vendedor>
+</Venta>

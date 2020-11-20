@@ -18,6 +18,9 @@ namespace InicioSesion
     public partial class UserPass : Form
     {
         static Comercio datosComercioTabla;
+        /// <summary>
+        /// IMPLEMENTACION DE HILOS.
+        /// </summary>
         Thread cargaDeDatos = new Thread(cargarDatosComercio);
 
 

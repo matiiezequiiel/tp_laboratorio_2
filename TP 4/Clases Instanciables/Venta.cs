@@ -14,7 +14,6 @@ namespace Clases_Instanciables
     public sealed class Venta 
     {
        
-
         #region Atributos
         Cliente comprador;
         Empleado vendedor;

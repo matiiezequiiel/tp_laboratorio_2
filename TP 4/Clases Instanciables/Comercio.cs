@@ -192,7 +192,7 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// Metodo de clase para leer un archivo .xml y retorna su informacion
+        /// Metodo de clase para leer un archivo .xml y retorna su informacion. IMPLEMENTACION DE ARCHIVOS.
         /// </summary>
         /// <returns>True si se leyo correctamente, false si no.</returns>
         public static List<Venta> Leer()
@@ -311,7 +311,7 @@ namespace Clases_Instanciables
         }
 
         /// <summary>
-        /// Agrega una venta al comercio para la prueba TEST, en el formulario guarda en un XML.
+        /// Agrega una venta al comercio para la prueba TEST, en el formulario guarda en un XML. IMPLEMENTACION DE EXCEPCIONES
         /// </summary>
         /// <param name="c">Comercio.</param>
         /// <param name="a">Venta</param>
@@ -319,6 +319,7 @@ namespace Clases_Instanciables
         public static Comercio operator + (Comercio c, Venta a)
         {
             bool existe = false;
+            int ticket;
 
             foreach (Venta item in c.ventas)
             {
@@ -334,11 +335,19 @@ namespace Clases_Instanciables
                 throw new VentaDuplicadaException();
             }
             else
-            {
-
+            { 
+                    
                 List<Producto> l = new List<Producto>();
                 l.AddRange(a.Carrito);
-                int ticket=c.ventas.Count;
+                if (a.Ticket == 0)
+                {
+                    ticket = c.ventas.Count;
+                }
+                else
+                {
+                    ticket = a.Ticket;
+                }
+                    
                 Cliente cl = new Cliente();
                 cl=a.Comprador;
                 Empleado v = new Empleado();

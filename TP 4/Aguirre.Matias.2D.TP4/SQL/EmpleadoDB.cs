@@ -10,6 +10,9 @@ using System.Security.Cryptography;
 
 namespace SQL
 {
+    /// <summary>
+    /// IMPLEMENTACION DE BD
+    /// </summary>
     public class EmpleadoDB
     {
         const string STRINGCONNEC = @"Data Source=DESKTOP-9CR275H\SQLEXPRESS;Initial Catalog =TP4;Integrated Security = True"; 

@@ -55,6 +55,8 @@ namespace InicioSesion
 
             string nroTicket="";
 
+            lsvProductos.Items.Clear();
+
             CheckBoxIndicesEmpleados(e.Index);
 
 
@@ -79,7 +81,7 @@ namespace InicioSesion
                 {
                     foreach (Producto item2 in item.Carrito)
                     {
-                        lsvProductos.Items.Clear(); 
+                        
                         ListViewItem aux = new ListViewItem(item2.Nombre.ToString());
                         aux.SubItems.Add(item2.Precio.ToString());
                         aux.SubItems.Add(item2.Codigo.ToString());

@@ -22,6 +22,10 @@ namespace InicioSesion
         event ActualizarCliente CambioEnListaCliente;
 
         #region Carga de datos
+        /// <summary>
+        /// IMPLEMENTACION DE EVENTOS
+        /// </summary>
+        /// <param name="m"></param>
         public NuevoCliente(MenuPrincipal m)
         {
             InitializeComponent();
@@ -163,6 +167,11 @@ namespace InicioSesion
         #endregion
 
         #region Agrego Cliente
+        /// <summary>
+        /// IMPLEMENTACION DE EVENTOS, BD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
          
@@ -173,7 +182,10 @@ namespace InicioSesion
                 {
                     Cliente nuevoCliente = new Cliente(this.txtNombre.Text, this.txtApellido.Text, this.txtDNI.Text, (Persona.ESexo)this.cmbSexo.SelectedIndex, (Persona.ENacionalidad)this.cmbNacio.SelectedIndex);
                     ClienteDB.InsertarCliente(nuevoCliente);
+                    auxMenu.miComercio.Clientes.Clear();
+                    auxMenu.miComercio.Clientes = ClienteDB.TraerClientes();
                     CambioEnListaCliente.Invoke();
+
                     MessageBox.Show("Cliente agregado correctamente.");
                 }
                 catch(DniInvalidoException ex)
@@ -208,7 +220,6 @@ namespace InicioSesion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            //UserPass.formMenu.Show();
             auxMenu.Show();
         }
 
