@@ -107,7 +107,7 @@ namespace Clases_Abstractas
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
         /// <param name="nacionalidad"> Argentino, Extranjero </param>
-        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad) : this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
